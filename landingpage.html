@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>lache&lebe | Meditation & Bewusstsein</title>
+
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      background: #f8f8fb;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #c084fc, #60a5fa);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 20px;
+    }
+
+    .box {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      margin-bottom: 20px;
+    }
+
+    .choices button {
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+      padding: 14px;
+      background: #6d28d9;
+      color: white;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    .choices button:hover {
+      background: #7c3aed;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      margin-bottom: 14px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 15px;
+    }
+
+    button.submit {
+      background: #2563eb;
+      color: white;
+      border: none;
+      padding: 14px;
+      width: 100%;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button.submit:hover {
+      background: #1d4ed8;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 13px;
+      padding: 25px;
+    }
+
+    a {
+      color: #2563eb;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>lache&lebe | Meditation & Bewusstsein</h1>
+  <p>Ich begleite dich auf deinem Weg zu mehr Lebensfreude, Ruhe und innerer Balance.</p>
+</header>
+
+<section>
+
+  <div class="box">
+    <p>
+      Hier findest du kostenlose Meditationen – unter anderem eine 4-Tage-Meditationsreihe für Erwachsene,
+      damit du auftanken, loslassen und einfach wieder du selbst sein kannst.
+    </p>
+
+    <p>
+      Auch für unsere Kinder, die unser wertvollstes Gut sind, gibt es eine liebevoll geführte 3-Tage-Meditationsreihe,
+      damit auch sie Entspannung, Vertrauen und innere Stärke erleben dürfen.
+    </p>
+
+    <p>
+      Denn Meditation nährt die Seele – und genauso wichtig ist es, auf den Körper zu achten.
+      Darum erhältst du hier außerdem verständliche Informationen zur Nährstoffbalance
+      und wie du deinen Körper sanft und natürlich unterstützen kannst.
+    </p>
+
+    <p>
+      Ich freue mich, wenn du dabei bist und dir diese kleinen Auszeiten schenkst 🌸
+    </p>
+  </div>
+
+  <h2>Bitte wähle, was dich interessiert:</h2>
+
+  <div class="box choices">
+    <button>Seele Erwachsene | 4-Tage-Meditationsreihe</button>
+    <button>Körper | Nährstoffbalance-Vortrag</button>
+    <button>Kinder | 3-Tage-Meditationsreihe</button>
+  </div>
+
+  <div class="box">
+    <h3>Anmeldung</h3>
+
+    <!-- 👉 HIER können wir später Formspree/Mailerlite einfügen -->
+    <form>
+
+      <label>Name</label>
+      <input type="text" name="name" required>
+
+      <label>E-Mail</label>
+      <input type="email" name="email" required>
+
+      <label>Auswahl</label>
+      <select name="auswahl" required>
+        <option value="">Bitte auswählen…</option>
+        <option value="erwachsene">Seele Erwachsene | 4-Tage-Meditationsreihe</option>
+        <option value="koerper">Körper | Nährstoffbalance-Vortrag</option>
+        <option value="kinder">Kinder | 3-Tage-Meditationsreihe</option>
+      </select>
+
+      <label>
+        <input type="checkbox" required>
+        Ich stimme zu, E-Mails zu meinen ausgewählten Inhalten und passenden Angeboten zu erhalten.
+        Ich kann mich jederzeit abmelden. Weitere Informationen stehen in der Datenschutzerklärung.
+      </label>
+
+      <button class="submit" type="submit">Anmelden</button>
+    </form>
+  </div>
+
+  <footer>
+    <a href="#">Impressum</a> •
+    <a href="#">Datenschutz</a>
+  </footer>
+
+</section>
+
+</body>
+</html>
