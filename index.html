@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>lache&lebe | Meditation & Bewusstsein</title>
+  <meta name="description" content="Kostenlose Meditationen für Erwachsene und Kinder sowie ein Vortrag zur Nährstoffbalance. lache&lebe – Meditation & Bewusstsein mit Andrea Hopf.">
 
   <style>
     :root {
@@ -40,11 +41,20 @@
       background: linear-gradient(to bottom, var(--bg-card-top) 0 38%, var(--bg-card-bottom) 38% 100%);
     }
 
-    .card-inner { padding: 80px 26px 26px; }
+    .card-inner {
+      padding: 80px 26px 26px;
+    }
 
+    @media (max-width: 640px) {
+      .card-inner {
+        padding: 80px 18px 22px;
+      }
+    }
+
+    /* Rundes Bild oben */
     .avatar-wrapper {
       position: absolute;
-      top: 18px;
+      top: -25px; /* etwas höher, damit es nicht im Text hängt */
       left: 50%;
       transform: translateX(-50%);
       width: 104px;
@@ -53,19 +63,26 @@
       border: 4px solid #f4f1ea;
       overflow: hidden;
       box-shadow: 0 12px 30px rgba(148,163,184,.9);
+      background: #d1e4dc;
     }
 
     .avatar-wrapper img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      display: block;
     }
 
-    header { text-align: center; max-width: 700px; margin: 0 auto 26px; }
+    /* Kopfbereich */
+    header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 26px;
+    }
 
     .brand {
       font-size: 1.7rem;
-      letter-spacing: .18em;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
       font-weight: 600;
     }
@@ -74,31 +91,52 @@
       margin-top: 4px;
       font-size: 1.05rem;
       color: var(--accent-dark);
-      letter-spacing: .08em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
     }
 
     .intro {
       margin-top: 18px;
-      font-size: .95rem;
+      font-size: 0.95rem;
       color: var(--text-muted);
+      line-height: 1.7;
     }
 
-    .intro p + p { margin-top: .6rem; }
-    .intro strong { color: var(--text-main); }
+    .intro p + p { margin-top: 0.6rem; }
+    .intro strong { color: var(--text-main); font-weight: 650; }
 
     /* Formularblock */
     .form-section {
       margin-top: 32px;
-      background: rgba(255,255,255,.9);
+      background: rgba(255,255,255,.93);
       border-radius: 22px;
       padding: 22px 20px;
       box-shadow: 0 12px 32px rgba(148,163,184,.55);
+      border: 1px solid #e5e7eb;
     }
 
-    form { display: grid; gap: 14px; }
+    .form-section h2 {
+      font-size: 1.05rem;
+      margin-bottom: 4px;
+    }
 
-    label { font-size: .9rem; color: var(--text-muted); }
+    .form-section p.small {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    form {
+      display: grid;
+      gap: 14px;
+      font-size: 0.9rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--text-muted);
+    }
 
     input[type="text"],
     input[type="email"] {
@@ -107,122 +145,187 @@
       border-radius: 999px;
       border: 1px solid #d1d5db;
       background: #f9fafb;
+      font: inherit;
+      outline: none;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px rgba(122,168,153,.6);
+      background: #ffffff;
     }
 
     .options-group {
-      border: 1px dashed #cbd5e1;
-      background: #f3f4f6;
-      border-radius: 16px;
-      padding: 10px 12px;
       display: grid;
       gap: 6px;
+      padding: 10px 12px;
+      border-radius: 16px;
+      background: #f3f4f6;
+      border: 1px dashed #cbd5e1;
     }
 
     .checkbox-row {
       display: flex;
       gap: 8px;
-      font-size: .9rem;
+      align-items: flex-start;
+      font-size: 0.9rem;
+      color: var(--text-main);
     }
 
-    .checkbox-row input { accent-color: var(--accent); }
+    .checkbox-row input[type="checkbox"] {
+      margin-top: 2px;
+      accent-color: var(--accent);
+    }
+
+    .consent-text {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
 
     .btn-submit {
-      border-radius: 999px;
+      margin-top: 4px;
       border: none;
+      border-radius: 999px;
       padding: 11px 16px;
+      font-size: 0.95rem;
       font-weight: 600;
-      background: linear-gradient(135deg,#7aa899,#b4cfb9);
-      color: white;
       cursor: pointer;
+      background: linear-gradient(135deg,#7aa899,#b4cfb9);
+      color: #ffffff;
+      box-shadow: 0 10px 18px rgba(148,163,184,.7);
+      transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.12s ease;
+    }
+
+    .btn-submit:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.03);
+      box-shadow: 0 16px 28px rgba(148,163,184,.8);
+    }
+
+    .btn-submit:active {
+      transform: translateY(0);
+      box-shadow: 0 8px 16px rgba(148,163,184,.7);
     }
 
     footer {
       text-align: center;
-      margin-top: 16px;
-      font-size: .8rem;
+      margin-top: 18px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
     }
 
-    footer a { color: var(--accent-dark); text-decoration: none; }
-    footer a:hover { text-decoration: underline; }
+    footer a {
+      color: var(--accent-dark);
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
   <div class="page">
     <div class="card">
+      <!-- Bild -->
       <div class="avatar-wrapper">
-        <img src="dein-bild.jpg" alt="Andrea Hopf">
+        <!-- wichtig: Dateiname muss genauso im Repo liegen -->
+        <img src="bild_andrea.jpg" alt="Andrea Hopf">
       </div>
 
       <div class="card-inner">
-
+        <!-- Kopfbereich -->
         <header>
-          <div class="brand">lache&lebe</div>
-          <div class="subbrand">Meditation & Bewusstsein</div>
+          <div class="brand">LACHE&LEBE</div>
+          <div class="subbrand">MEDITATION &amp; BEWUSSTSEIN</div>
 
           <div class="intro">
-            <p>Ich begleite dich auf deinem Weg zu mehr <strong>Lebensfreude, Ruhe und innerer Balance.</strong></p>
-            <p>Hier findest du <strong>kostenlose Meditationen</strong> – u. a. eine <strong>4-Tage-Meditationsreihe für Erwachsene</strong>.</p>
-            <p>Für Kinder gibt es eine liebevoll geführte <strong>3-Tage-Meditationsreihe</strong>.</p>
-            <p>Außerdem erhältst du verständliche Infos zur <strong>Nährstoffbalance</strong>.</p>
+            <p>
+              Ich begleite dich auf deinem Weg zu mehr <strong>Lebensfreude, Ruhe und innerer Balance.</strong>
+            </p>
+            <p>
+              Hier findest du <strong>kostenlose Meditationen</strong> – unter anderem eine
+              <strong>4-Tage-Meditationsreihe für Erwachsene</strong>,
+              damit du auftanken, loslassen und einfach wieder du selbst sein kannst.
+            </p>
+            <p>
+              Auch für unsere Kinder, die unser wertvollstes Gut sind, gibt es eine liebevoll geführte
+              <strong>3-Tage-Meditationsreihe</strong>,
+              damit auch sie Entspannung, Vertrauen und innere Stärke erleben dürfen.
+            </p>
+            <p>
+              Denn <strong>Meditation nährt die Seele</strong> – und genauso wichtig ist es, auf den Körper zu achten.
+              Darum erhältst du hier außerdem verständliche Informationen zur <strong>Nährstoffbalance</strong>
+              und wie du deinen Körper sanft und natürlich unterstützen kannst.
+            </p>
+            <p>
+              Ich freue mich, wenn du dabei bist und dir diese kleinen Auszeiten schenkst 🌸
+            </p>
           </div>
         </header>
 
+        <!-- Formular-Bereich -->
         <section class="form-section">
           <h2>Bitte wähle, was dich interessiert:</h2>
           <p class="small">Du kannst mehrere Häkchen setzen.</p>
 
+          <!-- später kannst du action/method ergänzen, z. B. für Maildienst -->
           <form id="leadForm">
-            <!-- 1 Auswahl zuerst -->
+            <!-- 1. Auswahl -->
             <div>
               <label>Deine Auswahl</label>
               <div class="options-group">
                 <label class="checkbox-row">
                   <input type="checkbox" name="angebot" value="erwachsene">
-                  Seele Erwachsene – 4-Tage-Meditationsreihe
+                  <span>Seele Erwachsene – 4-Tage-Meditationsreihe</span>
                 </label>
                 <label class="checkbox-row">
                   <input type="checkbox" name="angebot" value="koerper">
-                  Körper – Nährstoffbalance-Vortrag
+                  <span>Körper – Nährstoffbalance-Vortrag</span>
                 </label>
                 <label class="checkbox-row">
                   <input type="checkbox" name="angebot" value="kinder">
-                  Kinder – 3-Tage-Meditationsreihe
+                  <span>Kinder – 3-Tage-Meditationsreihe</span>
                 </label>
               </div>
             </div>
 
-            <!-- 2 Name -->
+            <!-- 2. Name -->
             <div>
               <label for="name">Name</label>
-              <input id="name" type="text" required>
+              <input id="name" type="text" name="name" required>
             </div>
 
-            <!-- 3 Email -->
+            <!-- 3. E-Mail -->
             <div>
               <label for="email">E-Mail</label>
-              <input id="email" type="email" required>
+              <input id="email" type="email" name="email" required>
             </div>
 
-            <!-- 4 Datenschutz -->
+            <!-- 4. Datenschutz -->
             <div class="checkbox-row">
               <input type="checkbox" id="ds" required>
-              <label for="ds">
-                Ich stimme zu, E-Mails zu meinen ausgewählten Inhalten zu erhalten.
-                Details: <a href="https://lachelebe.github.io/privacy-policy/Datenschutzerklaerung_Landingpage.html" target="_blank">Datenschutzerklärung</a>.
+              <label for="ds" class="consent-text">
+                Ich stimme zu, E-Mails zu meinen ausgewählten Inhalten und passenden Angeboten zu erhalten.
+                Ich kann mich jederzeit über den Abmeldelink in jeder E-Mail wieder abmelden.
+                Details findest du unten unter <strong>Datenschutz</strong>.
               </label>
             </div>
 
-            <!-- 5 Button -->
+            <!-- 5. Button -->
             <button class="btn-submit" type="submit">Anmelden</button>
           </form>
         </section>
 
         <footer>
-          <a href="https://lachelebe.github.io/privacy-policy/Impressum_lache_lebe.html" target="_blank">Impressum</a>
+          <a href="https://lachelebe.github.io/privacy-policy/Impressum_lache_lebe.html" target="_blank" rel="noopener">Impressum</a>
           •
-          <a href="https://lachelebe.github.io/privacy-policy/Datenschutzerklaerung_Landingpage.html" target="_blank">Datenschutz</a>
+          <a href="https://lachelebe.github.io/privacy-policy/Datenschutzerklaerung_Landingpage.html" target="_blank" rel="noopener">Datenschutz</a>
         </footer>
-
       </div>
     </div>
   </div>
