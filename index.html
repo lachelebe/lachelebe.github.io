@@ -138,76 +138,10 @@
       margin-bottom: 12px;
     }
 
-    form {
-      display: grid;
-      gap: 14px;
-      font-size: 0.9rem;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 4px;
-      color: var(--text-muted);
-    }
-
-    input[type="text"],
-    input[type="email"] {
+    /* Brevo-Form soll die ganze Breite nutzen */
+    .brevo-wrapper {
       width: 100%;
-      padding: 9px 11px;
-      border-radius: 999px;
-      border: 1px solid #d1d5db;
-      background: #f9fafb;
-      font: inherit;
-      outline: none;
-      transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
-    }
-
-    input[type="text"]:focus,
-    input[type="email"]:focus {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 1px rgba(122,168,153,.6);
-      background: #ffffff;
-    }
-
-    .options-group {
-      display: grid;
-      gap: 6px;
-      padding: 10px 12px;
-      border-radius: 16px;
-      background: #f3f4f6;
-      border: 1px dashed #cbd5e1;
-    }
-
-    .checkbox-row {
-      display: flex;
-      gap: 8px;
-      align-items: flex-start;
-      font-size: 0.9rem;
-      color: var(--text-main);
-    }
-
-    .checkbox-row input[type="checkbox"] {
-      margin-top: 2px;
-      accent-color: var(--accent);
-    }
-
-    .consent-text {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      line-height: 1.5;
-    }
-
-    .btn-submit {
-      margin-top: 4px;
       border: none;
-      border-radius: 999px;
-      padding: 11px 16px;
-      font-size: 0.95rem;
-      font-weight: 600;
-      cursor: pointer;
-      background: linear-gradient(135deg,#7aa899,#b4cfb9);
-      color: #ffffff;
-      box-shadow: 0 10px 18px rgba(148,163,184,.7);
     }
 
     footer {
@@ -267,49 +201,19 @@
           </div>
         </header>
 
+        <!-- Brevo-Formular statt eigenem HTML-Formular -->
         <section class="form-section">
           <h2>Bitte wähle, was dich interessiert (kostenlos):</h2>
           <p class="small">Du kannst mehrere Häkchen setzen.</p>
 
-          <form>
-            <div>
-              <label>Deine Auswahl</label>
-              <div class="options-group">
-                <label class="checkbox-row">
-                  <input type="checkbox">
-                  <span>Seele Erwachsene – 4-Tage-Meditationsreihe</span>
-                </label>
-                <label class="checkbox-row">
-                  <input type="checkbox">
-                  <span>Körper – Nährstoffbalance-Vortrag</span>
-                </label>
-                <label class="checkbox-row">
-                  <input type="checkbox">
-                  <span>Kinder – 3-Tage-Meditationsreihe</span>
-                </label>
-              </div>
-            </div>
-
-            <div>
-              <label>Name</label>
-              <input type="text" required>
-            </div>
-
-            <div>
-              <label>E-Mail</label>
-              <input type="email" required>
-            </div>
-
-            <div class="checkbox-row">
-              <input type="checkbox" required>
-              <label class="consent-text">
-                Ich stimme zu, E-Mails zu meinen ausgewählten Inhalten zu erhalten.
-                Details unten unter <strong>Datenschutz</strong>.
-              </label>
-            </div>
-
-            <button class="btn-submit" type="submit">Anmelden</button>
-          </form>
+          <div class="brevo-wrapper">
+            <iframe
+              src="https://a2dd5f2c.sibforms.com/serve/MUIFAJ-qfyjYRDKYmz8Vsf2EP_nEusD0bMWLn-X9YA07-LXlAN08cmSEAeoEoVDvFHezuyblzJcRATPfISA-Og2giz_VAkaAc5649kQ4y7f0ZOwJI191xDDlq70cY4Anr8pUS3GEDbS8kPNYwrd2hLcQ719b0P1EYiHlRPkAx7FR6pnSyLvXEQIIUwxAiIvgOW6VMXWZ2avNLlLH9g=="
+              style="width: 100%; border: none; min-height: 520px;"
+              frameborder="0"
+              scrolling="no">
+            </iframe>
+          </div>
         </section>
 
         <footer>
