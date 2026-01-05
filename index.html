@@ -7,20 +7,16 @@
 
   <style>
     :root {
-      --bg-page: #f4f1ea;          /* sanftes Beige */
-      --bg-hero: #e7f0ea;          /* weiches Grün */
-      --bg-card: #ffffff;          /* Karten-Hintergrund */
-      --accent: #7aa899;           /* Salbeigrün */
+      --bg-page: #f4f1ea;
+      --bg-card-top: #e7f0ea;
+      --bg-card-bottom: #ffffff;
+      --accent: #7aa899;
       --accent-dark: #5f8b7c;
       --text-main: #25313a;
       --text-muted: #6b7280;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -35,37 +31,20 @@
       padding: 32px 16px 40px;
     }
 
-    /* HERO-BEREICH – EINTEILUNG WIE DEIN SCREENSHOT */
-    .hero-wrapper {
+    .card {
       position: relative;
-      background: linear-gradient(180deg, var(--bg-hero) 0%, #f4f1ea 70%);
-      border-radius: 0 0 28px 28px;
-      padding: 80px 24px 32px;
-      text-align: center;
-      box-shadow: 0 18px 45px rgba(148, 163, 184, 0.5);
+      border-radius: 28px;
       overflow: hidden;
+      box-shadow: 0 18px 45px rgba(148,163,184,.6);
+      border: 1px solid #e5e7eb;
+      background: linear-gradient(to bottom, var(--bg-card-top) 0 38%, var(--bg-card-bottom) 38% 100%);
     }
 
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at top left, rgba(122, 168, 153, 0.5), transparent 60%),
-        radial-gradient(circle at top right, rgba(190, 220, 210, 0.8), transparent 60%);
-      opacity: 0.7;
-      pointer-events: none;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 720px;
-      margin: 0 auto;
-    }
+    .card-inner { padding: 80px 26px 26px; }
 
     .avatar-wrapper {
       position: absolute;
-      top: -52px;
+      top: 18px;
       left: 50%;
       transform: translateX(-50%);
       width: 104px;
@@ -73,84 +52,53 @@
       border-radius: 999px;
       border: 4px solid #f4f1ea;
       overflow: hidden;
-      box-shadow: 0 12px 30px rgba(148, 163, 184, 0.9);
-      background: #d1e4dc;
+      box-shadow: 0 12px 30px rgba(148,163,184,.9);
     }
 
     .avatar-wrapper img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      display: block;
     }
 
-    h1 {
-      font-size: clamp(1.8rem, 3vw, 2.2rem);
-      margin-bottom: 6px;
-      letter-spacing: 0.04em;
+    header { text-align: center; max-width: 700px; margin: 0 auto 26px; }
+
+    .brand {
+      font-size: 1.7rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      font-weight: 600;
     }
 
-    .subtitle {
-      font-size: 1rem;
-      margin-bottom: 18px;
+    .subbrand {
+      margin-top: 4px;
+      font-size: 1.05rem;
       color: var(--accent-dark);
+      letter-spacing: .08em;
+      text-transform: uppercase;
     }
 
     .intro {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      line-height: 1.7;
-    }
-
-    .intro p + p {
-      margin-top: 0.5rem;
-    }
-
-    .intro strong {
-      color: var(--text-main);
-      font-weight: 650;
-    }
-
-    .divider {
-      margin: 24px auto 0;
-      width: 55%;
-      border: none;
-      border-top: 1px solid rgba(148, 163, 184, 0.7);
-    }
-
-    /* FORM-KARTE UNTER DEM HERO */
-
-    .form-card {
-      margin-top: 28px;
-      background: var(--bg-card);
-      border-radius: 24px;
-      padding: 24px 20px 22px;
-      box-shadow: 0 18px 40px rgba(148, 163, 184, 0.6);
-      border: 1px solid #e5e7eb;
-    }
-
-    .form-card h3 {
-      font-size: 1.05rem;
-      margin-bottom: 6px;
-    }
-
-    .form-card p.desc {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      margin-bottom: 16px;
-    }
-
-    form {
-      display: grid;
-      gap: 14px;
-      font-size: 0.9rem;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 4px;
+      margin-top: 18px;
+      font-size: .95rem;
       color: var(--text-muted);
     }
+
+    .intro p + p { margin-top: .6rem; }
+    .intro strong { color: var(--text-main); }
+
+    /* Formularblock */
+    .form-section {
+      margin-top: 32px;
+      background: rgba(255,255,255,.9);
+      border-radius: 22px;
+      padding: 22px 20px;
+      box-shadow: 0 12px 32px rgba(148,163,184,.55);
+    }
+
+    form { display: grid; gap: 14px; }
+
+    label { font-size: .9rem; color: var(--text-muted); }
 
     input[type="text"],
     input[type="email"] {
@@ -158,194 +106,125 @@
       padding: 9px 11px;
       border-radius: 999px;
       border: 1px solid #d1d5db;
-      font: inherit;
-      outline: none;
-      transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
       background: #f9fafb;
     }
 
-    input[type="text"]:focus,
-    input[type="email"]:focus {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 1px rgba(122, 168, 153, 0.6);
-      background: #ffffff;
-    }
-
     .options-group {
+      border: 1px dashed #cbd5e1;
+      background: #f3f4f6;
+      border-radius: 16px;
+      padding: 10px 12px;
       display: grid;
       gap: 6px;
-      padding: 10px 12px;
-      border-radius: 16px;
-      background: #f3f4f6;
-      border: 1px dashed #cbd5e1;
     }
 
     .checkbox-row {
       display: flex;
       gap: 8px;
-      align-items: flex-start;
-      font-size: 0.86rem;
-      color: var(--text-main);
+      font-size: .9rem;
     }
 
-    .checkbox-row input[type="checkbox"] {
-      margin-top: 2px;
-      accent-color: var(--accent);
-    }
-
-    .consent-text {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      line-height: 1.5;
-    }
+    .checkbox-row input { accent-color: var(--accent); }
 
     .btn-submit {
-      margin-top: 4px;
-      border: none;
       border-radius: 999px;
+      border: none;
       padding: 11px 16px;
-      font-size: 0.95rem;
       font-weight: 600;
+      background: linear-gradient(135deg,#7aa899,#b4cfb9);
+      color: white;
       cursor: pointer;
-      background: linear-gradient(135deg, #7aa899, #b4cfb9);
-      color: #ffffff;
-      box-shadow: 0 10px 18px rgba(148, 163, 184, 0.7);
-      transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.12s ease;
-    }
-
-    .btn-submit:hover {
-      transform: translateY(-1px);
-      filter: brightness(1.03);
-      box-shadow: 0 16px 28px rgba(148, 163, 184, 0.8);
-    }
-
-    .btn-submit:active {
-      transform: translateY(0);
-      box-shadow: 0 8px 16px rgba(148, 163, 184, 0.7);
     }
 
     footer {
-      margin-top: 22px;
       text-align: center;
-      font-size: 0.78rem;
-      color: var(--text-muted);
+      margin-top: 16px;
+      font-size: .8rem;
     }
 
-    footer a {
-      color: var(--accent-dark);
-      text-decoration: none;
-      margin: 0 10px;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    @media (max-width: 640px) {
-      .hero-wrapper {
-        padding: 76px 14px 26px;
-      }
-
-      .form-card {
-        padding: 20px 16px 18px;
-      }
-    }
+    footer a { color: var(--accent-dark); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
   <div class="page">
-    <!-- HERO WIE AUF DEINEM SCREENSHOT (nur Farben geändert) -->
-    <header class="hero-wrapper">
-      <div class="hero-bg"></div>
-
-      <!-- Dein rundes Bild oben -->
+    <div class="card">
       <div class="avatar-wrapper">
-        <!-- HIER deinen Dateinamen einsetzen -->
         <img src="dein-bild.jpg" alt="Andrea Hopf">
       </div>
 
-      <div class="hero-content">
-        <h1>lache&lebe | Meditation & Bewusstsein</h1>
-        <p class="subtitle">
-          Ich begleite dich auf deinem Weg zu mehr Lebensfreude, Ruhe und innerer Balance.
-        </p>
+      <div class="card-inner">
 
-        <div class="intro">
-          <p>
-            Hier findest du <strong>kostenlose Meditationen</strong> – unter anderem eine
-            <strong>4-Tage-Meditationsreihe für Erwachsene</strong>, damit du auftanken, loslassen
-            und einfach wieder du selbst sein kannst.
-          </p>
-          <p>
-            Auch für unsere Kinder, die unser wertvollstes Gut sind, gibt es eine liebevoll geführte
-            <strong>3-Tage-Meditationsreihe</strong>, damit auch sie Entspannung, Vertrauen und innere Stärke erleben dürfen.
-          </p>
-          <p>
-            Denn <strong>Meditation nährt die Seele</strong> – und genauso wichtig ist es, auf den Körper zu achten.
-            Darum erhältst du hier außerdem verständliche Informationen zur <strong>Nährstoffbalance</strong>
-            und wie du deinen Körper sanft und natürlich unterstützen kannst.
-          </p>
-          <p>
-            Ich freue mich, wenn du dabei bist und dir diese kleinen Auszeiten schenkst 🌸
-          </p>
-        </div>
+        <header>
+          <div class="brand">lache&lebe</div>
+          <div class="subbrand">Meditation & Bewusstsein</div>
 
-        <hr class="divider" />
-      </div>
-    </header>
-
-    <!-- FORMULAR-KARTE -->
-    <section class="form-card">
-      <h3>Bitte wähle, was dich interessiert:</h3>
-      <p class="desc">Du kannst auch mehrere Häkchen setzen.</p>
-
-      <!-- 👉 Hier später action + method einfügen (Mailerlite / Formspree etc.) -->
-      <form>
-        <div>
-          <label for="name">Name</label>
-          <input id="name" type="text" name="name" required>
-        </div>
-
-        <div>
-          <label for="email">E-Mail</label>
-          <input id="email" type="email" name="email" required>
-        </div>
-
-        <div>
-          <label>Was möchtest du erhalten?</label>
-          <div class="options-group">
-            <label class="checkbox-row">
-              <input type="checkbox" name="angebot" value="erwachsene">
-              <span>Seele Erwachsene | 4-Tage-Meditationsreihe</span>
-            </label>
-            <label class="checkbox-row">
-              <input type="checkbox" name="angebot" value="koerper">
-              <span>Körper | Nährstoffbalance-Vortrag</span>
-            </label>
-            <label class="checkbox-row">
-              <input type="checkbox" name="angebot" value="kinder">
-              <span>Kinder | 3-Tage-Meditationsreihe</span>
-            </label>
+          <div class="intro">
+            <p>Ich begleite dich auf deinem Weg zu mehr <strong>Lebensfreude, Ruhe und innerer Balance.</strong></p>
+            <p>Hier findest du <strong>kostenlose Meditationen</strong> – u. a. eine <strong>4-Tage-Meditationsreihe für Erwachsene</strong>.</p>
+            <p>Für Kinder gibt es eine liebevoll geführte <strong>3-Tage-Meditationsreihe</strong>.</p>
+            <p>Außerdem erhältst du verständliche Infos zur <strong>Nährstoffbalance</strong>.</p>
           </div>
-        </div>
+        </header>
 
-        <div class="checkbox-row">
-          <input id="consent" type="checkbox" required>
-          <label for="consent" class="consent-text">
-            Ich stimme zu, E-Mails zu meinen ausgewählten Inhalten und passenden Angeboten zu erhalten.
-            Ich kann mich jederzeit über den Abmeldelink in jeder E-Mail wieder abmelden.
-            Weitere Informationen stehen in der Datenschutzerklärung.
-          </label>
-        </div>
+        <section class="form-section">
+          <h2>Bitte wähle, was dich interessiert:</h2>
+          <p class="small">Du kannst mehrere Häkchen setzen.</p>
 
-        <button type="submit" class="btn-submit">Anmelden</button>
-      </form>
-    </section>
+          <form id="leadForm">
+            <!-- 1 Auswahl zuerst -->
+            <div>
+              <label>Deine Auswahl</label>
+              <div class="options-group">
+                <label class="checkbox-row">
+                  <input type="checkbox" name="angebot" value="erwachsene">
+                  Seele Erwachsene – 4-Tage-Meditationsreihe
+                </label>
+                <label class="checkbox-row">
+                  <input type="checkbox" name="angebot" value="koerper">
+                  Körper – Nährstoffbalance-Vortrag
+                </label>
+                <label class="checkbox-row">
+                  <input type="checkbox" name="angebot" value="kinder">
+                  Kinder – 3-Tage-Meditationsreihe
+                </label>
+              </div>
+            </div>
 
-    <footer>
-      <a href="#">Impressum</a>
-      <a href="#">Datenschutz</a>
-    </footer>
+            <!-- 2 Name -->
+            <div>
+              <label for="name">Name</label>
+              <input id="name" type="text" required>
+            </div>
+
+            <!-- 3 Email -->
+            <div>
+              <label for="email">E-Mail</label>
+              <input id="email" type="email" required>
+            </div>
+
+            <!-- 4 Datenschutz -->
+            <div class="checkbox-row">
+              <input type="checkbox" id="ds" required>
+              <label for="ds">
+                Ich stimme zu, E-Mails zu meinen ausgewählten Inhalten zu erhalten.
+                Details: <a href="https://lachelebe.github.io/privacy-policy/Datenschutzerklaerung_Landingpage.html" target="_blank">Datenschutzerklärung</a>.
+              </label>
+            </div>
+
+            <!-- 5 Button -->
+            <button class="btn-submit" type="submit">Anmelden</button>
+          </form>
+        </section>
+
+        <footer>
+          <a href="https://lachelebe.github.io/privacy-policy/Impressum_lache_lebe.html" target="_blank">Impressum</a>
+          •
+          <a href="https://lachelebe.github.io/privacy-policy/Datenschutzerklaerung_Landingpage.html" target="_blank">Datenschutz</a>
+        </footer>
+
+      </div>
+    </div>
   </div>
 </body>
 </html>
