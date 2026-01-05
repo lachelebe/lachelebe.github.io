@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>lache&amp;lebe | Meditation &amp; Bewusstsein</title>
+  <title>lache&lebe | Meditation & Bewusstsein</title>
 
   <style>
     :root {
-      --bg: #050816;
-      --card: #111827;
-      --accent: #22d3ee;
-      --accent-soft: #0f172a;
-      --text-main: #f9fafb;
-      --text-muted: #9ca3af;
+      --bg-page: #f4f1ea;          /* sanftes Beige */
+      --bg-card: #ffffff;          /* Karten-Hintergrund */
+      --accent: #7aa899;           /* weiches Salbeigrün */
+      --accent-dark: #5f8b7c;
+      --text-main: #25313a;
+      --text-muted: #6b7280;
     }
 
     * {
@@ -23,144 +23,121 @@
 
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #0ea5e9 0, #050816 55%, #020617 100%);
+      background: var(--bg-page);
       color: var(--text-main);
-      min-height: 100vh;
+      line-height: 1.6;
     }
 
     .page {
-      max-width: 820px;
+      max-width: 980px;
       margin: 0 auto;
       padding: 32px 16px 40px;
     }
 
-    /* Hero / Kopfbereich */
-    .hero-wrapper {
-      background: rgba(15, 23, 42, 0.9);
-      border-radius: 0 0 24px 24px;
-      padding: 80px 24px 32px;
+    /* HERO-BEREICH ------------------------------------------------ */
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr);
+      gap: 32px;
+      align-items: center;
+      background: linear-gradient(135deg, #f8f4ec 0%, #e4efe7 100%);
+      border-radius: 24px;
+      padding: 32px;
+      box-shadow: 0 18px 45px rgba(148, 163, 184, 0.45);
+    }
+
+    @media (max-width: 780px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 24px 18px;
+      }
+    }
+
+    .hero-image-wrap {
       position: relative;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.65);
-      text-align: center;
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      backdrop-filter: blur(10px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    .hero-bg {
+    .hero-image-bg {
       position: absolute;
-      inset: 0;
-      opacity: 0.28;
-      background: radial-gradient(circle at top, #38bdf8 0, transparent 55%),
-                  radial-gradient(circle at bottom, #22c55e 0, transparent 55%);
-      mix-blend-mode: screen;
-      pointer-events: none;
+      inset: 12%;
+      border-radius: 32px;
+      background: #b9d7c9; /* grünlicher Hintergrund wie auf deinem Beispielbild */
+      opacity: 0.7;
     }
 
-    .hero-content {
+    .hero-image {
       position: relative;
-      z-index: 1;
-    }
-
-    .avatar-wrapper {
-      position: absolute;
-      top: -52px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 104px;
-      height: 104px;
-      border-radius: 999px;
-      border: 4px solid #0b1120;
+      width: 100%;
+      max-width: 320px;
+      border-radius: 32px;
       overflow: hidden;
-      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.8);
-      background: #020617;
+      box-shadow: 0 22px 40px rgba(148, 163, 184, 0.8);
     }
 
-    .avatar-wrapper img {
+    .hero-image img {
+      display: block;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      display: block;
     }
 
-    h1 {
-      font-size: clamp(1.6rem, 3vw, 2rem);
+    .hero-text h1 {
+      font-size: clamp(1.9rem, 3vw, 2.3rem);
+      margin-bottom: 8px;
+      letter-spacing: 0.04em;
+    }
+
+    .hero-text h2 {
+      font-size: 1.05rem;
+      font-weight: 500;
       margin-bottom: 18px;
-      letter-spacing: 0.03em;
+      color: var(--accent-dark);
     }
 
-    .intro {
+    .hero-text p {
       font-size: 0.98rem;
       color: var(--text-muted);
-      line-height: 1.7;
-      text-align: center;
-      max-width: 710px;
-      margin: 0 auto;
+      margin-bottom: 8px;
     }
 
-    .intro p + p {
-      margin-top: 0.7rem;
+    .hero-text p:last-of-type {
+      margin-bottom: 0;
     }
 
-    .intro strong {
+    .hero-text strong {
       color: var(--text-main);
       font-weight: 650;
     }
 
-    .divider {
-      margin: 26px auto 18px;
-      width: 60%;
-      border: none;
-      border-top: 1px solid rgba(148, 163, 184, 0.4);
-    }
+    /* FORM-KARTE -------------------------------------------------- */
 
-    .tagline {
-      margin-top: 10px;
-      font-size: 0.95rem;
-      color: var(--text-muted);
-    }
-
-    /* Inhalt + Formular */
-    .content {
-      margin-top: 26px;
-      background: rgba(15, 23, 42, 0.92);
+    .form-card {
+      margin-top: 28px;
+      background: var(--bg-card);
       border-radius: 24px;
-      padding: 24px 20px 20px;
-      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.7);
-      border: 1px solid rgba(148, 163, 184, 0.35);
+      padding: 24px 20px 22px;
+      box-shadow: 0 20px 45px rgba(148, 163, 184, 0.5);
+      border: 1px solid #e5e7eb;
     }
 
-    .section-title {
-      font-size: 1rem;
-      margin-bottom: 10px;
-      color: var(--text-main);
+    .form-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 6px;
     }
 
-    .choice-list {
-      list-style: none;
-      margin-bottom: 20px;
-    }
-
-    .choice-pill {
-      padding: 10px 12px;
-      border-radius: 999px;
-      margin-bottom: 8px;
-      background: var(--accent-soft);
-      border: 1px solid rgba(55, 65, 81, 0.8);
+    .form-card p.desc {
       font-size: 0.9rem;
-      text-align: left;
       color: var(--text-muted);
-    }
-
-    .choice-pill span {
-      color: var(--accent);
-      font-weight: 600;
-      margin-right: 6px;
+      margin-bottom: 16px;
     }
 
     form {
-      margin-top: 8px;
       display: grid;
-      gap: 12px;
+      gap: 14px;
       font-size: 0.9rem;
     }
 
@@ -171,35 +148,31 @@
     }
 
     input[type="text"],
-    input[type="email"],
-    select {
+    input[type="email"] {
       width: 100%;
       padding: 9px 11px;
       border-radius: 999px;
-      border: 1px solid rgba(75, 85, 99, 0.9);
-      background: #020617;
-      color: var(--text-main);
+      border: 1px solid #d1d5db;
       font: inherit;
       outline: none;
       transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+      background: #f9fafb;
     }
 
     input[type="text"]:focus,
-    input[type="email"]:focus,
-    select:focus {
+    input[type="email"]:focus {
       border-color: var(--accent);
-      box-shadow: 0 0 0 1px rgba(34, 211, 238, 0.55);
-      background: #020617;
+      box-shadow: 0 0 0 1px rgba(122, 168, 153, 0.6);
+      background: #ffffff;
     }
 
     .options-group {
       display: grid;
       gap: 6px;
-      margin-top: 2px;
       padding: 10px 12px;
       border-radius: 16px;
-      background: #020617;
-      border: 1px dashed rgba(75, 85, 99, 0.9);
+      background: #f3f4f6;
+      border: 1px dashed #cbd5e1;
     }
 
     .checkbox-row {
@@ -207,11 +180,10 @@
       gap: 8px;
       align-items: flex-start;
       font-size: 0.86rem;
-      color: var(--text-muted);
+      color: var(--text-main);
     }
 
-    .checkbox-row input[type="checkbox"],
-    .checkbox-row input[type="radio"] {
+    .checkbox-row input[type="checkbox"] {
       margin-top: 2px;
       accent-color: var(--accent);
     }
@@ -230,105 +202,85 @@
       font-size: 0.95rem;
       font-weight: 600;
       cursor: pointer;
-      background: linear-gradient(135deg, #22d3ee, #a855f7);
-      color: #020617;
-      box-shadow: 0 16px 30px rgba(8, 47, 73, 0.7);
+      background: linear-gradient(135deg, #7aa899, #b0ccb4);
+      color: #ffffff;
+      box-shadow: 0 10px 18px rgba(107, 114, 128, 0.5);
       transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.12s ease;
     }
 
     .btn-submit:hover {
       transform: translateY(-1px);
-      filter: brightness(1.05);
-      box-shadow: 0 20px 40px rgba(8, 47, 73, 0.9);
+      filter: brightness(1.03);
+      box-shadow: 0 16px 28px rgba(107, 114, 128, 0.6);
     }
 
     .btn-submit:active {
       transform: translateY(0);
-      box-shadow: 0 10px 22px rgba(8, 47, 73, 0.7);
+      box-shadow: 0 8px 16px rgba(107, 114, 128, 0.5);
     }
 
     footer {
-      margin-top: 26px;
+      margin-top: 22px;
       text-align: center;
       font-size: 0.78rem;
       color: var(--text-muted);
-      padding-bottom: 10px;
     }
 
     footer a {
-      color: var(--text-muted);
+      color: var(--accent-dark);
       text-decoration: none;
       margin: 0 10px;
     }
 
     footer a:hover {
-      color: var(--accent);
       text-decoration: underline;
-    }
-
-    @media (max-width: 640px) {
-      .hero-wrapper {
-        padding: 72px 16px 26px;
-      }
-
-      .content {
-        padding: 18px 14px 16px;
-      }
-
-      .choice-pill {
-        text-align: center;
-      }
     }
   </style>
 </head>
 <body>
   <div class="page">
-    <div class="hero-wrapper">
-      <div class="hero-bg"></div>
 
-      <!-- Dein Profilbild – Datei später ins Repo legen (z.B. "andrea.jpg") -->
-      <div class="avatar-wrapper">
-        <img src="dein-bild.jpg" alt="Andrea Hopf">
-      </div>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-image-wrap">
+        <div class="hero-image-bg"></div>
 
-      <div class="hero-content">
-        <h1>lache&amp;lebe | Meditation &amp; Bewusstsein</h1>
-        <div class="intro">
-          <p>
-            Ich begleite dich auf deinem Weg zu mehr <strong>Lebensfreude, Ruhe und innerer Balance.</strong>
-          </p>
-          <p>
-            Hier findest du <strong>kostenlose Meditationen</strong> – unter anderem eine <strong>4-Tage-Meditationsreihe für Erwachsene</strong>,
-            damit du auftanken, loslassen und einfach wieder du selbst sein kannst.
-          </p>
-          <p>
-            Auch für unsere Kinder, die unser wertvollstes Gut sind, gibt es eine liebevoll geführte <strong>3-Tage-Meditationsreihe</strong>,
-            damit auch sie Entspannung, Vertrauen und innere Stärke erleben dürfen.
-          </p>
-          <p>
-            Denn <strong>Meditation nährt die Seele</strong> – und genauso wichtig ist es, auf den Körper zu achten.
-            Darum erhältst du hier außerdem verständliche Informationen zur <strong>Nährstoffbalance</strong>
-            und wie du deinen Körper sanft und natürlich unterstützen kannst.
-          </p>
-          <p>
-            Ich freue mich, wenn du dabei bist und dir diese kleinen Auszeiten schenkst 🌸
-          </p>
+        <!-- HIER dein Bild einfügen: Datei z.B. "andrea-gruen.jpg" ins Repo laden -->
+        <div class="hero-image">
+          <img src="dein-bild-mit-gruenem-hintergrund.jpg" alt="Meditation lache&lebe">
         </div>
-
-        <hr class="divider" />
-        <p class="tagline">Bitte wähle, was dich interessiert:</p>
       </div>
-    </div>
 
-    <div class="content">
-      <p class="section-title">Deine Auswahl</p>
-      <ul class="choice-list">
-        <li class="choice-pill"><span>Seele Erwachsene</span>4-Tage-Meditationsreihe</li>
-        <li class="choice-pill"><span>Körper</span>Nährstoffbalance-Vortrag</li>
-        <li class="choice-pill"><span>Kinder</span>3-Tage-Meditationsreihe</li>
-      </ul>
+      <div class="hero-text">
+        <h1>lache&lebe | Meditation & Bewusstsein</h1>
+        <h2>Ich begleite dich auf deinem Weg zu mehr Lebensfreude, Ruhe und innerer Balance.</h2>
 
-      <!-- Hier später action + method für Formdienst einsetzen (Formspree, Mailerlite etc.) -->
+        <p>
+          Hier findest du <strong>kostenlose Meditationen</strong> – unter anderem eine
+          <strong>4-Tage-Meditationsreihe für Erwachsene</strong>,
+          damit du auftanken, loslassen und einfach wieder du selbst sein kannst.
+        </p>
+        <p>
+          Auch für unsere Kinder, die unser wertvollstes Gut sind, gibt es eine liebevoll geführte
+          <strong>3-Tage-Meditationsreihe</strong>, damit auch sie Entspannung, Vertrauen und innere Stärke erleben dürfen.
+        </p>
+        <p>
+          Denn <strong>Meditation nährt die Seele</strong> – und genauso wichtig ist es, auf den Körper zu achten.
+          Darum erhältst du hier außerdem verständliche Informationen zur <strong>Nährstoffbalance</strong>
+          und wie du deinen Körper sanft und natürlich unterstützen kannst.
+        </p>
+        <p>
+          Ich freue mich, wenn du dabei bist und dir diese kleinen Auszeiten schenkst 🌸
+        </p>
+      </div>
+    </section>
+
+    <!-- FORMULAR-KARTE -->
+    <section class="form-card">
+      <h3>Bitte wähle, was dich interessiert:</h3>
+      <p class="desc">Du kannst auch mehrere Häkchen setzen.</p>
+
+      <!-- 👉 Hier später action + method für Mailerlite / Formspree etc. -->
       <form>
         <div>
           <label for="name">Name</label>
@@ -369,7 +321,7 @@
 
         <button type="submit" class="btn-submit">Anmelden</button>
       </form>
-    </div>
+    </section>
 
     <footer>
       <a href="#">Impressum</a>
