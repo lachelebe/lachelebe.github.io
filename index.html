@@ -39,22 +39,22 @@
       box-shadow: 0 18px 45px rgba(148,163,184,.6);
       border: 1px solid #e5e7eb;
 
-      /* Hintergrund weiter nach unten gezogen */
+      /* Hintergrund weiter nach unten gezogen – etwa bis zum Satz „sanft und natürlich unterstützen kannst“ */
       background: linear-gradient(
         to bottom,
-        var(--bg-card-top) 0 45%,
-        var(--bg-card-bottom) 45% 100%
+        var(--bg-card-top) 0 60%,
+        var(--bg-card-bottom) 60% 100%
       );
     }
 
     /* genug Platz für Bild + Überschrift */
     .card-inner {
-      padding: 140px 26px 26px;
+      padding: 150px 26px 26px;
     }
 
     @media (max-width: 640px) {
       .card-inner {
-        padding: 140px 18px 22px;
+        padding: 150px 18px 22px;
       }
     }
 
@@ -62,15 +62,15 @@
     .avatar-wrapper {
       position: absolute;
 
-      /* ↓ Foto etwas runtergesetzt */
-      top: 40px;
+      /* Bild etwas weiter nach unten */
+      top: 55px;
 
       left: 50%;
       transform: translateX(-50%);
       width: 120px;
       height: 120px;
       border-radius: 999px;
-      border: 4px solid #f4f1ea;
+      border: 4px solid #ffffff;
       overflow: hidden;
       box-shadow: 0 12px 30px rgba(148,163,184,.9);
       background: #d1e4dc;
@@ -81,8 +81,8 @@
       height: 100%;
       object-fit: cover;
 
-      /* Kopf schön mittig */
-      object-position: 50% 22%;
+      /* Kopf mittiger im Kreis */
+      object-position: 50% 30%;
     }
 
     /* Kopfbereich */
