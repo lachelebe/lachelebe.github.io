@@ -33,49 +33,26 @@
     }
 
     .card {
-      position: relative;
       border-radius: 28px;
       overflow: hidden;
       box-shadow: 0 18px 45px rgba(148,163,184,.6);
       border: 1px solid #e5e7eb;
       background: linear-gradient(
         to bottom,
-        var(--bg-card-top) 0 60%,
-        var(--bg-card-bottom) 60% 100%
+        var(--bg-card-top) 0 55%,
+        var(--bg-card-bottom) 55% 100%
       );
     }
 
     .card-inner {
-      padding: 150px 26px 32px;
+      padding: 50px 26px 32px;
       text-align: center;
     }
 
     @media (max-width: 640px) {
       .card-inner {
-        padding: 150px 18px 26px;
+        padding: 40px 18px 26px;
       }
-    }
-
-    /* Rundes Bild oben */
-    .avatar-wrapper {
-      position: absolute;
-      top: 55px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 120px;
-      height: 120px;
-      border-radius: 999px;
-      border: 4px solid #ffffff;
-      overflow: hidden;
-      box-shadow: 0 12px 30px rgba(148,163,184,.9);
-      background: #d1e4dc;
-    }
-
-    .avatar-wrapper img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: 50% 30%;
     }
 
     .brand {
@@ -118,7 +95,6 @@
       margin-top: 26px;
       padding: 11px 24px;
       border-radius: 999px;
-      border: none;
       background: linear-gradient(135deg,#7aa899,#b4cfb9);
       color: #ffffff;
       font-size: 0.95rem;
@@ -155,11 +131,6 @@
   <div class="page">
     <div class="card">
 
-      <!-- Bild -->
-      <div class="avatar-wrapper">
-        <img src="bild_andrea.jpg" alt="Andrea Hopf">
-      </div>
-
       <div class="card-inner">
         <div class="brand">LACHE&LEBE</div>
         <div class="subbrand">MEDITATION &amp; BEWUSSTSEIN</div>
@@ -177,7 +148,6 @@
           </p>
           <p>
             Schau bitte auch in deinem Spam- oder Werbung-Ordner nach, falls du keine Nachricht siehst.
-            Du kannst unsere E-Mail-Adresse gern zu deinen Kontakten hinzufügen, damit nichts verloren geht.
           </p>
           <p>
             Ich wünsche dir viel Freude, Ruhe und sanfte Auszeiten mit den Meditationen 💫
