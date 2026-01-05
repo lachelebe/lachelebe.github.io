@@ -38,24 +38,33 @@
       overflow: hidden;
       box-shadow: 0 18px 45px rgba(148,163,184,.6);
       border: 1px solid #e5e7eb;
-      background: linear-gradient(to bottom, var(--bg-card-top) 0 38%, var(--bg-card-bottom) 38% 100%);
+
+      /* Hintergrund weiter nach unten gezogen */
+      background: linear-gradient(
+        to bottom,
+        var(--bg-card-top) 0 45%,
+        var(--bg-card-bottom) 45% 100%
+      );
     }
 
-    /* mehr Platz nach oben, damit der Kreis schön im Grünen sitzt */
+    /* genug Platz für Bild + Überschrift */
     .card-inner {
-      padding: 150px 26px 26px;
+      padding: 140px 26px 26px;
     }
 
     @media (max-width: 640px) {
       .card-inner {
-        padding: 150px 18px 22px;
+        padding: 140px 18px 22px;
       }
     }
 
     /* Rundes Bild oben */
     .avatar-wrapper {
       position: absolute;
-      top: -40px; /* Kreis weiter nach oben, oberhalb von LACHE&LEBE */
+
+      /* ↓ Foto etwas runtergesetzt */
+      top: 40px;
+
       left: 50%;
       transform: translateX(-50%);
       width: 120px;
@@ -71,8 +80,9 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: 50% 18%; /* Ausschnitt so, dass dein Kopf schön im Kreis ist */
-      display: block;
+
+      /* Kopf schön mittig */
+      object-position: 50% 22%;
     }
 
     /* Kopfbereich */
@@ -198,18 +208,6 @@
       background: linear-gradient(135deg,#7aa899,#b4cfb9);
       color: #ffffff;
       box-shadow: 0 10px 18px rgba(148,163,184,.7);
-      transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.12s ease;
-    }
-
-    .btn-submit:hover {
-      transform: translateY(-1px);
-      filter: brightness(1.03);
-      box-shadow: 0 16px 28px rgba(148,163,184,.8);
-    }
-
-    .btn-submit:active {
-      transform: translateY(0);
-      box-shadow: 0 8px 16px rgba(148,163,184,.7);
     }
 
     footer {
@@ -230,16 +228,17 @@
     }
   </style>
 </head>
+
 <body>
   <div class="page">
     <div class="card">
+
       <!-- Bild -->
       <div class="avatar-wrapper">
         <img src="bild_andrea.jpg" alt="Andrea Hopf">
       </div>
 
       <div class="card-inner">
-        <!-- Kopfbereich -->
         <header>
           <div class="brand">LACHE&LEBE</div>
           <div class="subbrand">MEDITATION &amp; BEWUSSTSEIN</div>
@@ -268,63 +267,55 @@
           </div>
         </header>
 
-        <!-- Formular-Bereich -->
         <section class="form-section">
           <h2>Bitte wähle, was dich interessiert (kostenlos):</h2>
           <p class="small">Du kannst mehrere Häkchen setzen.</p>
 
-          <!-- später kannst du action/method ergänzen, z. B. für Maildienst -->
-          <form id="leadForm">
-            <!-- 1. Auswahl -->
+          <form>
             <div>
               <label>Deine Auswahl</label>
               <div class="options-group">
                 <label class="checkbox-row">
-                  <input type="checkbox" name="angebot" value="erwachsene">
+                  <input type="checkbox">
                   <span>Seele Erwachsene – 4-Tage-Meditationsreihe</span>
                 </label>
                 <label class="checkbox-row">
-                  <input type="checkbox" name="angebot" value="koerper">
+                  <input type="checkbox">
                   <span>Körper – Nährstoffbalance-Vortrag</span>
                 </label>
                 <label class="checkbox-row">
-                  <input type="checkbox" name="angebot" value="kinder">
+                  <input type="checkbox">
                   <span>Kinder – 3-Tage-Meditationsreihe</span>
                 </label>
               </div>
             </div>
 
-            <!-- 2. Name -->
             <div>
-              <label for="name">Name</label>
-              <input id="name" type="text" name="name" required>
+              <label>Name</label>
+              <input type="text" required>
             </div>
 
-            <!-- 3. E-Mail -->
             <div>
-              <label for="email">E-Mail</label>
-              <input id="email" type="email" name="email" required>
+              <label>E-Mail</label>
+              <input type="email" required>
             </div>
 
-            <!-- 4. Datenschutz -->
             <div class="checkbox-row">
-              <input type="checkbox" id="ds" required>
-              <label for="ds" class="consent-text">
-                Ich stimme zu, E-Mails zu meinen ausgewählten Inhalten und passenden Angeboten zu erhalten.
-                Ich kann mich jederzeit über den Abmeldelink in jeder E-Mail wieder abmelden.
-                Details findest du unten unter <strong>Datenschutz</strong>.
+              <input type="checkbox" required>
+              <label class="consent-text">
+                Ich stimme zu, E-Mails zu meinen ausgewählten Inhalten zu erhalten.
+                Details unten unter <strong>Datenschutz</strong>.
               </label>
             </div>
 
-            <!-- 5. Button -->
             <button class="btn-submit" type="submit">Anmelden</button>
           </form>
         </section>
 
         <footer>
-          <a href="https://lachelebe.github.io/privacy-policy/Impressum_lache_lebe.html" target="_blank" rel="noopener">Impressum</a>
+          <a href="https://lachelebe.github.io/privacy-policy/Impressum_lache_lebe.html" target="_blank">Impressum</a>
           •
-          <a href="https://lachelebe.github.io/privacy-policy/Datenschutzerklaerung_Landingpage.html" target="_blank" rel="noopener">Datenschutz</a>
+          <a href="https://lachelebe.github.io/privacy-policy/Datenschutzerklaerung_Landingpage.html" target="_blank">Datenschutz</a>
         </footer>
       </div>
     </div>
