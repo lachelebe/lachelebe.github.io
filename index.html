@@ -45,23 +45,25 @@
       );
     }
 
-    /* etwas weniger Platz oben, damit alles kompakter wirkt */
+    /* Inhalt – oben etwas weniger Platz, weil Bild weiter unten sitzt */
     .card-inner {
-      padding: 135px 26px 26px;
+      padding: 40px 26px 26px;
     }
 
     @media (max-width: 640px) {
       .card-inner {
-        padding: 135px 18px 22px;
+        padding: 32px 18px 22px;
       }
     }
 
-    /* Rundes Bild oben */
+    /* Bild jetzt im Inhaltsfluss, nicht mehr ganz oben über der Karte */
     .avatar-wrapper {
-      position: absolute;
-      top: 40px; /* Bild etwas höher */
-      left: 50%;
-      transform: translateX(-50%);
+      display: flex;
+      justify-content: center;
+      margin-bottom: 18px;     /* Abstand zur Überschrift */
+    }
+
+    .avatar-wrapper-inner {
       width: 110px;
       height: 110px;
       border-radius: 999px;
@@ -71,11 +73,10 @@
       background: #d1e4dc;
     }
 
-    .avatar-wrapper img {
+    .avatar-wrapper-inner img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      /* Kopf mittiger im Kreis, etwas nach oben */
       object-position: 50% 28%;
     }
 
@@ -111,39 +112,10 @@
     .intro p + p { margin-top: 0.6rem; }
     .intro strong { color: var(--text-main); font-weight: 650; }
 
-    /* Formularblock – ruhiger gestaltet */
-    .form-section {
-      margin-top: 28px;
-      background: rgba(255,255,255,.96);
-      border-radius: 22px;
-      padding: 20px 20px 18px;
-      box-shadow: 0 8px 20px rgba(148,163,184,.35);
-      border: 1px solid #e5e7eb;
-    }
-
-    .form-section h2 {
-      font-size: 1.05rem;
-      margin-bottom: 4px;
-    }
-
-    .form-section p.small {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      margin-bottom: 12px;
-    }
-
-    /* „Rahmen“ für das komplette Brevo-Formular – ein ruhiger großer Kasten */
-    .brevo-shell {
-      margin-top: 6px;
-      border-radius: 18px;
-      overflow: hidden;          /* rundes Eck greift auch fürs Iframe */
-      border: 1px solid #e5e7eb;
-      background: #ffffff;
-    }
-
+    /* Brevo direkt, ohne zusätzlichen Hintergrund-Block */
     .brevo-wrapper {
       width: 100%;
-      border: none;
+      margin-top: 28px;    /* Abstand nach dem Text */
     }
 
     .brevo-wrapper iframe {
@@ -175,13 +147,15 @@
 <body>
   <div class="page">
     <div class="card">
-
-      <!-- Bild -->
-      <div class="avatar-wrapper">
-        <img src="bild_andrea.jpg" alt="Andrea Hopf">
-      </div>
-
       <div class="card-inner">
+
+        <!-- Bild jetzt im Textbereich unten, da wo du markiert hast -->
+        <div class="avatar-wrapper">
+          <div class="avatar-wrapper-inner">
+            <img src="bild_andrea.jpg" alt="Andrea Hopf">
+          </div>
+        </div>
+
         <header>
           <div class="brand">LACHE&LEBE</div>
           <div class="subbrand">MEDITATION &amp; BEWUSSTSEIN</div>
@@ -210,21 +184,14 @@
           </div>
         </header>
 
-        <!-- Brevo-Formular -->
-        <section class="form-section">
-          <h2>Bitte wähle, was dich interessiert (kostenlos):</h2>
-          <p class="small">Du kannst mehrere Häkchen setzen.</p>
-
-          <div class="brevo-shell">
-            <div class="brevo-wrapper">
-              <iframe
-                src="https://a2dd5f2c.sibforms.com/serve/MUIFAJ-qfyjYRDKYmz8Vsf2EP_nEusD0bMWLn-X9YA07-LXlAN08cmSEAeoEoVDvFHezuyblzJcRATPfISA-Og2giz_VAkaAc5649kQ4y7f0ZOwJI191xDDlq70cY4Anr8pUS3GEDbS8kPNYwrd2hLcQ719b0P1EYiHlRPkAx7FR6pnSyLvXEQIIUwxAiIvgOW6VMXWZ2avNLlLH9g=="
-                frameborder="0"
-                scrolling="no">
-              </iframe>
-            </div>
-          </div>
-        </section>
+        <!-- NUR noch das Brevo-Formular, ohne Überschrift, ohne extra Hintergrund -->
+        <div class="brevo-wrapper">
+          <iframe
+            src="https://a2dd5f2c.sibforms.com/serve/MUIFAJ-qfyjYRDKYmz8Vsf2EP_nEusD0bMWLn-X9YA07-LXlAN08cmSEAeoEoVDvFHezuyblzJcRATPfISA-Og2giz_VAkaAc5649kQ4y7f0ZOwJI191xDDlq70cY4Anr8pUS3GEDbS8kPNYwrd2hLcQ719b0P1EYiHlRPkAx7FR6pnSyLvXEQIIUwxAiIvgOW6VMXWZ2avNLlLH9g=="
+            frameborder="0"
+            scrolling="no">
+          </iframe>
+        </div>
 
         <footer>
           <a href="https://lachelebe.github.io/privacy-policy/Impressum_lache_lebe.html" target="_blank">Impressum</a>
