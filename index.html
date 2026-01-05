@@ -45,7 +45,6 @@
       );
     }
 
-    /* Inhalt – oben etwas weniger Platz, weil Bild weiter unten sitzt */
     .card-inner {
       padding: 40px 26px 26px;
     }
@@ -56,11 +55,11 @@
       }
     }
 
-    /* Bild jetzt im Inhaltsfluss, nicht mehr ganz oben über der Karte */
+    /* Bild im Inhaltsbereich */
     .avatar-wrapper {
       display: flex;
       justify-content: center;
-      margin-bottom: 18px;     /* Abstand zur Überschrift */
+      margin-bottom: 18px;
     }
 
     .avatar-wrapper-inner {
@@ -80,7 +79,6 @@
       object-position: 50% 28%;
     }
 
-    /* Kopfbereich */
     header {
       text-align: center;
       max-width: 700px;
@@ -112,16 +110,28 @@
     .intro p + p { margin-top: 0.6rem; }
     .intro strong { color: var(--text-main); font-weight: 650; }
 
-    /* Brevo direkt, ohne zusätzlichen Hintergrund-Block */
+    /* Bereich für Brevo: vollflächig weiß, bündig mit der Karte links/rechts */
+    .brevo-area {
+      margin: 28px -26px 10px;   /* negative Margins = bündig mit Kartenrand */
+      padding: 24px 26px 26px;
+      background: #ffffff;       /* gleiche Farbe wie das Formular */
+    }
+
+    @media (max-width: 640px) {
+      .brevo-area {
+        margin: 24px -18px 8px;
+        padding: 20px 18px 22px;
+      }
+    }
+
     .brevo-wrapper {
       width: 100%;
-      margin-top: 28px;    /* Abstand nach dem Text */
     }
 
     .brevo-wrapper iframe {
       width: 100%;
       border: none;
-      min-height: 520px;
+      min-height: 520px;   /* kannst du nach Bedarf erhöhen/verringern */
       display: block;
     }
 
@@ -149,7 +159,7 @@
     <div class="card">
       <div class="card-inner">
 
-        <!-- Bild jetzt im Textbereich unten, da wo du markiert hast -->
+        <!-- Bild -->
         <div class="avatar-wrapper">
           <div class="avatar-wrapper-inner">
             <img src="bild_andrea.jpg" alt="Andrea Hopf">
@@ -184,13 +194,15 @@
           </div>
         </header>
 
-        <!-- NUR noch das Brevo-Formular, ohne Überschrift, ohne extra Hintergrund -->
-        <div class="brevo-wrapper">
-          <iframe
-            src="https://a2dd5f2c.sibforms.com/serve/MUIFAJ-qfyjYRDKYmz8Vsf2EP_nEusD0bMWLn-X9YA07-LXlAN08cmSEAeoEoVDvFHezuyblzJcRATPfISA-Og2giz_VAkaAc5649kQ4y7f0ZOwJI191xDDlq70cY4Anr8pUS3GEDbS8kPNYwrd2hLcQ719b0P1EYiHlRPkAx7FR6pnSyLvXEQIIUwxAiIvgOW6VMXWZ2avNLlLH9g=="
-            frameborder="0"
-            scrolling="no">
-          </iframe>
+        <!-- Weißer Bereich über die ganze Breite, darin das Brevo-Formular -->
+        <div class="brevo-area">
+          <div class="brevo-wrapper">
+            <iframe
+              src="https://a2dd5f2c.sibforms.com/serve/MUIFAJ-qfyjYRDKYmz8Vsf2EP_nEusD0bMWLn-X9YA07-LXlAN08cmSEAeoEoVDvFHezuyblzJcRATPfISA-Og2giz_VAkaAc5649kQ4y7f0ZOwJI191xDDlq70cY4Anr8pUS3GEDbS8kPNYwrd2hLcQ719b0P1EYiHlRPkAx7FR6pnSyLvXEQIIUwxAiIvgOW6VMXWZ2avNLlLH9g=="
+              frameborder="0"
+              scrolling="yes">
+            </iframe>
+          </div>
         </div>
 
         <footer>
