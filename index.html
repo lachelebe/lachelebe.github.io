@@ -4,14 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>lache&lebe | Meditation & Bewusstsein</title>
-  <meta name="description" content="Kostenlose Meditationen für Erwachsene und Kinder sowie ein Vortrag zur Nährstoffbalance. lache&lebe – Meditation & Bewusstsein mit Andrea Hopf.">
 
   <style>
     :root {
       --bg-page: #f4f1ea;
-      --bg-card-top: #e7f0ea;
-      --bg-card-bottom: #ffffff;
-      --accent: #7aa899;
+      --bg-card-top: #e7f0ea;      /* grünlich oben */
+      --bg-card-mid: #eef1f3;      /* sanftes grau */
       --accent-dark: #5f8b7c;
       --text-main: #25313a;
       --text-muted: #6b7280;
@@ -36,26 +34,28 @@
       position: relative;
       border-radius: 28px;
       overflow: hidden;
-      box-shadow: 0 16px 40px rgba(148,163,184,.55);
+      box-shadow: 0 16px 40px rgba(148,163,184,.45);
       border: 1px solid #e5e7eb;
+
+      /* grün oben -> nahtlos in grau unten */
       background: linear-gradient(
         to bottom,
-        var(--bg-card-top) 0 58%,
-        var(--bg-card-bottom) 58% 100%
+        var(--bg-card-top) 0 46%,
+        var(--bg-card-mid) 46% 100%
       );
     }
 
     .card-inner {
-      padding: 40px 26px 26px;
+      padding: 40px 26px 30px;
     }
 
     @media (max-width: 640px) {
       .card-inner {
-        padding: 32px 18px 22px;
+        padding: 26px 16px 26px;
       }
     }
 
-    /* Bild im Inhaltsbereich */
+    /* Bild */
     .avatar-wrapper {
       display: flex;
       justify-content: center;
@@ -68,8 +68,7 @@
       border-radius: 999px;
       border: 3px solid #ffffff;
       overflow: hidden;
-      box-shadow: 0 10px 26px rgba(148,163,184,.75);
-      background: #d1e4dc;
+      box-shadow: 0 10px 26px rgba(148,163,184,.6);
     }
 
     .avatar-wrapper-inner img {
@@ -82,62 +81,50 @@
     header {
       text-align: center;
       max-width: 700px;
-      margin: 0 auto 22px;
+      margin: 0 auto 18px;
     }
 
     .brand {
-      font-size: 1.7rem;
-      letter-spacing: 0.18em;
+      font-size: 1.6rem;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
       font-weight: 600;
     }
 
     .subbrand {
-      margin-top: 4px;
-      font-size: 1.05rem;
+      margin-top: 2px;
+      font-size: 1rem;
       color: var(--accent-dark);
       letter-spacing: 0.08em;
       text-transform: uppercase;
     }
 
     .intro {
-      margin-top: 16px;
+      margin-top: 12px;
       font-size: 0.95rem;
       color: var(--text-muted);
-      line-height: 1.7;
     }
 
-    .intro p + p { margin-top: 0.6rem; }
-    .intro strong { color: var(--text-main); font-weight: 650; }
+    .intro p + p { margin-top: 0.55rem; }
 
-    /* Bereich für Brevo: vollflächig weiß, bündig mit der Karte links/rechts */
+    /* GRAUER Brevo-Bereich – ohne weißen Block */
     .brevo-area {
-      margin: 28px -26px 10px;   /* negative Margins = bündig mit Kartenrand */
-      padding: 24px 26px 26px;
-      background: #ffffff;       /* gleiche Farbe wie das Formular */
-    }
-
-    @media (max-width: 640px) {
-      .brevo-area {
-        margin: 24px -18px 8px;
-        padding: 20px 18px 22px;
-      }
-    }
-
-    .brevo-wrapper {
-      width: 100%;
+      margin-top: 16px;
     }
 
     .brevo-wrapper iframe {
       width: 100%;
       border: none;
-      min-height: 520px;   /* kannst du nach Bedarf erhöhen/verringern */
+
+      /* Seite verlängert statt Scrollen */
+      min-height: 1050px;   /* hier kannst du bei Bedarf nur Zahl ändern */
+
       display: block;
     }
 
     footer {
       text-align: center;
-      margin-top: 18px;
+      margin-top: 10px;
       font-size: 0.78rem;
       color: var(--text-muted);
     }
@@ -148,9 +135,7 @@
       margin: 0 10px;
     }
 
-    footer a:hover {
-      text-decoration: underline;
-    }
+    footer a:hover { text-decoration: underline; }
   </style>
 </head>
 
@@ -159,7 +144,6 @@
     <div class="card">
       <div class="card-inner">
 
-        <!-- Bild -->
         <div class="avatar-wrapper">
           <div class="avatar-wrapper-inner">
             <img src="bild_andrea.jpg" alt="Andrea Hopf">
@@ -171,45 +155,26 @@
           <div class="subbrand">MEDITATION &amp; BEWUSSTSEIN</div>
 
           <div class="intro">
-            <p>
-              Ich begleite dich auf deinem Weg zu mehr <strong>Lebensfreude, Ruhe und innerer Balance.</strong>
-            </p>
-            <p>
-              Hier findest du <strong>kostenlose Meditationen</strong> – unter anderem eine
-              <strong>4-Tage-Meditationsreihe für Erwachsene</strong>, damit du auftanken, loslassen
-              und einfach wieder du selbst sein kannst.
-            </p>
-            <p>
-              Auch für unsere Kinder, die unser wertvollstes Gut sind, gibt es eine liebevoll geführte
-              <strong>3-Tage-Meditationsreihe</strong>, damit auch sie Entspannung, Vertrauen und innere Stärke erleben dürfen.
-            </p>
-            <p>
-              Denn <strong>Meditation nährt die Seele</strong> – und genauso wichtig ist es, auf den Körper zu achten.
-              Darum erhältst du hier außerdem verständliche Informationen zur <strong>Nährstoffbalance</strong>
-              und wie du deinen Körper sanft und natürlich unterstützen kannst.
-            </p>
-            <p>
-              Ich freue mich, wenn du dabei bist und dir diese kleinen Auszeiten schenkst 🌸
-            </p>
+            <p>Ich begleite dich auf deinem Weg zu mehr <strong>Lebensfreude, Ruhe und innerer Balance.</strong></p>
+            <p>Hier findest du kostenlose Meditationen …</p>
           </div>
         </header>
 
-        <!-- Weißer Bereich über die ganze Breite, darin das Brevo-Formular -->
+        <!-- Brevo direkt auf dem grauen Hintergrund -->
         <div class="brevo-area">
           <div class="brevo-wrapper">
             <iframe
               src="https://a2dd5f2c.sibforms.com/serve/MUIFAJ-qfyjYRDKYmz8Vsf2EP_nEusD0bMWLn-X9YA07-LXlAN08cmSEAeoEoVDvFHezuyblzJcRATPfISA-Og2giz_VAkaAc5649kQ4y7f0ZOwJI191xDDlq70cY4Anr8pUS3GEDbS8kPNYwrd2hLcQ719b0P1EYiHlRPkAx7FR6pnSyLvXEQIIUwxAiIvgOW6VMXWZ2avNLlLH9g=="
-              frameborder="0"
-              scrolling="yes">
+              scrolling="no">
             </iframe>
           </div>
         </div>
 
         <footer>
-          <a href="https://lachelebe.github.io/privacy-policy/Impressum_lache_lebe.html" target="_blank">Impressum</a>
-          •
-          <a href="https://lachelebe.github.io/privacy-policy/Datenschutzerklaerung_Landingpage.html" target="_blank">Datenschutz</a>
+          <a href="#">Impressum</a> •
+          <a href="#">Datenschutz</a>
         </footer>
+
       </div>
     </div>
   </div>
