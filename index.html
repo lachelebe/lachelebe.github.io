@@ -1,202 +1,176 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>lache&lebe | Meditation & Bewusstsein</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>lache&lebe | Meditation & Bewusstsein</title>
 
-  <style>
-    :root {
-      --bg-page: #f4f1ea;
-      --bg-card-top: #e7f0ea;      /* grünlich oben */
-      --bg-card-mid: #eef1f3;      /* sanftes grau */
-      --accent-dark: #5f8b7c;
-      --text-main: #25313a;
-      --text-muted: #6b7280;
-    }
+<style>
+:root{
+--bg-page:#f4f1ea;
+--bg-card-top:#e7f0ea;
+--bg-card-mid:#eef1f3;
+--accent-dark:#5f8b7c;
+--text-main:#25313a;
+--text-muted:#6b7280;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{
+font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+background:var(--bg-page);
+color:var(--text-main);
+line-height:1.6;
+}
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+/* ================= LAYOUT ================= */
+.page{max-width:860px;margin:0 auto;padding:32px 16px 40px;}
+.card{
+border-radius:28px;
+overflow:hidden;
+box-shadow:0 16px 40px rgba(148,163,184,.45);
+border:1px solid #e5e7eb;
+background:linear-gradient(to bottom,var(--bg-card-top) 0 46%,var(--bg-card-mid) 46% 100%);
+}
+.card-inner{padding:40px 26px 30px;}
 
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg-page);
-      color: var(--text-main);
-      line-height: 1.6;
-    }
+/* ================= AVATAR ================= */
+.avatar-wrapper{display:flex;justify-content:center;margin-bottom:10px;}
+.avatar-wrapper-inner{
+width:110px;height:110px;border-radius:50%;
+border:3px solid #fff;overflow:hidden;
+box-shadow:0 10px 26px rgba(148,163,184,.6);
+}
+.avatar-wrapper-inner img{width:100%;height:100%;object-fit:cover;}
 
-    .page {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 32px 16px 40px;
-    }
+/* ================= SOCIAL ================= */
+.social-links{
+display:flex;
+justify-content:center;
+gap:14px;
+margin-bottom:22px;
+}
+.social-links a{
+width:42px;height:42px;border-radius:50%;
+background:rgba(255,255,255,0.7);
+border:1px solid #e5e7eb;
+display:flex;align-items:center;justify-content:center;
+font-size:16px;
+text-decoration:none;
+color:var(--accent-dark);
+box-shadow:0 8px 22px rgba(148,163,184,.35);
+transition:.25s ease;
+}
+.social-links a:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(148,163,184,.5);}
 
-    .card {
-      position: relative;
-      border-radius: 28px;
-      overflow: hidden;
-      box-shadow: 0 16px 40px rgba(148,163,184,.45);
-      border: 1px solid #e5e7eb;
+/* ================= TEXT ================= */
+header{text-align:center;}
+.brand{font-size:1.6rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;}
+.subbrand{font-size:1rem;color:var(--accent-dark);letter-spacing:.08em;text-transform:uppercase;}
+.intro{margin-top:14px;font-size:.95rem;color:var(--text-muted);}
+.intro p+p{margin-top:.6rem;}
+.intro strong{color:var(--text-main);}
 
-      /* grün oben -> nahtlos in grau unten */
-      background: linear-gradient(
-        to bottom,
-        var(--bg-card-top) 0 46%,
-        var(--bg-card-mid) 46% 100%
-      );
-    }
+/* ================= FOOTER ================= */
+footer{text-align:center;margin-top:16px;font-size:.78rem;}
+footer a{color:var(--accent-dark);text-decoration:none;margin:0 10px;}
 
-    .card-inner {
-      padding: 40px 26px 30px;
-    }
+/* ================= NAV ================= */
+.side-nav{
+position:fixed;left:18px;top:120px;
+display:flex;flex-direction:column;gap:10px;z-index:20;
+}
+.nav-item{
+background:rgba(255,255,255,.7);
+border:1px solid #e5e7eb;
+padding:10px 14px;border-radius:14px;
+text-decoration:none;color:var(--text-main);
+font-size:.92rem;cursor:pointer;
+box-shadow:0 10px 24px rgba(148,163,184,.25);
+}
 
-    @media (max-width: 640px) {
-      .card-inner {
-        padding: 26px 16px 26px;
-      }
-    }
-
-    /* Bild */
-    .avatar-wrapper {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 18px;
-    }
-
-    .avatar-wrapper-inner {
-      width: 110px;
-      height: 110px;
-      border-radius: 999px;
-      border: 3px solid #ffffff;
-      overflow: hidden;
-      box-shadow: 0 10px 26px rgba(148,163,184,.6);
-    }
-
-    .avatar-wrapper-inner img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: 50% 28%;
-    }
-
-    header {
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto 18px;
-    }
-
-    .brand {
-      font-size: 1.6rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      font-weight: 600;
-    }
-
-    .subbrand {
-      margin-top: 2px;
-      font-size: 1rem;
-      color: var(--accent-dark);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .intro {
-      margin-top: 12px;
-      font-size: 0.95rem;
-      color: var(--text-muted);
-    }
-
-    .intro p + p { margin-top: 0.55rem; }
-    .intro strong { color: var(--text-main); font-weight: 650; }
-
-    /* GRAUER Brevo-Bereich – ohne weißen Block */
-    .brevo-area {
-      margin-top: 16px;
-    }
-
-    .brevo-wrapper iframe {
-      width: 100%;
-      border: none;
-
-      /* Seite verlängert statt Scrollen */
-      min-height: 1050px;   /* hier kannst du bei Bedarf nur Zahl ändern */
-
-      display: block;
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 10px;
-      font-size: 0.78rem;
-      color: var(--text-muted);
-    }
-
-    footer a {
-      color: var(--accent-dark);
-      text-decoration: none;
-      margin: 0 10px;
-    }
-
-    footer a:hover { text-decoration: underline; }
-  </style>
+/* ================= MODAL ================= */
+.modal{position:fixed;inset:0;display:none;z-index:50;}
+.modal.is-open{display:block;}
+.modal-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.45);}
+.modal-dialog{
+position:relative;
+width:min(900px,100%);
+margin:5vh auto;
+background:#fff;
+border-radius:18px;
+overflow:hidden;
+}
+.modal-header{display:flex;justify-content:space-between;padding:12px 16px;background:#f8fafc;}
+.modal-body iframe{width:100%;border:none;height:80vh;}
+</style>
 </head>
 
 <body>
-  <div class="page">
-    <div class="card">
-      <div class="card-inner">
 
-        <div class="avatar-wrapper">
-          <div class="avatar-wrapper-inner">
-            <img src="bild_andrea.jpg" alt="Andrea Hopf">
-          </div>
-        </div>
+<!-- NAV -->
+<nav class="side-nav">
+<a class="nav-item" href="https://rauhnaechte-lache-lebe.netlify.app/" target="_blank">Seelenkompass – App</a>
+<a class="nav-item" href="meditationen.html">Meditationen</a>
+<button class="nav-item" id="openBrevo">Kostenlose Meditationen</button>
+</nav>
 
-        <header>
-          <div class="brand">LACHE&LEBE</div>
-          <div class="subbrand">MEDITATION &amp; BEWUSSTSEIN</div>
+<div class="page">
+<div class="card">
+<div class="card-inner">
 
-          <div class="intro">
-            <p>
-              Ich begleite dich auf deinem Weg zu mehr <strong>Lebensfreude, Ruhe und innerer Balance.</strong>
-            </p>
-            <p>
-              Hier findest du <strong>kostenlose Meditationen</strong> – unter anderem eine
-              <strong>4-Tage-Meditationsreihe für Erwachsene</strong>, damit du auftanken, loslassen
-              und einfach wieder du selbst sein kannst.
-            </p>
-            <p>
-              Auch für unsere Kinder, die unser wertvollstes Gut sind, gibt es eine liebevoll geführte
-              <strong>3-Tage-Meditationsreihe</strong>, damit auch sie Entspannung, Vertrauen und innere Stärke erleben dürfen.
-            </p>
-            <p>
-              Denn <strong>Meditation nährt die Seele</strong> – und genauso wichtig ist es, auf den Körper zu achten.
-              Darum erhältst du hier außerdem verständliche Informationen zur <strong>Nährstoffbalance</strong>
-              und wie du deinen Körper sanft und natürlich unterstützen kannst.
-            </p>
-            <p>
-              Ich freue mich, wenn du dabei bist und dir diese kleinen Auszeiten schenkst 🌸
-            </p>
-          </div>
-        </header>
+<div class="avatar-wrapper">
+<div class="avatar-wrapper-inner">
+<img src="bild_andrea.jpg" alt="Andrea Hopf">
+</div>
+</div>
 
-        <!-- Brevo direkt auf dem grauen Hintergrund -->
-        <div class="brevo-area">
-          <div class="brevo-wrapper">
-            <iframe
-              src="https://a2dd5f2c.sibforms.com/serve/MUIFAJ-qfyjYRDKYmz8Vsf2EP_nEusD0bMWLn-X9YA07-LXlAN08cmSEAeoEoVDvFHezuyblzJcRATPfISA-Og2giz_VAkaAc5649kQ4y7f0ZOwJI191xDDlq70cY4Anr8pUS3GEDbS8kPNYwrd2hLcQ719b0P1EYiHlRPkAx7FR6pnSyLvXEQIIUwxAiIvgOW6VMXWZ2avNLlLH9g=="
-              scrolling="no">
-            </iframe>
-          </div>
-        </div>
+<div class="social-links">
+<a href="https://www.youtube.com/@lache_lebe" target="_blank">YT</a>
+<a href="https://podcasts.apple.com/us/podcast/lache-lebe-|-meditation/id1867773266" target="_blank"></a>
+<a href="https://open.spotify.com/show/2ZSDd9IuOAhyJVqicPzay0" target="_blank">♫</a>
+</div>
 
-        <footer>
-          <a href="https://lachelebe.github.io/privacy-policy/Impressum.html" target="_blank">Impressum</a> •
-          <a href="https://lachelebe.github.io/privacy-policy/Datenschutzerklaerung_Landingpage.html" target="_blank">Datenschutz</a>
-        </footer>
+<header>
+<div class="brand">LACHE&LEBE</div>
+<div class="subbrand">Meditation & Bewusstsein</div>
 
-      </div>
-    </div>
-  </div>
+<div class="intro">
+<p>Ich begleite dich auf deinem Weg zu mehr <strong>Lebensfreude, Ruhe und innerer Balance.</strong></p>
+<p>Hier findest du <strong>kostenlose Meditationen</strong> – eine 4-Tage-Reihe für Erwachsene & eine 3-Tage-Reihe für Kinder.</p>
+<p>Meditation nährt die Seele – und dein Körper verdient ebenso liebevolle Unterstützung.</p>
+<p>Ich freue mich, dass du hier bist 🌸</p>
+</div>
+</header>
+
+<footer>
+<a href="https://lachelebe.github.io/privacy-policy/Impressum.html" target="_blank">Impressum</a> •
+<a href="https://lachelebe.github.io/privacy-policy/Datenschutzerklaerung_Landingpage.html" target="_blank">Datenschutz</a>
+</footer>
+
+</div>
+</div>
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="brevoModal">
+<div class="modal-backdrop" id="closeBrevo"></div>
+<div class="modal-dialog">
+<div class="modal-header">
+<strong>Kostenlose Meditationen</strong>
+<button id="closeBrevo2">×</button>
+</div>
+<div class="modal-body">
+<iframe src="https://a2dd5f2c.sibforms.com/serve/MUIFAJ-qfyjYRDKYmz8Vsf2EP_nEusD0bMWLn-X9YA07-LXlAN08cmSEAeoEoVDvFHezuyblzJcRATPfISA-Og2giz_VAkaAc5649kQ4y7f0ZOwJI191xDDlq70cY4Anr8pUS3GEDbS8kPNYwrd2hLcQ719b0P1EYiHlRPkAx7FR6pnSyLvXEQIIUwxAiIvgOW6VMXWZ2avNLlLH9g=="></iframe>
+</div>
+</div>
+</div>
+
+<script>
+const modal=document.getElementById("brevoModal");
+document.getElementById("openBrevo").onclick=()=>modal.classList.add("is-open");
+document.getElementById("closeBrevo").onclick=()=>modal.classList.remove("is-open");
+document.getElementById("closeBrevo2").onclick=()=>modal.classList.remove("is-open");
+</script>
+
 </body>
 </html>
-
