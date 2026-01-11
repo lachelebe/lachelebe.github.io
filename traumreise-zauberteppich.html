@@ -91,16 +91,17 @@
       letter-spacing: 0.02em;
     }
 
-    /* Image */
-    .hero-img {
-      width: 100%;
+    /* Image (smaller + centered) */
+    .cover {
+      max-width: 520px;   /* <- hier kleiner/größer: z.B. 420px oder 560px */
+      margin: 0 auto;
       border-radius: 20px;
       overflow: hidden;
       border: 1px solid var(--border);
       background: #fff;
       box-shadow: 0 12px 28px rgba(148,163,184,.18);
     }
-    .hero-img img {
+    .cover img {
       width: 100%;
       height: auto;
       display: block;
@@ -194,9 +195,9 @@
 
         <a class="back" href="kinder-meditation.html">← zurück zu Kinder-Meditationen</a>
 
-        <!-- 1) Bild -->
+        <!-- 1) Bild (kleiner + zentriert) -->
         <section class="section">
-          <div class="hero-img">
+          <div class="cover">
             <img src="bilder/Zauberteppich.png" alt="Traumreise mit dem Zauberteppich – Kindermeditation">
           </div>
         </section>
@@ -204,9 +205,26 @@
         <!-- 2) Beschreibung -->
         <section class="section">
           <h1>Traumreise mit dem Zauberteppich</h1>
+
           <p style="color: var(--text-muted); font-size: 0.98rem;">
-            Eine sanfte <strong>Kindermeditation zum Einschlafen</strong>, die dein Kind auf eine magische Reise zu
-            <strong>innerer Ruhe, Geborgenheit und emotionaler Sicherheit</strong> begleitet.
+            In dieser liebevollen Traumreise reisen Kinder auf einem magischen Zauberteppich in eine Welt voller Ruhe,
+            Geborgenheit und Vertrauen.
+          </p>
+
+          <p style="color: var(--text-muted); font-size: 0.98rem; margin-top: 10px;">
+            Die Meditation hilft beim Loslassen des Tages, beim Einschlafen und beim sanften Übergang in einen tiefen,
+            erholsamen Schlaf.
+          </p>
+
+          <p style="color: var(--text-muted); font-size: 0.98rem; margin-top: 10px;">
+            In dieser Geschichte werden sanfte Ho’oponopono-Frequenzen genutzt – mit den Worten
+            „Ich liebe dich“, „Es tut mir leid“, „Bitte verzeih mir“ und „Danke“.
+            Diese unterstützen das Unterbewusstsein dabei, Spannungen zu lösen und ein Gefühl von Sicherheit, Liebe und
+            innerem Frieden zu entwickeln.
+          </p>
+
+          <p style="color: var(--text-muted); font-size: 0.98rem; margin-top: 10px;">
+            Ideal für Kinder am Abend, vor dem Einschlafen oder nach einem aufregenden Tag.
           </p>
 
           <div class="actions">
@@ -229,17 +247,24 @@
           </iframe>
         </section>
 
-        <!-- 4) Apple Podcasts -->
+        <!-- 4) Apple Podcasts (Embed Player mit Episoden-ID) -->
         <section class="section">
           <h2>🍎 Auf Apple Podcasts hören</h2>
-          <p style="color: var(--text-muted); font-size: 0.98rem;">
-            Apple Podcasts unterstützt auf Webseiten nicht immer ein sauberes Embed. Deshalb findest du hier den direkten Link.
-          </p>
-          <div class="actions">
-            <a class="btn primary"
+
+          <iframe
+            class="embed"
+            style="height: 175px;"
+            src="https://embed.podcasts.apple.com/de/podcast/id1867773266?i=1000744590836"
+            title="Apple Podcasts Player – Der Zauberteppich"
+            frameborder="0"
+            sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation">
+          </iframe>
+
+          <div class="actions" style="margin-top: 12px;">
+            <a class="btn"
                href="https://podcasts.apple.com/us/podcast/lache-lebe-|-meditation/id1867773266"
                target="_blank" rel="noopener">
-               Bei Apple Podcasts anhören
+               Apple Podcasts (zur Show)
             </a>
           </div>
         </section>
