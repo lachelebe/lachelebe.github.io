@@ -52,6 +52,19 @@
       .card-inner { padding: 26px 16px 26px; }
     }
 
+    /* Back link (wie auf Kinder-Seite) */
+    .back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 14px;
+      color: var(--accent-dark);
+      text-decoration: none;
+      font-weight: 650;
+      font-size: 0.95rem;
+    }
+    .back:hover { text-decoration: underline; }
+
     /* Avatar */
     .avatar-wrapper {
       display: flex;
@@ -126,7 +139,7 @@
       font-style: italic;
     }
 
-    /* Buttons */
+    /* Button */
     .btn-row {
       max-width: 520px;
       margin: 0 auto 14px;
@@ -134,10 +147,9 @@
       gap: 12px;
     }
 
-    .big-btn, .big-btn:visited {
-      appearance: none;
+    .big-btn {
       border: 1px solid var(--border);
-      background: rgba(255,255,255,0.70);
+      background: rgba(95, 139, 124, 0.14);
       color: var(--text-main);
       text-decoration: none;
       border-radius: 16px;
@@ -146,21 +158,10 @@
       font-weight: 650;
       text-align: center;
       box-shadow: 0 14px 34px rgba(148,163,184,.22);
-      transition: transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
-      cursor: pointer;
-      display: inline-block;
     }
 
     .big-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 18px 44px rgba(148,163,184,.30);
-      border-color: #cbd5e1;
-      background: rgba(255,255,255,0.90);
-    }
-
-    .big-btn.primary {
-      background: rgba(95, 139, 124, 0.14);
-      border-color: rgba(95, 139, 124, 0.32);
+      background: rgba(95, 139, 124, 0.22);
     }
 
     footer {
@@ -175,8 +176,6 @@
       text-decoration: none;
       margin: 0 10px;
     }
-
-    footer a:hover { text-decoration: underline; }
   </style>
 </head>
 
@@ -185,69 +184,41 @@
     <div class="card">
       <div class="card-inner">
 
+        <!-- Zurück-Link wie auf Kinder-Seite -->
+        <a class="back" href="index.html">← Zur Startseite</a>
+
         <!-- Bild -->
         <div class="avatar-wrapper">
           <div class="avatar">
-            <!-- WICHTIG: falls dein Bild im Ordner /bilder/ liegt, dann: src="bilder/bild_andrea.jpg" -->
-            <img src="bild_andrea.jpg" alt="Andrea Hopf">
+            <img src="bilder/bild_andrea.jpg" alt="Andrea Hopf">
           </div>
         </div>
 
-        <!-- Titel -->
         <header>
-          <div class="brand">lache&lebe</div>
+          <div class="brand">LACHE&LEBE</div>
         </header>
 
-        <div class="title">Über mich - Andrea Hopf</div>
+        <div class="title">Über mich – Andrea Hopf</div>
 
-        <!-- Text -->
         <section class="content-box">
-          <p>
-            Ich bin <strong>Andrea Hopf</strong> – und ich glaube daran, dass wir uns selbst wieder finden dürfen:
-            inmitten von Alltag, Verantwortung und all den Gedanken, die manchmal so laut werden.
-          </p>
-
-          <p>
-            Mein Weg zur Meditation begann nicht „perfekt“ – sondern ganz menschlich.
-            Es gab Zeiten, in denen ich mich nach <strong>innerer Ruhe</strong>, <strong>Leichtigkeit</strong> und einem Gefühl von
-            <strong>Ankommen</strong> gesehnt habe. Und genau dort habe ich erlebt, wie viel sich verändern kann,
-            wenn wir unserem Nervensystem erlauben, wieder <strong>weich</strong> zu werden.
-          </p>
-
-          <p>
-            Heute teile ich Meditationen, die dich dabei unterstützen, <strong>zu entschleunigen</strong>,
-            <strong>Blockaden sanft zu lösen</strong> und dich wieder mit deinem <strong>Herzen</strong> zu verbinden –
-            für dich selbst, und auch für unsere Kinder, die so fein fühlen.
-          </p>
-
-          <p>
-            <strong>lache&lebe</strong> ist für mich ein Ort, an dem du nichts leisten musst.
-            Ein Ort für kleine, heilsame Momente – damit du dich Schritt für Schritt wieder
-            <strong>getragen</strong>, <strong>klar</strong> und <strong>lebendig</strong> fühlen kannst.
-          </p>
+          <p><strong>Ich bin Andrea Hopf</strong> – und ich glaube daran, dass wir uns selbst wieder finden dürfen.</p>
+          <p>Mein Weg zur Meditation begann nicht perfekt, sondern ganz menschlich…</p>
+          <p><strong>lache&lebe</strong> ist ein Ort für kleine, heilsame Momente.</p>
 
           <div class="quote">
-            „Du musst nicht erst fertig sein, um anfangen zu dürfen. Ein Atemzug reicht – und dann noch einer.“
+            „Du musst nicht erst fertig sein, um anfangen zu dürfen.“
           </div>
-
-          <p style="margin-top:0.9rem;">
-            Wenn du magst, begleite ich dich ein Stück – mit Meditationen, der kostenlosen Reihe
-            oder dem Seelenkompass. Ich freue mich, dass du hier bist 🌸
-          </p>
         </section>
 
-        <!-- Buttons (Startseiten-Button entfernt, Seelenkompass bleibt) -->
-        <section class="btn-row" aria-label="Navigation">
-          <a class="big-btn primary"
-             href="https://rauhnaechte-lache-lebe.netlify.app/"
-             target="_blank" rel="noopener">
-            Seelenkompass – die App
+        <section class="btn-row">
+          <a class="big-btn" href="https://rauhnaechte-lache-lebe.netlify.app/" target="_blank">
+            Seelenkompass
           </a>
         </section>
 
         <footer>
-          <a href="https://lachelebe.github.io/privacy-policy/Impressum.html" target="_blank" rel="noopener">Impressum</a> •
-          <a href="https://lachelebe.github.io/privacy-policy/Datenschutzerklaerung_Landingpage.html" target="_blank" rel="noopener">Datenschutz</a>
+          <a href="https://lachelebe.github.io/privacy-policy/Impressum.html">Impressum</a> •
+          <a href="https://lachelebe.github.io/privacy-policy/Datenschutzerklaerung_Landingpage.html">Datenschutz</a>
         </footer>
 
       </div>
