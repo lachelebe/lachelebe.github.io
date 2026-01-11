@@ -89,15 +89,6 @@
       font-weight: 650;
     }
 
-    .subbrand {
-      margin-top: 4px;
-      font-size: 1rem;
-      color: var(--accent-dark);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-weight: 600;
-    }
-
     .title {
       text-align: center;
       margin: 10px 0 18px;
@@ -197,16 +188,17 @@
         <!-- Bild -->
         <div class="avatar-wrapper">
           <div class="avatar">
+            <!-- WICHTIG: falls dein Bild im Ordner /bilder/ liegt, dann: src="bilder/bild_andrea.jpg" -->
             <img src="bild_andrea.jpg" alt="Andrea Hopf">
           </div>
         </div>
 
         <!-- Titel -->
         <header>
-          <div class="brand">Über mich</div>
+          <div class="brand">lache&lebe</div>
         </header>
 
-        <div class="title">Andrea Hopf</div>
+        <div class="title">Über mich - Andrea Hopf</div>
 
         <!-- Text -->
         <section class="content-box">
@@ -244,10 +236,8 @@
           </p>
         </section>
 
-        <!-- Buttons -->
+        <!-- Buttons (Startseiten-Button entfernt, Seelenkompass bleibt) -->
         <section class="btn-row" aria-label="Navigation">
-          <a class="big-btn" href="index.html">Zurück zur Startseite</a>
-
           <a class="big-btn primary"
              href="https://rauhnaechte-lache-lebe.netlify.app/"
              target="_blank" rel="noopener">
