@@ -1,1 +1,263 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kinder-Meditationen | lache&lebe</title>
+  <meta name="description" content="Kinder-Meditationen und Traumreisen für innere Ruhe, Geborgenheit und emotionales Wohlbefinden – liebevoll geführt von Andrea Hopf." />
+
+  <style>
+    :root {
+      --bg-page: #f4f1ea;
+      --bg-card-top: #e7f0ea;
+      --bg-card-mid: #eef1f3;
+      --accent-dark: #5f8b7c;
+      --text-main: #25313a;
+      --text-muted: #6b7280;
+      --border: #e5e7eb;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    .page {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 32px 16px 44px;
+    }
+
+    .card {
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 16px 40px rgba(148,163,184,.45);
+      border: 1px solid var(--border);
+      background: linear-gradient(
+        to bottom,
+        var(--bg-card-top) 0 46%,
+        var(--bg-card-mid) 46% 100%
+      );
+    }
+
+    .card-inner {
+      padding: 40px 26px 30px;
+    }
+
+    @media (max-width: 640px) {
+      .card-inner { padding: 26px 16px 26px; }
+    }
+
+    /* Header / Branding */
+    header {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 18px;
+    }
+
+    .brand {
+      font-size: 1.5rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 650;
+    }
+
+    .subbrand {
+      margin-top: 2px;
+      font-size: 1rem;
+      color: var(--accent-dark);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .intro {
+      margin-top: 12px;
+      font-size: 0.98rem;
+      color: var(--text-muted);
+    }
+
+    .intro p + p { margin-top: 0.55rem; }
+    .intro strong { color: var(--text-main); font-weight: 650; }
+
+    /* Back link */
+    .back {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+      color: var(--accent-dark);
+      text-decoration: none;
+      font-weight: 650;
+      font-size: 0.95rem;
+    }
+    .back:hover { text-decoration: underline; }
+
+    /* Meditation list */
+    .list {
+      margin-top: 22px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .item {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 16px;
+      align-items: center;
+
+      background: rgba(255,255,255,0.55);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 14px;
+      box-shadow: 0 12px 28px rgba(148,163,184,.18);
+    }
+
+    .thumb {
+      width: 100%;
+      height: 150px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: #fff;
+    }
+
+    .thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .item h2 {
+      font-size: 1.08rem;
+      margin-bottom: 6px;
+      letter-spacing: 0.02em;
+    }
+
+    .meta {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .actions {
+      margin-top: 10px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.75);
+      color: var(--text-main);
+      text-decoration: none;
+      font-weight: 650;
+      box-shadow: 0 10px 24px rgba(148,163,184,.20);
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(148,163,184,.26);
+      background: rgba(255,255,255,0.92);
+    }
+
+    .btn.primary {
+      background: rgba(95, 139, 124, 0.14);
+      border-color: rgba(95, 139, 124, 0.32);
+      color: var(--text-main);
+    }
+
+    @media (max-width: 720px) {
+      .item { grid-template-columns: 1fr; }
+      .thumb { height: 190px; }
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 18px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    footer a {
+      color: var(--accent-dark);
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <div class="card">
+      <div class="card-inner">
+
+        <a class="back" href="index.html">← Zur Startseite</a>
+
+        <header>
+          <div class="brand">LACHE&LEBE</div>
+          <div class="subbrand">KINDER-MEDITATIONEN</div>
+
+          <div class="intro">
+            <p>
+              Hier findest du liebevoll geführte <strong>Kindermeditationen und Traumreisen</strong>,
+              die dein Kind dabei unterstützen können, <strong>innerlich ruhiger</strong> zu werden,
+              leichter zu <strong>entspannen</strong> und sich <strong>geborgen</strong> zu fühlen.
+            </p>
+            <p>
+              Jede Meditation hat eine eigene Seite mit <strong>Audio</strong> und einer verständlichen
+              Beschreibung für Eltern.
+            </p>
+          </div>
+        </header>
+
+        <section class="list" aria-label="Liste der Kindermeditationen">
+
+          <!-- ====== MEDITATION 1: Zauberteppich (Block duplizieren für weitere) ====== -->
+          <article class="item">
+            <div class="thumb">
+              <img src="bilder/Zauberteppich.png" alt="Traumreise mit dem Zauberteppich – Kindermeditation">
+            </div>
+
+            <div>
+              <h2>Traumreise mit dem Zauberteppich</h2>
+              <div class="meta">
+                Eine sanfte Traumreise für Kinder – für mehr Geborgenheit, innere Ruhe und emotionale Sicherheit.
+              </div>
+
+              <div class="actions">
+                <a class="btn primary" href="traumreise-zauberteppich.html">Zur Meditation</a>
+                <!-- Optional: später, wenn du eine Dauer hast -->
+                <!-- <span class="btn" style="cursor:default;">Dauer: 12 Min</span> -->
+              </div>
+            </div>
+          </article>
+          <!-- ====== ENDE Meditation 1 ====== -->
+
+          <!-- Weitere Meditationen kannst du später hier hinzufügen (einfach den Block oben kopieren) -->
+
+        </section>
+
+        <footer>
+          <a href="https://lachelebe.github.io/privacy-policy/Impressum.html" target="_blank" rel="noopener">Impressum</a> •
+          <a href="https://lachelebe.github.io/privacy-policy/Datenschutzerklaerung_Landingpage.html" target="_blank" rel="noopener">Datenschutz</a>
+        </footer>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>
 
