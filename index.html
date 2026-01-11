@@ -6,336 +6,370 @@
   <title>lache&lebe | Meditation & Bewusstsein</title>
 
   <style>
-    :root {
-      --bg-page: #f4f1ea;
-      --bg-card-top: #e7f0ea;
-      --bg-card-mid: #eef1f3;
-      --accent-dark: #5f8b7c;
-      --text-main: #25313a;
-      --text-muted: #6b7280;
-      --border: #e5e7eb;
-      --white: #ffffff;
+    :root{
+      --bg-page:#f4f1ea;
+      --bg-card-top:#e7f0ea;
+      --bg-card-mid:#eef1f3;
+      --accent-dark:#5f8b7c;
+      --text-main:#25313a;
+      --text-muted:#6b7280;
+      --border:#e5e7eb;
+      --white:#ffffff;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    *{ box-sizing:border-box; margin:0; padding:0; }
 
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg-page);
-      color: var(--text-main);
-      line-height: 1.6;
+    body{
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:var(--bg-page);
+      color:var(--text-main);
+      line-height:1.6;
     }
 
-    .page {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 32px 16px 40px;
+    .page{
+      max-width:860px;
+      margin:0 auto;
+      padding:32px 16px 40px;
     }
 
-    .card {
-      border-radius: 28px;
-      overflow: hidden;
-      box-shadow: 0 16px 40px rgba(148,163,184,.45);
-      border: 1px solid var(--border);
-      background: linear-gradient(
-        to bottom,
-        var(--bg-card-top) 0 46%,
-        var(--bg-card-mid) 46% 100%
-      );
+    .card{
+      border-radius:28px;
+      overflow:hidden;
+      box-shadow:0 16px 40px rgba(148,163,184,.45);
+      border:1px solid var(--border);
+      background:linear-gradient(to bottom, var(--bg-card-top) 0 46%, var(--bg-card-mid) 46% 100%);
     }
 
-    .card-inner {
-      padding: 40px 26px 30px;
+    .card-inner{ padding:40px 26px 30px; }
+    @media (max-width:640px){ .card-inner{ padding:26px 16px 26px; } }
+
+    .avatar-wrapper{ display:flex; justify-content:center; margin-bottom:14px; }
+    .avatar{
+      width:110px; height:110px; border-radius:999px;
+      border:3px solid var(--white); overflow:hidden;
+      box-shadow:0 10px 26px rgba(148,163,184,.6);
+      background:#fff;
+    }
+    .avatar img{
+      width:100%; height:100%; object-fit:cover; object-position:50% 28%;
+      display:block;
     }
 
-    @media (max-width: 640px) {
-      .card-inner { padding: 26px 16px 26px; }
+    header{ text-align:center; margin-bottom:18px; }
+    .brand{ font-size:1.6rem; letter-spacing:.16em; text-transform:uppercase; font-weight:650; }
+    .subbrand{ margin-top:4px; font-size:1rem; color:var(--accent-dark); letter-spacing:.08em; text-transform:uppercase; font-weight:600; }
+
+    .desc-box{
+      margin:18px auto 20px;
+      max-width:720px;
+      background:rgba(255,255,255,0.55);
+      border:1px solid var(--border);
+      border-radius:20px;
+      padding:18px;
+      box-shadow:0 12px 28px rgba(148,163,184,.18);
     }
+    .desc-box p{ font-size:.98rem; color:var(--text-muted); }
+    .desc-box p + p{ margin-top:.6rem; }
+    .desc-box strong{ color:var(--text-main); font-weight:650; }
 
-    /* Avatar */
-    .avatar-wrapper {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 14px;
-    }
-
-    .avatar {
-      width: 110px;
-      height: 110px;
-      border-radius: 999px;
-      border: 3px solid var(--white);
-      overflow: hidden;
-      box-shadow: 0 10px 26px rgba(148,163,184,.6);
-      background: #fff;
-    }
-
-    .avatar img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: 50% 28%;
-      display: block;
-    }
-
-    /* Headline */
-    header {
-      text-align: center;
-      margin-bottom: 18px;
-    }
-
-    .brand {
-      font-size: 1.6rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      font-weight: 650;
-    }
-
-    .subbrand {
-      margin-top: 4px;
-      font-size: 1rem;
-      color: var(--accent-dark);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-weight: 600;
-    }
-
-    /* Beschreibung-Box */
-    .desc-box {
-      margin: 18px auto 20px;
-      max-width: 720px;
-      background: rgba(255,255,255,0.55);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 18px 18px;
-      box-shadow: 0 12px 28px rgba(148,163,184,.18);
-    }
-
-    .desc-box p {
-      font-size: 0.98rem;
-      color: var(--text-muted);
-    }
-
-    .desc-box p + p { margin-top: 0.6rem; }
-    .desc-box strong { color: var(--text-main); font-weight: 650; }
-
-    /* Buttons */
-    .btn-stack {
-      max-width: 520px;
-      margin: 0 auto 18px;
-      display: grid;
-      gap: 12px;
+    .btn-stack{
+      max-width:520px;
+      margin:0 auto 18px;
+      display:grid;
+      gap:12px;
     }
 
     .big-btn,
-    .big-btn:visited {
-      appearance: none;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,0.70);
-      color: var(--text-main);
-      text-decoration: none;
-      border-radius: 16px;
-      padding: 14px 16px;
-      font-size: 1.02rem;
-      font-weight: 650;
-      text-align: center;
-      box-shadow: 0 14px 34px rgba(148,163,184,.22);
-      transition: transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
-      cursor: pointer;
+    .big-btn:visited{
+      appearance:none;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,0.70);
+      color:var(--text-main);
+      text-decoration:none;
+      border-radius:16px;
+      padding:14px 16px;
+      font-size:1.02rem;
+      font-weight:650;
+      text-align:center;
+      box-shadow:0 14px 34px rgba(148,163,184,.22);
+      transition:transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
+      cursor:pointer;
+    }
+    .big-btn:hover{
+      transform:translateY(-2px);
+      box-shadow:0 18px 44px rgba(148,163,184,.30);
+      border-color:#cbd5e1;
+      background:rgba(255,255,255,0.90);
+    }
+    .big-btn.primary{
+      background:rgba(95, 139, 124, 0.14);
+      border-color:rgba(95, 139, 124, 0.32);
     }
 
-    .big-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 18px 44px rgba(148,163,184,.30);
-      border-color: #cbd5e1;
-      background: rgba(255,255,255,0.90);
+    .social-links{
+      display:flex;
+      justify-content:center;
+      gap:10px;
+      margin:10px 0 6px;
+      flex-wrap:wrap;
     }
-
-    .big-btn.primary {
-      background: rgba(95, 139, 124, 0.14);
-      border-color: rgba(95, 139, 124, 0.32);
-    }
-
-    /* Social Links */
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin: 10px 0 6px;
-      flex-wrap: wrap;
-    }
-
     .pill,
-    .pill:visited {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,0.60);
-      color: var(--accent-dark);
-      text-decoration: none;
-      font-size: 0.92rem;
-      box-shadow: 0 10px 24px rgba(148,163,184,.18);
-      transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+    .pill:visited{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,0.60);
+      color:var(--accent-dark);
+      text-decoration:none;
+      font-size:.92rem;
+      box-shadow:0 10px 24px rgba(148,163,184,.18);
+      transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+    }
+    .pill:hover{
+      transform:translateY(-1px);
+      background:rgba(255,255,255,0.90);
+      box-shadow:0 14px 30px rgba(148,163,184,.24);
     }
 
-    .pill:hover {
-      transform: translateY(-1px);
-      background: rgba(255,255,255,0.90);
-      box-shadow: 0 14px 30px rgba(148,163,184,.24);
+    footer{
+      text-align:center;
+      margin-top:12px;
+      font-size:.78rem;
+      color:var(--text-muted);
     }
-
-    footer {
-      text-align: center;
-      margin-top: 12px;
-      font-size: 0.78rem;
-      color: var(--text-muted);
+    footer a{
+      color:var(--accent-dark);
+      text-decoration:none;
+      margin:0 10px;
     }
-
-    footer a {
-      color: var(--accent-dark);
-      text-decoration: none;
-      margin: 0 10px;
-    }
-
-    footer a:hover { text-decoration: underline; }
+    footer a:hover{ text-decoration:underline; }
 
     /* Modal */
-    .modal {
-      position: fixed;
-      inset: 0;
-      display: none;
-      z-index: 50;
+    .modal{
+      position:fixed;
+      inset:0;
+      display:none;
+      z-index:50;
+    }
+    .modal.is-open{ display:block; }
+
+    .modal-backdrop{
+      position:absolute;
+      inset:0;
+      background:rgba(15, 23, 42, 0.45);
     }
 
-    .modal.is-open { display: block; }
-
-    .modal-backdrop {
-      position: absolute;
-      inset: 0;
-      background: rgba(15, 23, 42, 0.45);
+    .modal-dialog{
+      position:relative;
+      width:min(920px, calc(100% - 24px));
+      margin:5vh auto;
+      background:#fff;
+      border-radius:18px;
+      overflow:hidden;
+      box-shadow:0 24px 80px rgba(15,23,42,0.35);
+      border:1px solid var(--border);
     }
 
-    .modal-dialog {
-      position: relative;
-      width: min(920px, calc(100% - 24px));
-      margin: 5vh auto;
-      background: #fff;
-      border-radius: 18px;
-      overflow: hidden;
-      box-shadow: 0 24px 80px rgba(15,23,42,0.35);
-      border: 1px solid var(--border);
+    .modal-header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:14px 16px;
+      background:#f8fafc;
+      border-bottom:1px solid var(--border);
     }
 
-    .modal-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 14px 16px;
-      background: #f8fafc;
-      border-bottom: 1px solid var(--border);
+    .modal-title{ font-weight:800; color:var(--text-main); }
+
+    .modal-close{
+      width:38px; height:38px;
+      border-radius:10px;
+      border:1px solid var(--border);
+      background:#fff;
+      font-size:22px;
+      line-height:1;
+      cursor:pointer;
+      flex:0 0 auto;
     }
 
-    .modal-title {
-      font-weight: 700;
-      color: var(--text-main);
+    .modal-body{ padding:16px; }
+
+    .notice{
+      border:1px solid rgba(95, 139, 124, 0.25);
+      background:rgba(95, 139, 124, 0.10);
+      border-radius:14px;
+      padding:12px 12px;
+      color:var(--text-main);
+      box-shadow:0 10px 24px rgba(148,163,184,.14);
+      margin-bottom:12px;
+      font-size:.98rem;
     }
 
-    .modal-close {
-      width: 38px;
-      height: 38px;
-      border-radius: 10px;
-      border: 1px solid var(--border);
-      background: #fff;
-      font-size: 22px;
-      line-height: 1;
-      cursor: pointer;
+    .notice strong{ color:var(--text-main); }
+
+    .brevo-frame{
+      width:100%;
+      border:1px solid var(--border);
+      border-radius:14px;
+      overflow:hidden;
+      background:#fff;
+      /* sorgt dafür, dass es nie "klein" wird */
+      height:min(72vh, 720px);
+      min-height:560px;
     }
 
-    .modal-body iframe {
-      width: 100%;
-      border: none;
-      min-height: 80vh;
+    .brevo-frame iframe{
+      width:100%;
+      height:100%;
+      border:0;
+      display:block;
     }
+
+    .modal-footer{
+      display:flex;
+      justify-content:flex-end;
+      gap:10px;
+      padding:12px 16px 16px;
+    }
+
+    .link-btn{
+      border:1px solid var(--border);
+      background:rgba(255,255,255,0.75);
+      border-radius:12px;
+      padding:10px 12px;
+      text-decoration:none;
+      color:var(--accent-dark);
+      font-weight:650;
+      box-shadow:0 10px 24px rgba(148,163,184,.16);
+    }
+    .link-btn:hover{ background:rgba(255,255,255,0.95); }
   </style>
 </head>
 
 <body>
-<div class="page">
-<div class="card">
-<div class="card-inner">
+  <div class="page">
+    <div class="card">
+      <div class="card-inner">
 
-<div class="avatar-wrapper">
-<div class="avatar">
-<img src="bilder/lache_lebe_logo.png" alt="Andrea Hopf">
-</div>
-</div>
+        <div class="avatar-wrapper">
+          <div class="avatar">
+            <img src="bilder/lache_lebe_logo.png" alt="Andrea Hopf">
+          </div>
+        </div>
 
-<header>
-<div class="brand">LACHE&LEBE</div>
-<div class="subbrand">MEDITATION &amp; BEWUSSTSEIN</div>
-</header>
+        <header>
+          <div class="brand">LACHE&LEBE</div>
+          <div class="subbrand">MEDITATION &amp; BEWUSSTSEIN</div>
+        </header>
 
-<section class="desc-box">
-<p>
-Ich begleite dich auf deinem Weg zu mehr <strong>Lebensfreude</strong>, <strong>innerer Ruhe</strong> und einem
-<strong>liebevollen Umgang mit dir selbst</strong>.
-</p>
-<p>
-In meinen Meditationen – für <strong>Erwachsene und Kinder</strong> – darfst du <strong>ankommen</strong>,
-<strong>loslassen</strong> und dich wieder mit deinem <strong>Herzen</strong> verbinden.
-Sie helfen dir, <strong>innere Blockaden sanft zu lösen</strong>, dein <strong>Nervensystem zu beruhigen</strong>
-und wieder mehr <strong>Vertrauen</strong> und <strong>Leichtigkeit</strong> in dein Leben einzuladen.
-</p>
-<p>
-Wenn du dir regelmäßig kleine <strong>Inseln der Ruhe</strong> schenken möchtest, bist du hier genau richtig.
-Fühle dich herzlich eingeladen, meine <strong>kostenlose Meditationsreihe</strong> zu entdecken und dir selbst
-etwas <strong>Gutes zu tun</strong> 🌸
-</p>
-</section>
+        <section class="desc-box">
+          <p>
+            Ich begleite dich auf deinem Weg zu mehr <strong>Lebensfreude</strong>, <strong>innerer Ruhe</strong> und einem
+            <strong>liebevollen Umgang mit dir selbst</strong>.
+          </p>
+          <p>
+            In meinen Meditationen – für <strong>Erwachsene und Kinder</strong> – darfst du <strong>ankommen</strong>,
+            <strong>loslassen</strong> und dich wieder mit deinem <strong>Herzen</strong> verbinden.
+            Sie helfen dir, <strong>innere Blockaden sanft zu lösen</strong>, dein <strong>Nervensystem zu beruhigen</strong>
+            und wieder mehr <strong>Vertrauen</strong> und <strong>Leichtigkeit</strong> in dein Leben einzuladen.
+          </p>
+          <p>
+            Wenn du dir regelmäßig kleine <strong>Inseln der Ruhe</strong> schenken möchtest, bist du hier genau richtig.
+            Fühle dich herzlich eingeladen, meine <strong>kostenlose Meditationsreihe</strong> zu entdecken und dir selbst
+            etwas <strong>Gutes zu tun</strong> 🌸
+          </p>
+        </section>
 
-<section class="btn-stack">
-<a class="big-btn" href="ueber-mich.html">Über mich</a>
-<a class="big-btn primary" href="https://rauhnaechte-lache-lebe.netlify.app/" target="_blank">Seelenkompass – die App</a>
-<a class="big-btn" href="kinder-meditation.html">Kinder Meditation</a>
-<a class="big-btn" href="erwachsenen-meditation.html">Erwachsenen Meditation</a>
-<button class="big-btn" id="openBrevo">Kostenlose Meditationsreihe</button>
-</section>
+        <section class="btn-stack">
+          <a class="big-btn" href="ueber-mich.html">Über mich</a>
+          <a class="big-btn primary" href="https://rauhnaechte-lache-lebe.netlify.app/" target="_blank" rel="noopener">Seelenkompass – die App</a>
+          <a class="big-btn" href="kinder-meditation.html">Kinder Meditation</a>
+          <a class="big-btn" href="erwachsenen-meditation.html">Erwachsenen Meditation</a>
+          <button class="big-btn" id="openBrevo" type="button">Kostenlose Meditationsreihe</button>
+        </section>
 
-<div class="social-links">
-<a class="pill" href="https://www.youtube.com/@lache_lebe" target="_blank">YouTube</a>
-<a class="pill" href="https://podcasts.apple.com/us/podcast/lache-lebe-|-meditation/id1867773266" target="_blank">Apple Podcasts</a>
-<a class="pill" href="https://open.spotify.com/show/2ZSDd9IuOAhyJVqicPzay0" target="_blank">Spotify</a>
-</div>
+        <div class="social-links">
+          <a class="pill" href="https://www.youtube.com/@lache_lebe" target="_blank" rel="noopener">YouTube</a>
+          <a class="pill" href="https://podcasts.apple.com/us/podcast/lache-lebe-|-meditation/id1867773266" target="_blank" rel="noopener">Apple Podcasts</a>
+          <a class="pill" href="https://open.spotify.com/show/2ZSDd9IuOAhyJVqicPzay0" target="_blank" rel="noopener">Spotify</a>
+        </div>
 
-<footer>
-<a href="https://lachelebe.github.io/privacy-policy/Impressum.html" target="_blank">Impressum</a> •
-<a href="https://lachelebe.github.io/privacy-policy/Datenschutzerklaerung_Landingpage.html" target="_blank">Datenschutz</a>
-</footer>
+        <footer>
+          <a href="https://lachelebe.github.io/privacy-policy/Impressum.html" target="_blank" rel="noopener">Impressum</a> •
+          <a href="https://lachelebe.github.io/privacy-policy/Datenschutzerklaerung_Landingpage.html" target="_blank" rel="noopener">Datenschutz</a>
+        </footer>
 
-</div>
-</div>
-</div>
+      </div>
+    </div>
+  </div>
 
-<!-- Modal -->
-<div class="modal" id="brevoModal">
-<div class="modal-backdrop" id="closeBrevoBackdrop"></div>
-<div class="modal-dialog">
-<div class="modal-header">
-<div class="modal-title">Kostenlose Meditationsreihe</div>
-<button class="modal-close" id="closeBrevo">×</button>
-</div>
-<iframe src="https://a2dd5f2c.sibforms.com/serve/MUIFAJ-qfyjYRDKYmz8Vsf2EP_nEusD0bMWLn-X9YA07-LXlAN08cmSEAeoEoVDvFHezuyblzJcRATPfISA-Og2giz_VAkaAc5649kQ4y7f0ZOwJI191xDDlq70cY4Anr8pUS3GEDbS8kPNYwrd2hLcQ719b0P1EYiHlRPkAx7FR6pnSyLvXEQIIUwxAiIvgOW6VMXWZ2avNLlLH9g=="></iframe>
-</div>
-</div>
+  <!-- Modal -->
+  <div class="modal" id="brevoModal" aria-hidden="true">
+    <div class="modal-backdrop" id="closeBrevoBackdrop"></div>
 
-<script>
-const modal=document.getElementById("brevoModal");
-document.getElementById("openBrevo").onclick=()=>modal.classList.add("is-open");
-document.getElementById("closeBrevo").onclick=()=>modal.classList.remove("is-open");
-document.getElementById("closeBrevoBackdrop").onclick=()=>modal.classList.remove("is-open");
-</script>
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-label="Kostenlose Meditationsreihe">
+      <div class="modal-header">
+        <div class="modal-title">Kostenlose Meditationsreihe</div>
+        <button class="modal-close" id="closeBrevo" type="button" aria-label="Modal schließen">×</button>
+      </div>
 
+      <div class="modal-body">
+        <div class="notice">
+          <strong>Aktuell noch nicht verfügbar.</strong><br>
+          Du kannst dich aber schon anmelden – dann erhältst du die Meditationen automatisch, sobald sie verfügbar sind. 🌿
+        </div>
+
+        <div class="brevo-frame">
+          <iframe
+            title="Brevo Anmeldeformular"
+            loading="lazy"
+            src="https://a2dd5f2c.sibforms.com/serve/MUIFAJ-qfyjYRDKYmz8Vsf2EP_nEusD0bMWLn-X9YA07-LXlAN08cmSEAeoEoVDvFHezuyblzJcRATPfISA-Og2giz_VAkaAc5649kQ4y7f0ZOwJI191xDDlq70cY4Anr8pUS3GEDbS8kPNYwrd2hLcQ719b0P1EYiHlRPkAx7FR6pnSyLvXEQIIUwxAiIvgOW6VMXWZ2avNLlLH9g==">
+          </iframe>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <a class="link-btn"
+           href="https://a2dd5f2c.sibforms.com/serve/MUIFAJ-qfyjYRDKYmz8Vsf2EP_nEusD0bMWLn-X9YA07-LXlAN08cmSEAeoEoVDvFHezuyblzJcRATPfISA-Og2giz_VAkaAc5649kQ4y7f0ZOwJI191xDDlq70cY4Anr8pUS3GEDbS8kPNYwrd2hLcQ719b0P1EYiHlRPkAx7FR6pnSyLvXEQIIUwxAiIvgOW6VMXWZ2avNLlLH9g=="
+           target="_blank" rel="noopener">
+          Formular in neuem Tab öffnen
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const modal = document.getElementById("brevoModal");
+    const openBtn = document.getElementById("openBrevo");
+    const closeBtn = document.getElementById("closeBrevo");
+    const backdrop = document.getElementById("closeBrevoBackdrop");
+
+    function openModal(){
+      modal.classList.add("is-open");
+      modal.setAttribute("aria-hidden","false");
+      document.body.style.overflow = "hidden";
+      closeBtn.focus();
+    }
+
+    function closeModal(){
+      modal.classList.remove("is-open");
+      modal.setAttribute("aria-hidden","true");
+      document.body.style.overflow = "";
+      openBtn.focus();
+    }
+
+    openBtn.addEventListener("click", openModal);
+    closeBtn.addEventListener("click", closeModal);
+    backdrop.addEventListener("click", closeModal);
+
+    document.addEventListener("keydown", (e) => {
+      if(!modal.classList.contains("is-open")) return;
+      if(e.key === "Escape") closeModal();
+    });
+  </script>
 </body>
 </html>
