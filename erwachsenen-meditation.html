@@ -52,6 +52,19 @@
       .card-inner { padding: 26px 16px 26px; }
     }
 
+    /* Zurück-Link */
+    .back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 14px;
+      color: var(--accent-dark);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: .95rem;
+    }
+    .back:hover { text-decoration: underline; }
+
     /* Avatar */
     .avatar-wrapper {
       display: flex;
@@ -77,7 +90,6 @@
       display: block;
     }
 
-    /* Headline */
     header {
       text-align: center;
       margin-bottom: 18px;
@@ -99,7 +111,6 @@
       font-weight: 600;
     }
 
-    /* Box */
     .desc-box {
       margin: 18px auto 20px;
       max-width: 720px;
@@ -125,38 +136,6 @@
 
     .desc-box p + p { margin-top: 0.65rem; }
 
-    /* Buttons */
-    .btn-stack {
-      max-width: 520px;
-      margin: 0 auto 10px;
-      display: grid;
-      gap: 12px;
-    }
-
-    .big-btn, .big-btn:visited {
-      appearance: none;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,0.70);
-      color: var(--text-main);
-      text-decoration: none;
-      border-radius: 16px;
-      padding: 14px 16px;
-      font-size: 1.02rem;
-      font-weight: 650;
-      text-align: center;
-      box-shadow: 0 14px 34px rgba(148,163,184,.22);
-      transition: transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
-      cursor: pointer;
-      display: inline-block;
-    }
-
-    .big-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 18px 44px rgba(148,163,184,.30);
-      border-color: #cbd5e1;
-      background: rgba(255,255,255,0.90);
-    }
-
     footer {
       text-align: center;
       margin-top: 12px;
@@ -178,6 +157,9 @@
   <div class="page">
     <div class="card">
       <div class="card-inner">
+
+        <!-- Zurück Pfeil -->
+        <a class="back" href="index.html">← Zur Startseite</a>
 
         <div class="avatar-wrapper">
           <div class="avatar">
@@ -202,11 +184,6 @@
           </p>
         </section>
 
-        <section class="btn-stack" aria-label="Navigation">
-          <a class="big-btn" href="index.html">Zurück zur Startseite</a>
-          <a class="big-btn" href="kinder-meditation.html">Zu den Kinder Meditationen</a>
-        </section>
-
         <footer>
           <a href="https://lachelebe.github.io/privacy-policy/Impressum.html" target="_blank" rel="noopener">Impressum</a> •
           <a href="https://lachelebe.github.io/privacy-policy/Datenschutzerklaerung_Landingpage.html" target="_blank" rel="noopener">Datenschutz</a>
@@ -217,4 +194,3 @@
   </div>
 </body>
 </html>
-
