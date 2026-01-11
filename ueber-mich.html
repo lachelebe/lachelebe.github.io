@@ -44,20 +44,18 @@
       );
     }
 
-    .card-inner {
-      padding: 40px 26px 30px;
-    }
+    .card-inner { padding: 40px 26px 30px; }
 
     @media (max-width: 640px) {
       .card-inner { padding: 26px 16px 26px; }
     }
 
-    /* Back link (wie auf Kinder-Seite) */
+    /* Zur Startseite Button */
     .back {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      margin-bottom: 14px;
+      gap: 10px;
+      margin-bottom: 12px;
       color: var(--accent-dark);
       text-decoration: none;
       font-weight: 650;
@@ -106,18 +104,16 @@
       text-align: center;
       margin: 10px 0 18px;
       font-size: 1.12rem;
-      color: var(--text-main);
       font-weight: 700;
     }
 
-    /* Content Box */
     .content-box {
       margin: 10px auto 18px;
       max-width: 720px;
       background: rgba(255,255,255,0.55);
       border: 1px solid var(--border);
       border-radius: 20px;
-      padding: 18px 18px;
+      padding: 18px;
       box-shadow: 0 12px 28px rgba(148,163,184,.18);
     }
 
@@ -127,7 +123,6 @@
     }
 
     .content-box p + p { margin-top: 0.75rem; }
-    .content-box strong { color: var(--text-main); font-weight: 650; }
 
     .quote {
       margin-top: 12px;
@@ -135,33 +130,24 @@
       border-left: 4px solid rgba(95, 139, 124, 0.45);
       background: rgba(255,255,255,0.55);
       border-radius: 14px;
-      color: var(--text-main);
       font-style: italic;
     }
 
-    /* Button */
     .btn-row {
       max-width: 520px;
       margin: 0 auto 14px;
-      display: grid;
-      gap: 12px;
     }
 
     .big-btn {
-      border: 1px solid var(--border);
-      background: rgba(95, 139, 124, 0.14);
-      color: var(--text-main);
-      text-decoration: none;
-      border-radius: 16px;
+      display: block;
       padding: 14px 16px;
-      font-size: 1.02rem;
+      border-radius: 16px;
+      background: rgba(95, 139, 124, 0.14);
+      border: 1px solid rgba(95, 139, 124, 0.32);
+      text-decoration: none;
       font-weight: 650;
       text-align: center;
-      box-shadow: 0 14px 34px rgba(148,163,184,.22);
-    }
-
-    .big-btn:hover {
-      background: rgba(95, 139, 124, 0.22);
+      color: var(--text-main);
     }
 
     footer {
@@ -180,49 +166,46 @@
 </head>
 
 <body>
-  <div class="page">
-    <div class="card">
-      <div class="card-inner">
+<div class="page">
+<div class="card">
+<div class="card-inner">
 
-        <!-- Zurück-Link wie auf Kinder-Seite -->
-        <a class="back" href="index.html">← Zur Startseite</a>
+<!-- Zur Startseite Button -->
+<a class="back" href="index.html">← Zur Startseite</a>
 
-        <!-- Bild -->
-        <div class="avatar-wrapper">
-          <div class="avatar">
-            <img src="bilder/bild_andrea.jpg" alt="Andrea Hopf">
-          </div>
-        </div>
-
-        <header>
-          <div class="brand">LACHE&LEBE</div>
-        </header>
-
-        <div class="title">Über mich – Andrea Hopf</div>
-
-        <section class="content-box">
-          <p><strong>Ich bin Andrea Hopf</strong> – und ich glaube daran, dass wir uns selbst wieder finden dürfen.</p>
-          <p>Mein Weg zur Meditation begann nicht perfekt, sondern ganz menschlich…</p>
-          <p><strong>lache&lebe</strong> ist ein Ort für kleine, heilsame Momente.</p>
-
-          <div class="quote">
-            „Du musst nicht erst fertig sein, um anfangen zu dürfen.“
-          </div>
-        </section>
-
-        <section class="btn-row">
-          <a class="big-btn" href="https://rauhnaechte-lache-lebe.netlify.app/" target="_blank">
-            Seelenkompass
-          </a>
-        </section>
-
-        <footer>
-          <a href="https://lachelebe.github.io/privacy-policy/Impressum.html">Impressum</a> •
-          <a href="https://lachelebe.github.io/privacy-policy/Datenschutzerklaerung_Landingpage.html">Datenschutz</a>
-        </footer>
-
-      </div>
-    </div>
+<div class="avatar-wrapper">
+  <div class="avatar">
+    <img src="bild_andrea.jpg" alt="Andrea Hopf">
   </div>
+</div>
+
+<header>
+  <div class="brand">lache&lebe</div>
+</header>
+
+<div class="title">Über mich – Andrea Hopf</div>
+
+<section class="content-box">
+  <p>Ich bin <strong>Andrea Hopf</strong> – und ich glaube daran, dass wir uns selbst wieder finden dürfen.</p>
+  <p>Mein Weg zur Meditation begann nicht perfekt – sondern ganz menschlich.</p>
+  <p><strong>lache&lebe</strong> ist ein Ort für kleine, heilsame Momente.</p>
+
+  <div class="quote">
+    „Du musst nicht erst fertig sein, um anfangen zu dürfen.“
+  </div>
+</section>
+
+<section class="btn-row">
+  <a class="big-btn" href="https://rauhnaechte-lache-lebe.netlify.app/" target="_blank">Seelenkompass – die App</a>
+</section>
+
+<footer>
+  <a href="https://lachelebe.github.io/privacy-policy/Impressum.html">Impressum</a> •
+  <a href="https://lachelebe.github.io/privacy-policy/Datenschutzerklaerung_Landingpage.html">Datenschutz</a>
+</footer>
+
+</div>
+</div>
+</div>
 </body>
 </html>
