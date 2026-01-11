@@ -201,7 +201,7 @@
 
     footer a:hover { text-decoration: underline; }
 
-    /* Modal (Brevo Popup) */
+    /* Modal */
     .modal {
       position: fixed;
       inset: 0;
@@ -253,138 +253,89 @@
       cursor: pointer;
     }
 
-    .modal-body { padding: 0; }
-
     .modal-body iframe {
       width: 100%;
       border: none;
       min-height: 80vh;
-      display: block;
     }
   </style>
 </head>
 
 <body>
-  <div class="page">
-    <div class="card">
-      <div class="card-inner">
+<div class="page">
+<div class="card">
+<div class="card-inner">
 
-        <!-- Bild -->
-        <div class="avatar-wrapper">
-          <div class="avatar">
-            <img src="bild_andrea.jpg" alt="Andrea Hopf">
-          </div>
-        </div>
+<div class="avatar-wrapper">
+<div class="avatar">
+<img src="bild_andrea.jpg" alt="Andrea Hopf">
+</div>
+</div>
 
-        <!-- Titel -->
-        <header>
-          <div class="brand">LACHE&LEBE</div>
-          <div class="subbrand">MEDITATION &amp; BEWUSSTSEIN</div>
-        </header>
+<header>
+<div class="brand">LACHE&LEBE</div>
+<div class="subbrand">MEDITATION &amp; BEWUSSTSEIN</div>
+</header>
 
-        <!-- Beschreibung -->
-        <section class="desc-box">
-          <p>
-            Ich begleite dich auf deinem Weg zu mehr Lebensfreude, innerer Ruhe und einem liebevollen Umgang mit dir selbst.
-          </p>
-          <p>
-            In meinen Meditationen – für Erwachsene und Kinder – darfst du ankommen, loslassen und dich wieder mit deinem Herzen verbinden.
-            Sie helfen dir, innere Blockaden sanft zu lösen, dein Nervensystem zu beruhigen und wieder mehr Vertrauen und Leichtigkeit in dein Leben einzuladen.
-          </p>
-          <p>
-            Wenn du dir regelmäßig kleine Inseln der Ruhe schenken möchtest, bist du hier genau richtig.
-            Fühle dich herzlich eingeladen, meine kostenlose Meditationsreihe zu entdecken und dir selbst etwas Gutes zu tun 🌸
-          </p>
-        </section>
+<section class="desc-box">
+<p>
+Ich begleite dich auf deinem Weg zu mehr <strong>Lebensfreude</strong>, <strong>innerer Ruhe</strong> und einem
+<strong>liebevollen Umgang mit dir selbst</strong>.
+</p>
+<p>
+In meinen Meditationen – für <strong>Erwachsene und Kinder</strong> – darfst du <strong>ankommen</strong>,
+<strong>loslassen</strong> und dich wieder mit deinem <strong>Herzen</strong> verbinden.
+Sie helfen dir, <strong>innere Blockaden sanft zu lösen</strong>, dein <strong>Nervensystem zu beruhigen</strong>
+und wieder mehr <strong>Vertrauen</strong> und <strong>Leichtigkeit</strong> in dein Leben einzuladen.
+</p>
+<p>
+Wenn du dir regelmäßig kleine <strong>Inseln der Ruhe</strong> schenken möchtest, bist du hier genau richtig.
+Fühle dich herzlich eingeladen, meine <strong>kostenlose Meditationsreihe</strong> zu entdecken und dir selbst
+etwas <strong>Gutes zu tun</strong> 🌸
+</p>
+</section>
 
-        <!-- Buttons -->
-        <section class="btn-stack" aria-label="Links">
+<section class="btn-stack">
+<a class="big-btn" href="ueber-mich.html">Über mich</a>
+<a class="big-btn primary" href="https://rauhnaechte-lache-lebe.netlify.app/" target="_blank">Seelenkompass – die App</a>
+<a class="big-btn" href="kinder-meditation.html">Kinder Meditation</a>
+<a class="big-btn" href="erwachsenen-meditation.html">Erwachsenen Meditation</a>
+<button class="big-btn" id="openBrevo">Kostenlose Meditationsreihe</button>
+</section>
 
-          <!-- NEU: Über mich (oberhalb Seelenkompass) -->
-          <a class="big-btn" href="ueber-mich.html">
-            Über mich
-          </a>
+<div class="social-links">
+<a class="pill" href="https://www.youtube.com/@lache_lebe" target="_blank">YouTube</a>
+<a class="pill" href="https://podcasts.apple.com/us/podcast/lache-lebe-|-meditation/id1867773266" target="_blank">Apple Podcasts</a>
+<a class="pill" href="https://open.spotify.com/show/2ZSDd9IuOAhyJVqicPzay0" target="_blank">Spotify</a>
+</div>
 
-          <a class="big-btn primary"
-             href="https://rauhnaechte-lache-lebe.netlify.app/"
-             target="_blank" rel="noopener">
-            Seelenkompass – die App
-          </a>
+<footer>
+<a href="https://lachelebe.github.io/privacy-policy/Impressum.html" target="_blank">Impressum</a> •
+<a href="https://lachelebe.github.io/privacy-policy/Datenschutzerklaerung_Landingpage.html" target="_blank">Datenschutz</a>
+</footer>
 
-          <a class="big-btn" href="kinder-meditation.html">
-            Kinder Meditation
-          </a>
+</div>
+</div>
+</div>
 
-          <a class="big-btn" href="erwachsenen-meditation.html">
-            Erwachsenen Meditation
-          </a>
+<!-- Modal -->
+<div class="modal" id="brevoModal">
+<div class="modal-backdrop" id="closeBrevoBackdrop"></div>
+<div class="modal-dialog">
+<div class="modal-header">
+<div class="modal-title">Kostenlose Meditationsreihe</div>
+<button class="modal-close" id="closeBrevo">×</button>
+</div>
+<iframe src="https://a2dd5f2c.sibforms.com/serve/MUIFAJ-qfyjYRDKYmz8Vsf2EP_nEusD0bMWLn-X9YA07-LXlAN08cmSEAeoEoVDvFHezuyblzJcRATPfISA-Og2giz_VAkaAc5649kQ4y7f0ZOwJI191xDDlq70cY4Anr8pUS3GEDbS8kPNYwrd2hLcQ719b0P1EYiHlRPkAx7FR6pnSyLvXEQIIUwxAiIvgOW6VMXWZ2avNLlLH9g=="></iframe>
+</div>
+</div>
 
-          <button class="big-btn" id="openBrevo" type="button">
-            Kostenlose Meditationsreihe
-          </button>
-        </section>
+<script>
+const modal=document.getElementById("brevoModal");
+document.getElementById("openBrevo").onclick=()=>modal.classList.add("is-open");
+document.getElementById("closeBrevo").onclick=()=>modal.classList.remove("is-open");
+document.getElementById("closeBrevoBackdrop").onclick=()=>modal.classList.remove("is-open");
+</script>
 
-        <!-- Social -->
-        <div class="social-links" aria-label="Podcast & Video">
-          <a class="pill" href="https://www.youtube.com/@lache_lebe" target="_blank" rel="noopener">YouTube</a>
-          <a class="pill" href="https://podcasts.apple.com/us/podcast/lache-lebe-|-meditation/id1867773266" target="_blank" rel="noopener">Apple Podcasts</a>
-          <a class="pill" href="https://open.spotify.com/show/2ZSDd9IuOAhyJVqicPzay0" target="_blank" rel="noopener">Spotify</a>
-        </div>
-
-        <footer>
-          <a href="https://lachelebe.github.io/privacy-policy/Impressum.html" target="_blank" rel="noopener">Impressum</a> •
-          <a href="https://lachelebe.github.io/privacy-policy/Datenschutzerklaerung_Landingpage.html" target="_blank" rel="noopener">Datenschutz</a>
-        </footer>
-
-      </div>
-    </div>
-  </div>
-
-  <!-- BREVO MODAL -->
-  <div class="modal" id="brevoModal" aria-hidden="true">
-    <div class="modal-backdrop" id="closeBrevoBackdrop"></div>
-
-    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="brevoTitle">
-      <div class="modal-header">
-        <div class="modal-title" id="brevoTitle">Kostenlose Meditationsreihe</div>
-        <button class="modal-close" id="closeBrevo" type="button" aria-label="Schließen">×</button>
-      </div>
-
-      <div class="modal-body">
-        <iframe
-          title="Brevo Formular"
-          src="https://a2dd5f2c.sibforms.com/serve/MUIFAJ-qfyjYRDKYmz8Vsf2EP_nEusD0bMWLn-X9YA07-LXlAN08cmSEAeoEoVDvFHezuyblzJcRATPfISA-Og2giz_VAkaAc5649kQ4y7f0ZOwJI191xDDlq70cY4Anr8pUS3GEDbS8kPNYwrd2hLcQ719b0P1EYiHlRPkAx7FR6pnSyLvXEQIIUwxAiIvgOW6VMXWZ2avNLlLH9g=="
-          scrolling="no">
-        </iframe>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    const openBtn = document.getElementById('openBrevo');
-    const modal = document.getElementById('brevoModal');
-    const closeBtn = document.getElementById('closeBrevo');
-    const closeBackdrop = document.getElementById('closeBrevoBackdrop');
-
-    function openModal() {
-      modal.classList.add('is-open');
-      modal.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeModal() {
-      modal.classList.remove('is-open');
-      modal.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-    }
-
-    openBtn.addEventListener('click', openModal);
-    closeBtn.addEventListener('click', closeModal);
-    closeBackdrop.addEventListener('click', closeModal);
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
-    });
-  </script>
 </body>
 </html>
