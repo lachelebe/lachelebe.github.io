@@ -147,6 +147,16 @@
     }
     footer a:hover{ text-decoration:underline; }
 
+    /* Hinweise im Footer */
+    .footer-note{
+      font-size:0.8rem;
+      color:var(--text-muted);
+      text-align:center;
+      max-width:720px;
+      margin:10px auto 0;
+      line-height:1.55;
+    }
+
     /* Modal */
     .modal{
       position:fixed;
@@ -217,7 +227,6 @@
       border-radius:14px;
       overflow:hidden;
       background:#fff;
-      /* sorgt dafür, dass es nie "klein" wird */
       height:min(72vh, 720px);
       min-height:560px;
     }
@@ -300,7 +309,19 @@
 
         <footer>
           <a href="https://lachelebe.github.io/privacy-policy/Impressum.html" target="_blank" rel="noopener">Impressum</a> •
-          <a href="https://lachelebe.github.io/privacy-policy/Datenschutzerklaerung_Landingpage.html" target="_blank" rel="noopener">Datenschutz</a>
+          <a href="https://lachelebe.github.io/privacy-policy/Datenschutzerklaerung.html" target="_blank" rel="noopener">Datenschutz</a>
+
+          <!-- ✅ HINWEIS: Externe Player -->
+          <p class="footer-note">
+            Beim Abspielen von eingebetteten Inhalten (z. B. YouTube, Spotify oder Apple Podcasts) werden Daten an diese Anbieter übertragen.
+            Weitere Informationen findest du in der <a href="https://lachelebe.github.io/privacy-policy/Datenschutzerklaerung.html" target="_blank" rel="noopener">Datenschutzerklärung</a>.
+          </p>
+
+          <!-- ✅ HINWEIS: Kein Ersatz für Therapie/Medizin -->
+          <p class="footer-note">
+            Meine Meditationen und Inhalte dienen der Entspannung und persönlichen Entwicklung.
+            Sie ersetzen keine medizinische oder psychotherapeutische Behandlung.
+          </p>
         </footer>
 
       </div>
