@@ -146,52 +146,6 @@
       border: 0;
     }
 
-    /* ✅ Klick-Poster für YouTube (damit es nicht grau bleibt) */
-    .yt-poster {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-      padding: 0;
-      cursor: pointer;
-      background: #000;
-      color: inherit;
-    }
-    .yt-poster img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      filter: saturate(1.02);
-    }
-    .yt-poster::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(0,0,0,.35), rgba(0,0,0,0));
-      pointer-events: none;
-    }
-    .yt-play {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      width: 86px;
-      height: 86px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.92);
-      box-shadow: 0 18px 50px rgba(0,0,0,.35);
-      display: grid;
-      place-items: center;
-    }
-    .yt-play svg {
-      width: 30px;
-      height: 30px;
-      margin-left: 4px;
-      fill: #e11d48; /* dezentes Rot */
-    }
-
     .section h2 {
       font-size: 1.05rem;
       margin-bottom: 10px;
@@ -270,19 +224,16 @@
           </iframe>
         </section>
 
-        <!-- ✅ 3) YouTube (Klick zum Laden) -->
+        <!-- ✅ 3) YouTube (wie Zauberteppich) -->
         <section class="section">
           <h2>▶ Auf YouTube ansehen</h2>
-
-          <div class="video-wrap" id="ytWrap" aria-label="YouTube Player">
-            <button class="yt-poster" id="ytLoad" type="button" aria-label="YouTube Video laden">
-              <img src="bilder/Zauberwald.png" alt="YouTube Video laden – Zauberwald der Wünsche">
-              <span class="yt-play" aria-hidden="true">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M8 5v14l11-7z"></path>
-                </svg>
-              </span>
-            </button>
+          <div class="video-wrap" aria-label="YouTube Player">
+            <iframe
+              src="https://www.youtube.com/embed/-MTbMz4BOSk?start=248"
+              title="Zauberwald der Wünsche – Kindermeditation"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+              allowfullscreen>
+            </iframe>
           </div>
         </section>
 
@@ -330,26 +281,6 @@
       </div>
     </div>
   </div>
-
-  <!-- ✅ Script: lädt YouTube erst beim Klick -->
-  <script>
-    (function () {
-      const ytWrap = document.getElementById("ytWrap");
-      const ytLoad = document.getElementById("ytLoad");
-      if (!ytWrap || !ytLoad) return;
-
-      ytLoad.addEventListener("click", () => {
-        const iframe = document.createElement("iframe");
-        iframe.src = "https://www.youtube-nocookie.com/embed/-MTbMz4BOSk?start=248";
-        iframe.title = "Zauberwald der Wünsche – Kindermeditation";
-        iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen";
-        iframe.allowFullscreen = true;
-
-        ytWrap.innerHTML = "";
-        ytWrap.appendChild(iframe);
-      });
-    })();
-  </script>
 
   <!-- Schema.org (hilft bei SEO) -->
   <script type="application/ld+json">
