@@ -6,7 +6,7 @@
 
   <title>Sternenbaum der Gefühle – Kindermeditation zum Einschlafen | lache&lebe</title>
 
-  <meta name="description" content="Sternenbaum der Gefühle: Sanfte Traumreise & Einschlaf-Meditation für Kinder – Gefühle sortieren, loslassen und geborgen einschlafen. Jetzt auf Spotify, Apple Podcasts oder YouTube anhören." />
+  <meta name="description" content="Sternenbaum der Gefühle: Sanfte Traumreise & Einschlaf-Meditation für Kinder – Gefühle annehmen, sortieren und geborgen einschlafen. Jetzt auf Spotify, Apple Podcasts oder YouTube anhören." />
 
   <!-- Social Preview -->
   <meta property="og:title" content="Sternenbaum der Gefühle – Kindermeditation zum Einschlafen | lache&lebe" />
@@ -53,50 +53,91 @@
     }
 
     .card-inner { padding: 40px 26px 30px; }
+    @media (max-width: 640px) { .card-inner { padding: 26px 16px 26px; } }
 
+    /* Back link */
+    .back {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+      color: var(--accent-dark);
+      text-decoration: none;
+      font-weight: 650;
+      font-size: 0.95rem;
+    }
+    .back:hover { text-decoration: underline; }
+
+    /* Content blocks */
     .section {
       margin-top: 14px;
       background: rgba(255,255,255,0.55);
       border: 1px solid var(--border);
       border-radius: 22px;
       padding: 16px;
+      box-shadow: 0 12px 28px rgba(148,163,184,.18);
     }
 
+    /* HERO: Bild + Titel nebeneinander */
     .hero {
       display: grid;
       grid-template-columns: 420px 1fr;
       gap: 18px;
       align-items: center;
+      padding: 16px;
     }
 
     @media (max-width: 900px) {
       .hero { grid-template-columns: 1fr; }
     }
 
-    .cover img {
-      width: 100%;
+    .cover {
       border-radius: 18px;
+      overflow: hidden;
       border: 1px solid var(--border);
+      background: #fff;
+      box-shadow: 0 12px 28px rgba(148,163,184,.18);
     }
 
-    h1 { font-size: 1.75rem; margin-bottom: 10px; }
+    .cover img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
 
-    .lead { color: var(--text-muted); }
+    h1 {
+      font-size: 1.75rem;
+      letter-spacing: 0.01em;
+      line-height: 1.15;
+      margin-bottom: 10px;
+    }
 
+    .lead {
+      color: var(--text-muted);
+      font-size: 1.02rem;
+      margin-bottom: 10px;
+    }
+
+    /* Embed */
     .embed {
       width: 100%;
       border: none;
       border-radius: 16px;
+      overflow: hidden;
+      background: #fff;
     }
 
+    /* Responsive YouTube ratio */
     .video-wrap {
       position: relative;
       width: 100%;
       padding-top: 56.25%;
       border-radius: 16px;
       overflow: hidden;
+      border: 1px solid var(--border);
+      background: #000;
     }
-
     .video-wrap iframe {
       position: absolute;
       inset: 0;
@@ -104,6 +145,17 @@
       height: 100%;
       border: 0;
     }
+
+    .section h2 {
+      font-size: 1.05rem;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+
+    /* SEO text */
+    .seo p { color: var(--text-muted); font-size: 0.98rem; }
+    .seo p + p { margin-top: 0.7rem; }
+    .seo strong { color: var(--text-main); font-weight: 650; }
 
     footer {
       text-align: center;
@@ -122,128 +174,142 @@
 </head>
 
 <body>
-<div class="page">
-  <div class="card">
-    <div class="card-inner">
+  <div class="page">
+    <div class="card">
+      <div class="card-inner">
 
-      <!-- HERO -->
-      <section class="section hero">
-        <div class="cover">
-          <img src="bilder/Sternenbaum.png.png" alt="Sternenbaum der Gefühle – Kindermeditation zum Einschlafen">
-        </div>
-        <div>
-          <h1>Sternenbaum der Gefühle</h1>
-          <p class="lead">
-            Sanfte Einschlaf-Meditation & Traumreise für Kinder – um loszulassen, Gefühle zu sortieren und geborgen einzuschlafen.
-          </p>
-        </div>
-      </section>
+        <a class="back" href="kinder-meditation.html">← zurück zu Kinder-Meditationen</a>
 
-      <!-- Beschreibung -->
-      <section class="section">
-        <h2>🌙 Worum geht’s in dieser Traumreise?</h2>
-        <p>
-          In dieser liebevollen Einschlafreise begleitet dich ein leuchtender Schmetterling auf einem hellen Lichtweg
-          in den geheimnisvollen Garten der Gefühle. Dort triffst du Milo, den kleinen Vogel mit dem weichen Schal.
-          Gemeinsam entdeckt ihr den großen Sternenbaum – mit warm leuchtenden Sternen in seinen Ästen.
-        </p>
-        <p style="margin-top:10px">
-          Unter dem Sternenbaum darf alles ruhig werden: Gedanken dürfen ziehen, Gefühle dürfen einfach da sein.
-          Zum Schluss bekommst du deinen eigenen Herzstern, der in dir weiterleuchtet – und dich daran erinnert,
-          dass du wichtig bist und genau richtig, so wie du bist.
-        </p>
-      </section>
+        <!-- HERO -->
+        <section class="section hero">
+          <div class="cover">
+            <img src="bilder/Sternenbaum.png.png" alt="Sternenbaum der Gefühle – Kindermeditation zum Einschlafen">
+          </div>
 
-      <!-- Spotify -->
-      <section class="section">
-        <h2>🎧 Auf Spotify hören</h2>
-        <iframe
-          class="embed"
-          style="height:152px"
-          src="https://open.spotify.com/embed/episode/7thjB3Tcl5m1Y3NMyyxV8Q?si=rAZjHIjURMCutkaVHeonFA"
-          loading="lazy">
-        </iframe>
-      </section>
+          <div>
+            <h1>Sternenbaum der Gefühle</h1>
+            <p class="lead">
+              Eine sanfte <strong>Traumreise zum Einschlafen</strong> für Kinder – um Gefühle liebevoll anzunehmen,
+              innerlich zu sortieren und mit <strong>Geborgenheit</strong> und <strong>Ruhe</strong> einzuschlafen.
+            </p>
+            <p class="lead" style="margin-bottom:0;">
+              Ideal am Abend, vor dem Einschlafen oder nach einem emotionalen Tag.
+            </p>
+          </div>
+        </section>
 
-      <!-- Apple Podcasts -->
-      <section class="section">
-        <h2>🍎 Auf Apple Podcasts hören</h2>
-        <iframe
-          class="embed"
-          style="height:175px"
-          src="https://embed.podcasts.apple.com/de/podcast/sternenbaum-der-gef%C3%BChle-kindermeditation-zum-einschlafen/id1867773266?i=1000745548780">
-        </iframe>
-      </section>
-
-      <!-- YouTube -->
-      <section class="section">
-        <h2>▶ Auf YouTube ansehen</h2>
-        <div class="video-wrap">
+        <!-- 1) Spotify -->
+        <section class="section">
+          <h2>🎧 Auf Spotify hören</h2>
           <iframe
-            src="https://www.youtube.com/embed/-YL9TKMDVPI"
-            allowfullscreen>
+            class="embed"
+            style="height: 152px;"
+            src="https://open.spotify.com/embed/episode/7thjB3Tcl5m1Y3NMyyxV8Q"
+            title="Spotify Player – Sternenbaum der Gefühle"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy">
           </iframe>
-        </div>
-      </section>
+        </section>
 
-      <!-- Direktlinks -->
-      <section class="section">
-        <p>
-          Direktlinks:
-          <a href="https://open.spotify.com/episode/7thjB3Tcl5m1Y3NMyyxV8Q?si=rAZjHIjURMCutkaVHeonFA" target="_blank" rel="noopener">Spotify</a> ·
-          <a href="https://podcasts.apple.com/de/podcast/sternenbaum-der-gef%C3%BChle-kindermeditation-zum-einschlafen/id1867773266?i=1000745548780" target="_blank" rel="noopener">Apple Podcasts</a> ·
-          <a href="https://www.youtube.com/watch?v=-YL9TKMDVPI" target="_blank" rel="noopener">YouTube</a>
-        </p>
-      </section>
+        <!-- 2) Apple Podcasts -->
+        <section class="section">
+          <h2>🍎 Auf Apple Podcasts hören</h2>
+          <iframe
+            class="embed"
+            style="height: 175px;"
+            src="https://embed.podcasts.apple.com/de/podcast/sternenbaum-der-gef%C3%BChle-kindermeditation-zum-einschlafen/id1867773266?i=1000745548780"
+            title="Apple Podcasts Player – Sternenbaum der Gefühle"
+            frameborder="0"
+            sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation">
+          </iframe>
+        </section>
 
-      <!-- Nutzen / Zielgruppe -->
-      <section class="section">
-        <h2>✨ Diese Traumreise kann helfen bei</h2>
-        <ul style="margin-left:18px; margin-top:8px; color: var(--text-muted);">
-          <li>abends herunterzufahren</li>
-          <li>den Tag innerlich loszulassen</li>
-          <li>Gefühle zu sortieren</li>
-          <li>Mut und Selbstvertrauen zu spüren</li>
-          <li>ruhig und geborgen einzuschlafen</li>
-        </ul>
-        <p style="margin-top:10px; color: var(--text-muted);">
-          Besonders geeignet für Kinder von ca. 5–9 Jahren – und für alle Großen, die noch träumen können ✨
-        </p>
-        <p style="margin-top:10px; color: var(--text-muted);">
-          Bitte nur im Liegen oder gemütlichen Sitzen anhören – diese Meditation macht sehr müde 🌙
-        </p>
-        <p style="margin-top:10px;">
-          Deine Andrea – Lache &amp; Lebe 💛
-        </p>
-      </section>
+        <!-- 3) YouTube -->
+        <section class="section">
+          <h2>▶ Auf YouTube ansehen</h2>
+          <div class="video-wrap" aria-label="YouTube Player">
+            <iframe
+              src="https://www.youtube.com/embed/-YL9TKMDVPI"
+              title="Sternenbaum der Gefühle – Kindermeditation"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </section>
 
-      <footer>
-        <a href="https://lachelebe.github.io/privacy-policy/Impressum.html" target="_blank" rel="noopener">Impressum</a> •
-        <a href="https://lachelebe.github.io/privacy-policy/Datenschutzerklaerung_Landingpage.html" target="_blank" rel="noopener">Datenschutz</a>
-      </footer>
+        <!-- 4) Beschreibung (SEO + Elternnutzen) -->
+        <section class="section seo">
+          <h2>Beschreibung</h2>
 
+          <p>
+            In der <strong>Kindermeditation „Sternenbaum der Gefühle“</strong> wirst du liebevoll in den Schlaf begleitet.
+            Ein leuchtender Schmetterling holt dich in deiner Fantasie ab und führt dich über einen hellen Lichtweg
+            in den geheimnisvollen <strong>Garten der Gefühle</strong>.
+          </p>
+
+          <p>
+            Dort triffst du Milo, den kleinen Vogel mit dem weichen Schal. Gemeinsam entdeckt ihr den großen Sternenbaum,
+            dessen Äste voller warm leuchtender Sterne sind. Unter dem Sternenbaum darf alles still werden:
+            Gedanken dürfen ziehen, Gefühle dürfen einfach da sein – <strong>nichts ist falsch</strong> und <strong>nichts ist zu viel</strong>.
+          </p>
+
+          <p>
+            Diese sanfte <strong>Einschlafmeditation für Kinder</strong> kann dabei helfen,
+            den Tag innerlich loszulassen, Gefühle zu sortieren und mit einem sicheren Gefühl einzuschlafen.
+          </p>
+
+          <p>
+            Die Traumreise unterstützt dein Kind dabei:
+            <br>• abends herunterzufahren
+            <br>• den Tag loszulassen
+            <br>• Gefühle anzunehmen und zu ordnen
+            <br>• Mut & Selbstvertrauen zu spüren
+            <br>• ruhig und geborgen einzuschlafen
+          </p>
+
+          <p>
+            Tipp: Bitte nur im Liegen oder gemütlichen Sitzen hören – diese Meditation macht sehr müde 🌙
+          </p>
+
+          <p style="margin-top: 10px;">
+            Direktlinks:
+            <a href="https://open.spotify.com/episode/7thjB3Tcl5m1Y3NMyyxV8Q?si=rAZjHIjURMCutkaVHeonFA" target="_blank" rel="noopener">Spotify</a> ·
+            <a href="https://podcasts.apple.com/de/podcast/sternenbaum-der-gef%C3%BChle-kindermeditation-zum-einschlafen/id1867773266?i=1000745548780" target="_blank" rel="noopener">Apple Podcasts</a> ·
+            <a href="https://www.youtube.com/watch?v=-YL9TKMDVPI" target="_blank" rel="noopener">YouTube</a>
+          </p>
+
+          <p style="margin-top: 10px;">
+            Deine Andrea – Lache &amp; Lebe 💛
+          </p>
+        </section>
+
+        <footer>
+          <a href="https://lachelebe.github.io/privacy-policy/Impressum.html" target="_blank" rel="noopener">Impressum</a> •
+          <a href="https://lachelebe.github.io/privacy-policy/Datenschutzerklaerung_Landingpage.html" target="_blank" rel="noopener">Datenschutz</a>
+        </footer>
+
+      </div>
     </div>
   </div>
-</div>
 
-<!-- Schema.org -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "AudioObject",
-  "name": "Sternenbaum der Gefühle – Kindermeditation zum Einschlafen",
-  "thumbnailUrl": "bilder/Sternenbaum.png.png",
-  "publisher": {
-    "@type": "Organization",
-    "name": "lache&lebe"
-  },
-  "sameAs": [
-    "https://open.spotify.com/episode/7thjB3Tcl5m1Y3NMyyxV8Q?si=rAZjHIjURMCutkaVHeonFA",
-    "https://podcasts.apple.com/de/podcast/sternenbaum-der-gef%C3%BChle-kindermeditation-zum-einschlafen/id1867773266?i=1000745548780",
-    "https://www.youtube.com/watch?v=-YL9TKMDVPI"
-  ]
-}
-</script>
-
+  <!-- Schema.org (hilft bei SEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AudioObject",
+    "name": "Sternenbaum der Gefühle – Kindermeditation zum Einschlafen",
+    "description": "Sanfte Traumreise & Einschlafmeditation für Kinder: Gefühle annehmen, sortieren, loslassen und geborgen einschlafen. Mit dem Schmetterling auf dem Lichtweg in den Garten der Gefühle zum Sternenbaum.",
+    "thumbnailUrl": "bilder/Sternenbaum.png.png",
+    "publisher": {
+      "@type": "Organization",
+      "name": "lache&lebe"
+    },
+    "sameAs": [
+      "https://open.spotify.com/episode/7thjB3Tcl5m1Y3NMyyxV8Q?si=rAZjHIjURMCutkaVHeonFA",
+      "https://podcasts.apple.com/de/podcast/sternenbaum-der-gef%C3%BChle-kindermeditation-zum-einschlafen/id1867773266?i=1000745548780",
+      "https://www.youtube.com/watch?v=-YL9TKMDVPI"
+    ]
+  }
+  </script>
 </body>
 </html>
