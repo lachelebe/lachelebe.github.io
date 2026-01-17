@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Zauberfluss – Ängste loslassen – Kindermeditation | lache&lebe</title>
+  <title>Zauberfluss – Ängste loslassen – Kindermeditation zum Einschlafen | lache&lebe</title>
 
-  <meta name="description" content="Zauberfluss – Ängste loslassen: Kindermeditation zum Einschlafen für innere Ruhe, Geborgenheit und Vertrauen. Jetzt auf Spotify, Apple Podcasts oder YouTube anhören." />
+  <meta name="description" content="Zauberfluss – Ängste loslassen: Sanfte Traumreise & Einschlafmeditation für Kinder – Sorgen loslassen, zur Ruhe kommen und geborgen einschlafen. Jetzt auf Spotify, Apple Podcasts oder YouTube anhören." />
 
   <!-- Social Preview -->
-  <meta property="og:title" content="Zauberfluss – Ängste loslassen – Kindermeditation | lache&lebe" />
-  <meta property="og:description" content="Liebevolle Traumreise zum Einschlafen: Sorgen loslassen, innere Ruhe finden & geborgen einschlafen. Jetzt anhören." />
+  <meta property="og:title" content="Zauberfluss – Ängste loslassen – Kindermeditation zum Einschlafen | lache&lebe" />
+  <meta property="og:description" content="Sanfte Traumreise zum Einschlafen: Sorgen loslassen, innere Ruhe finden & geborgen schlafen. Jetzt anhören." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="bilder/Zauberfluss.png" />
 
@@ -53,50 +53,91 @@
     }
 
     .card-inner { padding: 40px 26px 30px; }
+    @media (max-width: 640px) { .card-inner { padding: 26px 16px 26px; } }
 
+    /* Back link */
+    .back {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+      color: var(--accent-dark);
+      text-decoration: none;
+      font-weight: 650;
+      font-size: 0.95rem;
+    }
+    .back:hover { text-decoration: underline; }
+
+    /* Content blocks */
     .section {
       margin-top: 14px;
       background: rgba(255,255,255,0.55);
       border: 1px solid var(--border);
       border-radius: 22px;
       padding: 16px;
+      box-shadow: 0 12px 28px rgba(148,163,184,.18);
     }
 
+    /* HERO: Bild + Titel nebeneinander */
     .hero {
       display: grid;
       grid-template-columns: 420px 1fr;
       gap: 18px;
       align-items: center;
+      padding: 16px;
     }
 
     @media (max-width: 900px) {
       .hero { grid-template-columns: 1fr; }
     }
 
-    .cover img {
-      width: 100%;
+    .cover {
       border-radius: 18px;
+      overflow: hidden;
       border: 1px solid var(--border);
+      background: #fff;
+      box-shadow: 0 12px 28px rgba(148,163,184,.18);
     }
 
-    h1 { font-size: 1.75rem; margin-bottom: 10px; }
+    .cover img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
 
-    .lead { color: var(--text-muted); }
+    h1 {
+      font-size: 1.75rem;
+      letter-spacing: 0.01em;
+      line-height: 1.15;
+      margin-bottom: 10px;
+    }
 
+    .lead {
+      color: var(--text-muted);
+      font-size: 1.02rem;
+      margin-bottom: 10px;
+    }
+
+    /* Embed */
     .embed {
       width: 100%;
       border: none;
       border-radius: 16px;
+      overflow: hidden;
+      background: #fff;
     }
 
+    /* Responsive YouTube ratio */
     .video-wrap {
       position: relative;
       width: 100%;
       padding-top: 56.25%;
       border-radius: 16px;
       overflow: hidden;
+      border: 1px solid var(--border);
+      background: #000;
     }
-
     .video-wrap iframe {
       position: absolute;
       inset: 0;
@@ -104,6 +145,17 @@
       height: 100%;
       border: 0;
     }
+
+    .section h2 {
+      font-size: 1.05rem;
+      margin-bottom: 10px;
+      letter-spacing: 0.02em;
+    }
+
+    /* SEO text */
+    .seo p { color: var(--text-muted); font-size: 0.98rem; }
+    .seo p + p { margin-top: 0.7rem; }
+    .seo strong { color: var(--text-main); font-weight: 650; }
 
     footer {
       text-align: center;
@@ -117,96 +169,142 @@
       text-decoration: none;
       margin: 0 10px;
     }
+    footer a:hover { text-decoration: underline; }
   </style>
 </head>
 
 <body>
-<div class="page">
-  <div class="card">
-    <div class="card-inner">
+  <div class="page">
+    <div class="card">
+      <div class="card-inner">
 
-      <!-- HERO -->
-      <section class="section hero">
-        <div class="cover">
-          <img src="bilder/Zauberfluss.png" alt="Zauberfluss – Ängste loslassen – Kindermeditation">
-        </div>
-        <div>
-          <h1>Zauberfluss – Ängste loslassen</h1>
-          <p class="lead">
-            Liebevolle Kindermeditation zum Einschlafen – für innere Ruhe, Geborgenheit und Vertrauen.
-          </p>
-        </div>
-      </section>
+        <a class="back" href="kinder-meditation.html">← zurück zu Kinder-Meditationen</a>
 
-      <!-- Spotify -->
-      <section class="section">
-        <h2>🎧 Auf Spotify hören</h2>
-        <iframe
-          class="embed"
-          style="height:152px"
-          src="https://open.spotify.com/embed/episode/0KIaBJxGtC8GO1Ki4kcLrL"
-          loading="lazy">
-        </iframe>
-      </section>
+        <!-- HERO -->
+        <section class="section hero">
+          <div class="cover">
+            <img src="bilder/Zauberfluss.png" alt="Zauberfluss – Ängste loslassen – Kindermeditation zum Einschlafen">
+          </div>
 
-      <!-- Apple Podcasts -->
-      <section class="section">
-        <h2>🍎 Auf Apple Podcasts hören</h2>
-        <iframe
-          class="embed"
-          style="height:175px"
-          src="https://embed.podcasts.apple.com/us/podcast/zauberfluss-%C3%A4ngste-loslassen-kindermeditation-zum-einschlafen/id1867773266?i=1000745464869">
-        </iframe>
-      </section>
+          <div>
+            <h1>Zauberfluss – Ängste loslassen</h1>
+            <p class="lead">
+              Eine sanfte <strong>Traumreise zum Einschlafen</strong> für Kinder – um Sorgen loszulassen,
+              innerlich ruhiger zu werden und mit <strong>Geborgenheit</strong> und <strong>Vertrauen</strong> einzuschlafen.
+            </p>
+            <p class="lead" style="margin-bottom:0;">
+              Ideal am Abend, vor dem Einschlafen oder nach einem aufregenden Tag.
+            </p>
+          </div>
+        </section>
 
-      <!-- YouTube -->
-      <section class="section">
-        <h2>▶ Auf YouTube ansehen</h2>
-        <div class="video-wrap">
+        <!-- 1) Spotify -->
+        <section class="section">
+          <h2>🎧 Auf Spotify hören</h2>
           <iframe
-            src="https://www.youtube.com/embed/-pLTSW1XUSE"
-            allowfullscreen>
+            class="embed"
+            style="height: 152px;"
+            src="https://open.spotify.com/embed/episode/0KIaBJxGtC8GO1Ki4kcLrL"
+            title="Spotify Player – Zauberfluss – Ängste loslassen"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy">
           </iframe>
-        </div>
-      </section>
+        </section>
 
-      <!-- Direktlinks -->
-      <section class="section">
-        <p>
-          Direktlinks:
-          <a href="https://open.spotify.com/episode/0KIaBJxGtC8GO1Ki4kcLrL?si=L5XDppMcRImtRhwZBjF7oA" target="_blank">Spotify</a> ·
-          <a href="https://podcasts.apple.com/us/podcast/zauberfluss-%C3%A4ngste-loslassen-kindermeditation-zum-einschlafen/id1867773266?i=1000745464869" target="_blank">Apple Podcasts</a> ·
-          <a href="https://www.youtube.com/watch?v=-pLTSW1XUSE" target="_blank">YouTube</a>
-        </p>
-      </section>
+        <!-- 2) Apple Podcasts -->
+        <section class="section">
+          <h2>🍎 Auf Apple Podcasts hören</h2>
+          <iframe
+            class="embed"
+            style="height: 175px;"
+            src="https://embed.podcasts.apple.com/us/podcast/zauberfluss-%C3%A4ngste-loslassen-kindermeditation-zum-einschlafen/id1867773266?i=1000745464869"
+            title="Apple Podcasts Player – Zauberfluss – Ängste loslassen"
+            frameborder="0"
+            sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation">
+          </iframe>
+        </section>
 
-      <footer>
-        <a href="https://lachelebe.github.io/privacy-policy/Impressum.html">Impressum</a> •
-        <a href="https://lachelebe.github.io/privacy-policy/Datenschutzerklaerung_Landingpage.html">Datenschutz</a>
-      </footer>
+        <!-- 3) YouTube -->
+        <section class="section">
+          <h2>▶ Auf YouTube ansehen</h2>
+          <div class="video-wrap" aria-label="YouTube Player">
+            <iframe
+              src="https://www.youtube.com/embed/-pLTSW1XUSE"
+              title="Zauberfluss – Ängste loslassen – Kindermeditation"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </section>
 
+        <!-- 4) Beschreibung (SEO + Elternnutzen) -->
+        <section class="section seo">
+          <h2>Beschreibung</h2>
+
+          <p>
+            In der <strong>Kindermeditation „Zauberfluss – Ängste loslassen“</strong> nimmt dich eine weiche Schlafwolke
+            direkt aus deinem Bett mit auf eine Reise durch den Nachthimmel – vorbei an funkelnden Sternen und dem lächelnden Vollmond –
+            zurück in den Zauberwald.
+          </p>
+
+          <p>
+            Dort warten Max, das kleine Eichhörnchen, und Hannah Hase auf dich. Gemeinsam entdeckt ihr einen magischen Glitzerfluss,
+            der alles Schwere wegspült. Ihr badet im Zauberfluss und lasst <strong>Sorgen</strong>, <strong>Müdigkeit</strong> und <strong>Grübelgedanken</strong>
+            einfach davonfließen – bis ihr am Ende die <strong>Quelle der Wünsche</strong> erreicht. Dort hilft dir eine weise kleine Schildkröte,
+            deinen Herzenswunsch ganz still in dir zu spüren.
+          </p>
+
+          <p>
+            Diese sanfte <strong>Einschlafmeditation für Kinder</strong> kann dabei helfen:
+            <br>• abends herunterzufahren
+            <br>• Anspannung und Gedanken loszulassen
+            <br>• sich geborgen zu fühlen
+            <br>• ruhig und sicher einzuschlafen
+          </p>
+
+          <p>
+            Tipp: Bitte nur im Liegen oder gemütlichen Sitzen hören – diese Meditation macht sehr müde 🌙
+          </p>
+
+          <p style="margin-top: 10px;">
+            Direktlinks:
+            <a href="https://open.spotify.com/episode/0KIaBJxGtC8GO1Ki4kcLrL?si=L5XDppMcRImtRhwZBjF7oA" target="_blank" rel="noopener">Spotify</a> ·
+            <a href="https://podcasts.apple.com/us/podcast/zauberfluss-%C3%A4ngste-loslassen-kindermeditation-zum-einschlafen/id1867773266?i=1000745464869" target="_blank" rel="noopener">Apple Podcasts</a> ·
+            <a href="https://www.youtube.com/watch?v=-pLTSW1XUSE" target="_blank" rel="noopener">YouTube</a>
+          </p>
+
+          <p style="margin-top: 10px;">
+            Deine Andrea – Lache &amp; Lebe 💛
+          </p>
+        </section>
+
+        <footer>
+          <a href="https://lachelebe.github.io/privacy-policy/Impressum.html" target="_blank" rel="noopener">Impressum</a> •
+          <a href="https://lachelebe.github.io/privacy-policy/Datenschutzerklaerung_Landingpage.html" target="_blank" rel="noopener">Datenschutz</a>
+        </footer>
+
+      </div>
     </div>
   </div>
-</div>
 
-<!-- Schema.org -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "AudioObject",
-  "name": "Zauberfluss – Ängste loslassen – Kindermeditation",
-  "thumbnailUrl": "bilder/Zauberfluss.png",
-  "publisher": {
-    "@type": "Organization",
-    "name": "lache&lebe"
-  },
-  "sameAs": [
-    "https://open.spotify.com/episode/0KIaBJxGtC8GO1Ki4kcLrL?si=L5XDppMcRImtRhwZBjF7oA",
-    "https://podcasts.apple.com/us/podcast/zauberfluss-%C3%A4ngste-loslassen-kindermeditation-zum-einschlafen/id1867773266?i=1000745464869",
-    "https://www.youtube.com/watch?v=-pLTSW1XUSE"
-  ]
-}
-</script>
-
+  <!-- Schema.org (hilft bei SEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AudioObject",
+    "name": "Zauberfluss – Ängste loslassen – Kindermeditation zum Einschlafen",
+    "description": "Sanfte Traumreise & Einschlafmeditation für Kinder: Mit einer Schlafwolke in den Zauberwald fliegen, im Glitzerfluss Sorgen loslassen und an der Quelle der Wünsche zur Ruhe kommen. Unterstützt beim Loslassen, Geborgenheit spüren und ruhig einschlafen.",
+    "thumbnailUrl": "bilder/Zauberfluss.png",
+    "publisher": {
+      "@type": "Organization",
+      "name": "lache&lebe"
+    },
+    "sameAs": [
+      "https://open.spotify.com/episode/0KIaBJxGtC8GO1Ki4kcLrL?si=L5XDppMcRImtRhwZBjF7oA",
+      "https://podcasts.apple.com/us/podcast/zauberfluss-%C3%A4ngste-loslassen-kindermeditation-zum-einschlafen/id1867773266?i=1000745464869",
+      "https://www.youtube.com/watch?v=-pLTSW1XUSE"
+    ]
+  }
+  </script>
 </body>
 </html>
