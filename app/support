@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support | SeelenKompass | lache&lebe</title>
+  <meta name="description" content="Support & Kontakt für die App SeelenKompass (Numerologie, Rauhnächte, Rituale, Traumdeutung).">
+
+  <style>
+    :root{
+      --bg-page:#f4f1ea; --bg-card-top:#e7f0ea; --bg-card-bottom:#ffffff;
+      --accent:#7aa899; --accent-dark:#5f8b7c; --text-main:#25313a; --text-muted:#6b7280;
+      --border:#e5e7eb;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg-page);color:var(--text-main);line-height:1.6}
+    a{color:inherit}
+    .page{max-width:860px;margin:0 auto;padding:32px 16px 40px}
+    .card{
+      border-radius:28px;overflow:hidden;box-shadow:0 18px 45px rgba(148,163,184,.6);border:1px solid var(--border);
+      background:linear-gradient(to bottom,var(--bg-card-top) 0 52%,var(--bg-card-bottom) 52% 100%)
+    }
+    .card-inner{padding:50px 26px 38px;text-align:center}
+    @media (max-width:640px){.card-inner{padding:40px 18px 32px}}
+    .brand{font-size:1.7rem;letter-spacing:.18em;text-transform:uppercase;font-weight:600}
+    .subbrand{margin-top:4px;font-size:1.05rem;color:var(--accent-dark);letter-spacing:.08em;text-transform:uppercase}
+    .headline{margin-top:20px;font-size:1.45rem;font-weight:650}
+    .lead{margin-top:10px;font-size:.98rem;color:var(--text-muted);max-width:660px;margin-left:auto;margin-right:auto}
+
+    .cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:18px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:8px;
+      padding:12px 16px;border-radius:14px;border:1px solid rgba(122,168,153,.35);
+      background:rgba(255,255,255,.9);text-decoration:none;font-weight:600;
+      transition:transform .06s ease, box-shadow .12s ease, background .12s ease;
+      min-width:210px
+    }
+    .btn:hover{transform:translateY(-1px);box-shadow:0 10px 26px rgba(148,163,184,.35);background:#fff}
+    .btn.primary{background:var(--accent);color:white;border-color:transparent}
+    .btn.primary:hover{background:var(--accent-dark)}
+    .btn small{display:block;font-weight:500;opacity:.9}
+
+    .section{margin-top:28px;text-align:left;max-width:760px;margin-left:auto;margin-right:auto}
+    .section h2{font-size:1.05rem;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-dark);margin-bottom:10px}
+    .box{
+      background:#fff;border:1px solid var(--border);border-radius:18px;padding:16px 16px;
+    }
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    @media (max-width:740px){.grid{grid-template-columns:1fr}}
+    .item-title{font-weight:650;margin-bottom:6px}
+    .muted{color:var(--text-muted)}
+    .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace}
+
+    .pill-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+    .pill{
+      font-size:.85rem;color:var(--accent-dark);border:1px solid rgba(95,139,124,.25);
+      padding:6px 10px;border-radius:999px;background:rgba(231,240,234,.55)
+    }
+
+    details{border:1px solid var(--border);border-radius:16px;background:#fff;padding:12px 14px}
+    details+details{margin-top:10px}
+    summary{cursor:pointer;font-weight:650}
+    summary::-webkit-details-marker{display:none}
+    .faq{margin-top:12px}
+    .footer{
+      margin-top:26px;padding-top:14px;border-top:1px solid rgba(229,231,235,.9);
+      font-size:.92rem;color:var(--text-muted);text-align:center
+    }
+    .footer a{color:var(--accent-dark);text-decoration:none}
+    .footer a:hover{text-decoration:underline}
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <div class="card">
+      <div class="card-inner">
+        <div class="brand">LACHE&LEBE</div>
+        <div class="subbrand">SEELENKOMPASS • SUPPORT</div>
+
+        <div class="headline">Support & Kontakt für die App „SeelenKompass“</div>
+        <div class="lead">
+          Du hast eine Frage zur App (Numerologie, Rauhnächte, Traumdeutung, Rituale) oder brauchst Hilfe?
+          Hier findest du die richtigen Links und kannst mich direkt erreichen.
+        </div>
+
+        <div class="cta-row">
+          <!-- TODO: Ersetze die URLs -->
+          <a class="btn primary" href="APP_STORE_URL" target="_blank" rel="noopener">
+             App Store <small>SeelenKompass öffnen</small>
+          </a>
+          <a class="btn" href="PLAY_STORE_URL" target="_blank" rel="noopener">
+            ▶ Google Play <small>SeelenKompass öffnen</small>
+          </a>
+        </div>
+
+        <div class="pill-row" aria-label="Kurzüberblick">
+          <span class="pill">Numerologie</span>
+          <span class="pill">Rauhnächte</span>
+          <span class="pill">Traumdeutung</span>
+          <span class="pill">Rituale</span>
+          <span class="pill">Meditationen</span>
+        </div>
+
+        <div class="section">
+          <h2>Kontakt</h2>
+          <div class="box grid">
+            <div>
+              <div class="item-title">E-Mail Support</div>
+              <div class="muted">
+                Schreib mir gerne an:
+                <a href="mailto:support@lachelebe.com">support@lachelebe.com</a>
+              </div>
+              <div class="muted" style="margin-top:8px">
+                Antwortzeit i. d. R. innerhalb von <strong>48 Stunden</strong>.
+              </div>
+            </div>
+            <div>
+              <div class="item-title">Damit ich schnell helfen kann</div>
+              <div class="muted">
+                Bitte mitschicken:
+                <div class="mono" style="margin-top:8px">
+                  • iPhone/Android Modell<br>
+                  • iOS/Android Version<br>
+                  • App-Version (z.B. 1.0.2)<br>
+                  • kurze Beschreibung + Screenshot
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq">
+            <h2>Häufige Fragen</h2>
+
+            <details>
+              <summary>Mein Abo / In-App-Kauf wird nicht freigeschaltet – was tun?</summary>
+              <div class="muted" style="margin-top:8px">
+                Bitte schließe die App komplett und öffne sie erneut. Wenn es weiterhin nicht klappt,
+                sende mir deine Bestell-ID (App Store/Google Play) und einen Screenshot der Kaufbestätigung.
+              </div>
+            </details>
+
+            <details>
+              <summary>Wo finde ich die App-Version?</summary>
+              <div class="muted" style="margin-top:8px">
+                In der App unter „Einstellungen/Info“ (falls vorhanden) oder als Screenshot aus dem Store.
+              </div>
+            </details>
+
+            <details>
+              <summary>Ich sehe Inhalte nicht / Kacheln sind leer</summary>
+              <div class="muted" style="margin-top:8px">
+                Bitte prüfe deine Internetverbindung und starte die App neu. Wenn es weiterhin so ist,
+                sende mir einen Screenshot und kurz, welche Auswahl du getroffen hast (Anfänger/Fortgeschritten/Profi).
+              </div>
+            </details>
+
+            <details>
+              <summary>Datenschutz</summary>
+              <div class="muted" style="margin-top:8px">
+                Datenschutz findest du hier:
+                <a href="https://lachelebe.com/privacy-policy/Datenschutzerklaerung_Landingpage.html" target="_blank" rel="noopener">
+                  Datenschutzerklärung
+                </a>
+              </div>
+            </details>
+          </div>
+
+          <div class="footer">
+            <div>© 2026 Andrea Hopf • lachelebe.com</div>
+            <div style="margin-top:6px">
+              <a href="https://lachelebe.com/privacy-policy/Datenschutzerklaerung_Landingpage.html" target="_blank" rel="noopener">Datenschutz</a>
+              &nbsp;•&nbsp;
+              <a href="mailto:support@lachelebe.com">Kontakt</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
