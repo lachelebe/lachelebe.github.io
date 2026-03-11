@@ -41,23 +41,79 @@
     }
 
     .card-inner{ padding:40px 26px 30px; }
-    @media (max-width:640px){ .card-inner{ padding:26px 16px 26px; } }
 
-    .avatar-wrapper{ display:flex; justify-content:center; margin-bottom:14px; }
-    .avatar{
-      width:110px; height:110px; border-radius:999px;
-      border:3px solid var(--white); overflow:hidden;
+    @media (max-width:640px){
+      .card-inner{ padding:26px 16px 26px; }
+    }
+
+    .logo-row{
+      display:flex;
+      justify-content:center;
+      align-items:flex-end;
+      gap:14px;
+      margin-bottom:16px;
+      flex-wrap:nowrap;
+    }
+
+    .logo-circle{
+      width:84px;
+      height:84px;
+      border-radius:999px;
+      border:3px solid var(--white);
+      overflow:hidden;
       box-shadow:0 10px 26px rgba(148,163,184,.6);
       background:#fff;
+      flex:0 0 auto;
     }
-    .avatar img{
-      width:100%; height:100%; object-fit:cover; object-position:50% 28%;
+
+    .logo-circle img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
       display:block;
     }
 
-    header{ text-align:center; margin-bottom:18px; }
-    .brand{ font-size:1.6rem; letter-spacing:.16em; text-transform:uppercase; font-weight:650; }
-    .subbrand{ margin-top:4px; font-size:1rem; color:var(--accent-dark); letter-spacing:.08em; text-transform:uppercase; font-weight:600; }
+    .logo-circle.center{
+      width:112px;
+      height:112px;
+    }
+
+    @media (max-width:640px){
+      .logo-row{
+        gap:10px;
+      }
+
+      .logo-circle{
+        width:72px;
+        height:72px;
+      }
+
+      .logo-circle.center{
+        width:96px;
+        height:96px;
+      }
+    }
+
+    header{
+      text-align:center;
+      margin-bottom:18px;
+    }
+
+    .brand{
+      font-size:1.75rem;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      font-weight:650;
+    }
+
+    .subbrand{
+      margin-top:6px;
+      font-size:1rem;
+      color:var(--accent-dark);
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      font-weight:600;
+    }
 
     .desc-box{
       margin:18px auto 20px;
@@ -65,12 +121,23 @@
       background:rgba(255,255,255,0.55);
       border:1px solid var(--border);
       border-radius:20px;
-      padding:18px;
+      padding:20px 18px;
       box-shadow:0 12px 28px rgba(148,163,184,.18);
     }
-    .desc-box p{ font-size:.98rem; color:var(--text-muted); }
-    .desc-box p + p{ margin-top:.6rem; }
-    .desc-box strong{ color:var(--text-main); font-weight:650; }
+
+    .desc-box p{
+      font-size:.98rem;
+      color:var(--text-muted);
+    }
+
+    .desc-box p + p{
+      margin-top:.8rem;
+    }
+
+    .desc-box strong{
+      color:var(--text-main);
+      font-weight:650;
+    }
 
     .btn-stack{
       max-width:520px;
@@ -95,18 +162,19 @@
       transition:transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
       cursor:pointer;
     }
+
     .big-btn:hover{
       transform:translateY(-2px);
       box-shadow:0 18px 44px rgba(148,163,184,.30);
       border-color:#cbd5e1;
       background:rgba(255,255,255,0.90);
     }
+
     .big-btn.primary{
       background:rgba(95, 139, 124, 0.14);
       border-color:rgba(95, 139, 124, 0.32);
     }
 
-    /* Social */
     .social-links{
       display:flex;
       justify-content:center;
@@ -114,6 +182,7 @@
       margin:10px 0 6px;
       flex-wrap:wrap;
     }
+
     .pill,
     .pill:visited{
       display:inline-flex;
@@ -129,6 +198,7 @@
       box-shadow:0 10px 24px rgba(148,163,184,.18);
       transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
     }
+
     .pill:hover{
       transform:translateY(-1px);
       background:rgba(255,255,255,0.90);
@@ -141,12 +211,16 @@
       font-size:.78rem;
       color:var(--text-muted);
     }
+
     footer a{
       color:var(--accent-dark);
       text-decoration:none;
       margin:0 10px;
     }
-    footer a:hover{ text-decoration:underline; }
+
+    footer a:hover{
+      text-decoration:underline;
+    }
 
     .footer-note{
       font-size:0.8rem;
@@ -157,14 +231,16 @@
       line-height:1.55;
     }
 
-    /* Modal */
     .modal{
       position:fixed;
       inset:0;
       display:none;
       z-index:50;
     }
-    .modal.is-open{ display:block; }
+
+    .modal.is-open{
+      display:block;
+    }
 
     .modal-backdrop{
       position:absolute;
@@ -193,10 +269,14 @@
       border-bottom:1px solid var(--border);
     }
 
-    .modal-title{ font-weight:800; color:var(--text-main); }
+    .modal-title{
+      font-weight:800;
+      color:var(--text-main);
+    }
 
     .modal-close{
-      width:38px; height:38px;
+      width:38px;
+      height:38px;
       border-radius:10px;
       border:1px solid var(--border);
       background:#fff;
@@ -206,7 +286,9 @@
       flex:0 0 auto;
     }
 
-    .modal-body{ padding:16px; }
+    .modal-body{
+      padding:16px;
+    }
 
     .notice{
       border:1px solid rgba(95, 139, 124, 0.25);
@@ -218,7 +300,10 @@
       margin-bottom:12px;
       font-size:.98rem;
     }
-    .notice strong{ color:var(--text-main); }
+
+    .notice strong{
+      color:var(--text-main);
+    }
 
     .brevo-frame{
       width:100%;
@@ -229,6 +314,7 @@
       height:min(72vh, 720px);
       min-height:560px;
     }
+
     .brevo-frame iframe{
       width:100%;
       height:100%;
@@ -243,7 +329,6 @@
       padding:12px 16px 16px;
     }
 
-    /* 🔥 Sichtbarer Button im Modal (Seelenkompass-Farbwelt) */
     .link-btn,
     .link-btn:visited{
       border:1px solid rgba(95, 139, 124, 0.42);
@@ -256,6 +341,7 @@
       box-shadow:0 12px 28px rgba(148,163,184,.20);
       transition:transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
     }
+
     .link-btn:hover{
       transform:translateY(-1px);
       background:rgba(95, 139, 124, 0.26);
@@ -270,45 +356,55 @@
     <div class="card">
       <div class="card-inner">
 
-        <div class="avatar-wrapper">
-          <div class="avatar">
-            <img src="bilder/lache_lebe_logo.png" alt="Andrea Hopf">
+        <div class="logo-row">
+          <div class="logo-circle">
+            <img src="bilder/lache_lebe_logo.png" alt="Kindermeditationen">
+          </div>
+
+          <div class="logo-circle center">
+            <img src="app/icon.png" alt="Seelenkompass">
+          </div>
+
+          <div class="logo-circle">
+            <img src="bilder/lache_lebe_E_Logo.png" alt="Erwachsenenmeditationen">
           </div>
         </div>
 
         <header>
           <div class="brand">LACHE&LEBE</div>
-          <div class="subbrand">MEDITATION &amp; BEWUSSTSEIN</div>
+          <div class="subbrand">Achtsamkeit, Meditation &amp; Bewusstseinsarbeit</div>
         </header>
 
         <section class="desc-box">
           <p>
-            Ich begleite dich auf deinem Weg zu mehr <strong>Lebensfreude</strong>, <strong>innerer Ruhe</strong> und einem
-            <strong>liebevollen Umgang mit dir selbst</strong>.
+            <strong>lache&amp;lebe</strong> verbindet Achtsamkeitsübungen, Meditationen und Bewusstseinsarbeit
+            für <strong>Kinder</strong>, <strong>Erwachsene</strong> und den Alltag.
           </p>
+
           <p>
-            In meinen Meditationen – für <strong>Erwachsene und Kinder</strong> – darfst du <strong>ankommen</strong>,
-            <strong>loslassen</strong> und dich wieder mit deinem <strong>Herzen</strong> verbinden.
-            Sie helfen dir, <strong>innere Blockaden sanft zu lösen</strong>, dein <strong>Nervensystem zu beruhigen</strong>
-            und wieder mehr <strong>Vertrauen</strong> und <strong>Leichtigkeit</strong> in dein Leben einzuladen.
+            Für Kinder entstehen Meditationen, die dabei unterstützen, <strong>ruhiger zu werden</strong>,
+            besser <strong>einzuschlafen</strong> und sich sicherer und entspannter zu fühlen.
+            Für Erwachsene öffnen sich Räume für <strong>innere Ruhe</strong>, <strong>Selbstreflexion</strong>,
+            bewusste Ausrichtung und persönliche Entwicklung.
           </p>
+
           <p>
-            Wenn du dir regelmäßig kleine <strong>Inseln der Ruhe</strong> schenken möchtest, bist du hier genau richtig.
-            Fühle dich herzlich eingeladen, meine <strong>kostenlose Meditationsreihe</strong> zu entdecken und dir selbst
-            etwas <strong>Gutes zu tun</strong> 🌸
+            Der <strong>Seelenkompass</strong> verbindet diese Themen in einer App mit
+            <strong>Tagesreflexionen</strong>, <strong>innerer Ausrichtung</strong>, meditativen Übungen,
+            <strong>Journaling</strong> und besonderen Begleitungen wie den <strong>Rauhnächten</strong>.
           </p>
         </section>
 
         <section class="btn-stack">
-          <a class="big-btn" href="ueber-mich.html">Über mich</a>
-
-          <!-- ✅ Änderung: Seelenkompass-Link zeigt jetzt auf deine Support-Seite -->
-          <a class="big-btn primary" href="app/seelenkompass.html">Seelenkompass – die App</a>
-
-          <a class="big-btn" href="kinder-meditation.html">Kinder Meditation</a>
-          <a class="big-btn" href="erwachsenen-meditation.html">Erwachsenen Meditation</a>
+          <a class="big-btn primary" href="app/seelenkompass.html">Seelenkompass</a>
 
           <button class="big-btn primary" id="openBrevo" type="button">Kostenlose Meditationsreihe</button>
+
+          <a class="big-btn" href="kinder-meditation.html">Kindermeditation</a>
+
+          <a class="big-btn" href="erwachsenen-meditation.html">Erwachsenenmeditation</a>
+
+          <a class="big-btn" href="ueber-mich.html">Über mich</a>
         </section>
 
         <div class="social-links">
@@ -336,7 +432,6 @@
     </div>
   </div>
 
-  <!-- Modal -->
   <div class="modal" id="brevoModal" aria-hidden="true">
     <div class="modal-backdrop" id="closeBrevoBackdrop"></div>
 
