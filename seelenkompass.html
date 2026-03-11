@@ -7,190 +7,188 @@
 
   <style>
     :root {
-      --bg-page:#f4f1ea;
-      --bg-card-top:#e7f0ea;
-      --bg-card-mid:#eef1f3;
-      --accent-dark:#5f8b7c;
-      --text-main:#25313a;
-      --text-muted:#6b7280;
-      --border:#e5e7eb;
-      --white:#ffffff;
+      --bg-page: #f4f1ea;
+      --bg-card-top: #e7f0ea;
+      --bg-card-mid: #eef1f3;
+      --accent-dark: #5f8b7c;
+      --text-main: #25313a;
+      --text-muted: #6b7280;
+      --border: #e5e7eb;
+      --white: #ffffff;
     }
 
-    * { box-sizing:border-box; margin:0; padding:0; }
-
-    body{
-      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-      background:var(--bg-page);
-      color:var(--text-main);
-      line-height:1.6;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    .page{
-      max-width:860px;
-      margin:0 auto;
-      padding:32px 16px 40px;
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.6;
     }
 
-    .card{
-      border-radius:28px;
-      overflow:hidden;
-      box-shadow:0 16px 40px rgba(148,163,184,.45);
-      border:1px solid var(--border);
-      background:linear-gradient(to bottom,var(--bg-card-top) 0 46%,var(--bg-card-mid) 46% 100%);
+    .page {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 32px 16px 40px;
     }
 
-    .card-inner{ padding:40px 26px 30px; }
-
-    @media(max-width:640px){
-      .card-inner{ padding:26px 16px; }
+    .card {
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 16px 40px rgba(148, 163, 184, 0.45);
+      border: 1px solid var(--border);
+      background: linear-gradient(
+        to bottom,
+        var(--bg-card-top) 0 46%,
+        var(--bg-card-mid) 46% 100%
+      );
     }
 
-    .back{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      color:var(--accent-dark);
-      text-decoration:none;
-      font-weight:600;
-      font-size:.95rem;
-      margin-bottom:14px;
+    .card-inner {
+      padding: 40px 26px 30px;
     }
 
-    .back:hover{ text-decoration:underline; }
-
-    .avatar-wrapper{
-      display:flex;
-      justify-content:center;
-      margin-bottom:14px;
+    @media (max-width: 640px) {
+      .card-inner {
+        padding: 26px 16px;
+      }
     }
 
-    .avatar{
-      width:110px;
-      height:110px;
-      border-radius:999px;
-      border:3px solid var(--white);
-      overflow:hidden;
-      box-shadow:0 10px 26px rgba(148,163,184,.6);
-      background:#fff;
+    .back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent-dark);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 14px;
     }
 
-    .avatar img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      object-position:center;
-      display:block;
+    .back:hover {
+      text-decoration: underline;
     }
 
-    header{
-      text-align:center;
-      margin-bottom:16px;
+    .avatar-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 14px;
     }
 
-    .brand{
-      font-size:1.6rem;
-      letter-spacing:.16em;
-      text-transform:uppercase;
-      font-weight:650;
+    .avatar {
+      width: 110px;
+      height: 110px;
+      border-radius: 999px;
+      border: 3px solid var(--white);
+      overflow: hidden;
+      box-shadow: 0 10px 26px rgba(148, 163, 184, 0.6);
+      background: #fff;
     }
 
-    .title{
-      text-align:center;
-      margin:10px 0 18px;
-      font-size:1.12rem;
-      font-weight:700;
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
     }
 
-    .content-box{
-      margin:10px auto 18px;
-      max-width:720px;
-      background:rgba(255,255,255,.55);
-      border:1px solid var(--border);
-      border-radius:20px;
-      padding:18px;
-      box-shadow:0 12px 28px rgba(148,163,184,.18);
+    header {
+      text-align: center;
+      margin-bottom: 16px;
     }
 
-    .content-box p{
-      font-size:.98rem;
-      color:var(--text-muted);
+    .brand {
+      font-size: 1.6rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 650;
     }
 
-    .content-box p + p{
-      margin-top:.75rem;
+    .title {
+      text-align: center;
+      margin: 10px 0 18px;
+      font-size: 1.12rem;
+      font-weight: 700;
     }
 
-    .content-box strong{
-      color:var(--text-main);
-      font-weight:650;
+    .content-box {
+      margin: 10px auto 18px;
+      max-width: 720px;
+      background: rgba(255, 255, 255, 0.55);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 18px;
+      box-shadow: 0 12px 28px rgba(148, 163, 184, 0.18);
     }
 
-    .notice{
-      margin-top:12px;
-      padding:12px 14px;
-      border-left:4px solid rgba(95,139,124,.45);
-      background:rgba(255,255,255,.55);
-      border-radius:14px;
-      color:var(--text-main);
-      font-size:.95rem;
+    .content-box p {
+      font-size: 0.98rem;
+      color: var(--text-muted);
     }
 
-    .status{
-      margin-top:14px;
-      font-size:.95rem;
-      color:var(--accent-dark);
-      text-align:center;
-      font-weight:600;
+    .content-box p + p {
+      margin-top: 0.75rem;
     }
 
-    .btn-row{
-      max-width:520px;
-      margin:18px auto 14px;
-      display:grid;
-      gap:12px;
+    .content-box strong {
+      color: var(--text-main);
+      font-weight: 650;
+    }
+
+    .btn-row {
+      max-width: 520px;
+      margin: 18px auto 14px;
+      display: grid;
+      gap: 12px;
     }
 
     .big-btn,
-    .big-btn:visited{
-      display:block;
-      border:1px solid var(--border);
-      background:rgba(255,255,255,.7);
-      color:var(--text-main);
-      border-radius:16px;
-      padding:14px 16px;
-      font-weight:650;
-      text-align:center;
-      text-decoration:none;
-      box-shadow:0 14px 34px rgba(148,163,184,.22);
-      transition:.2s;
+    .big-btn:visited {
+      display: block;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.7);
+      color: var(--text-main);
+      border-radius: 16px;
+      padding: 14px 16px;
+      font-weight: 650;
+      text-align: center;
+      text-decoration: none;
+      box-shadow: 0 14px 34px rgba(148, 163, 184, 0.22);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, border-color 0.18s ease;
     }
 
-    .big-btn:hover{
-      transform:translateY(-2px);
-      box-shadow:0 18px 44px rgba(148,163,184,.3);
+    .big-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 44px rgba(148, 163, 184, 0.3);
+      border-color: #cbd5e1;
+      background: rgba(255, 255, 255, 0.9);
     }
 
-    .big-btn.primary{
-      background:rgba(95,139,124,.14);
-      border-color:rgba(95,139,124,.32);
+    .big-btn.primary {
+      background: rgba(95, 139, 124, 0.14);
+      border-color: rgba(95, 139, 124, 0.32);
     }
 
-    footer{
-      text-align:center;
-      margin-top:12px;
-      font-size:.78rem;
-      color:var(--text-muted);
+    footer {
+      text-align: center;
+      margin-top: 12px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
     }
 
-    footer a{
-      color:var(--accent-dark);
-      text-decoration:none;
-      margin:0 10px;
+    footer a {
+      color: var(--accent-dark);
+      text-decoration: none;
+      margin: 0 10px;
     }
 
-    footer a:hover{
-      text-decoration:underline;
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -204,7 +202,7 @@
 
         <div class="avatar-wrapper">
           <div class="avatar">
-            <img src="icon.png" alt="Seelenkompass Icon">
+            <img src="app/icon.png" alt="Seelenkompass Icon" />
           </div>
         </div>
 
@@ -215,34 +213,54 @@
         <div class="title">Die App herunterladen</div>
 
         <section class="content-box">
+          <p><strong>Klarheit beginnt mit einem bewussten Moment.</strong></p>
+
           <p>
-            Du wirst automatisch zum passenden App Store weitergeleitet –
-            je nachdem, ob du ein <strong>iPhone</strong> oder ein <strong>Android-Gerät</strong> verwendest.
+            Seelenkompass bietet dir einen strukturierten Raum für Achtsamkeit,
+            Selbstreflexion und persönliche Entwicklung. Die App unterstützt dich
+            dabei, Gedanken zu ordnen, innere Prozesse bewusst wahrzunehmen und
+            deine Ausrichtung aktiv zu gestalten – ruhig, klar und alltagstauglich.
           </p>
 
           <p>
-            Sollte die automatische Weiterleitung nicht funktionieren, kannst du den passenden Store einfach unten direkt auswählen.
+            Meditationen, Reflexionsfragen und Journaling-Formate greifen ineinander
+            und begleiten dich Schritt für Schritt auf deinem Weg zu mehr innerer
+            Klarheit und bewusster Selbstführung.
           </p>
 
-          <div class="notice">
-            <strong>Hinweis:</strong> Diese Seite erkennt dein Gerät automatisch und öffnet den passenden Store für den Seelenkompass.
-          </div>
-
-          <div class="status" id="statusText">Gerät wird erkannt …</div>
+          <p>
+            Falls die automatische Weiterleitung nicht funktioniert, kannst du unten
+            den passenden Store auswählen oder direkt den Support öffnen.
+          </p>
         </section>
 
         <section class="btn-row">
-          <a class="big-btn primary" href="https://apps.apple.com/app/id6757330122" target="_blank" rel="noopener">
+          <a
+            class="big-btn primary"
+            href="https://apps.apple.com/app/id6757330122"
+            target="_blank"
+            rel="noopener"
+          >
             Im Apple App Store öffnen
           </a>
 
-          <a class="big-btn" href="https://play.google.com/store/apps/details?id=de.lachelebe.rauhnaechte&pcampaignid=web_shareLink" target="_blank" rel="noopener">
+          <a
+            class="big-btn"
+            href="https://play.google.com/store/apps/details?id=de.lachelebe.rauhnaechte"
+            target="_blank"
+            rel="noopener"
+          >
             Im Google Play Store öffnen
           </a>
-          
-          <a class="big-btn" href="https://lachelebe.github.io/app/support/" target="_blank" rel="noopener">
-          Zum Support
-          </a> 
+
+          <a
+            class="big-btn"
+            href="https://lachelebe.github.io/app/support.html"
+            target="_blank"
+            rel="noopener"
+          >
+            Zum Support
+          </a>
         </section>
 
         <footer>
@@ -256,28 +274,22 @@
 
   <script>
     const APPLE_URL = "https://apps.apple.com/app/id6757330122";
-    const ANDROID_URL = "https://play.google.com/store/apps/details?id=de.lachelebe.rauhnaechte&pcampaignid=web_shareLink";
-    const statusText = document.getElementById("statusText");
+    const ANDROID_URL = "https://play.google.com/store/apps/details?id=de.lachelebe.rauhnaechte";
 
     const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-
     const isAndroid = /android/i.test(userAgent);
-    const isIOS = /iPad|iPhone|iPod/.test(userAgent) ||
+    const isIOS =
+      /iPad|iPhone|iPod/.test(userAgent) ||
       (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
 
-    function redirectTo(url, label) {
-      statusText.textContent = "Weiterleitung zum " + label + " …";
-      setTimeout(() => {
-        window.location.href = url;
-      }, 700);
-    }
-
     if (isIOS) {
-      redirectTo(APPLE_URL, "Apple App Store");
+      setTimeout(() => {
+        window.location.href = APPLE_URL;
+      }, 600);
     } else if (isAndroid) {
-      redirectTo(ANDROID_URL, "Google Play Store");
-    } else {
-      statusText.textContent = "Kein mobiles Gerät erkannt – bitte wähle unten deinen Store aus.";
+      setTimeout(() => {
+        window.location.href = ANDROID_URL;
+      }, 600);
     }
   </script>
 </body>
