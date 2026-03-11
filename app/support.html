@@ -4,223 +4,223 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Support | Seelenkompass | lache&lebe</title>
-  <meta name="description" content="Support & Kontakt für die App Seelenkompass rund um Achtsamkeit, Meditation, Selbstreflexion, Journaling und Rauhnächte.">
+  <meta name="description" content="Support für die App Seelenkompass." />
 
   <style>
-    :root{
-      --bg-page:#f4f1ea;
-      --bg-card-top:#e7f0ea;
-      --bg-card-bottom:#ffffff;
-      --accent:#7aa899;
-      --accent-dark:#5f8b7c;
-      --text-main:#25313a;
-      --text-muted:#6b7280;
-      --border:#e5e7eb;
+    :root {
+      --bg-page: #f4f1ea;
+      --bg-card-top: #e7f0ea;
+      --bg-card-mid: #eef1f3;
+      --accent-dark: #5f8b7c;
+      --text-main: #25313a;
+      --text-muted: #6b7280;
+      --border: #e5e7eb;
+      --white: #ffffff;
     }
 
-    *{box-sizing:border-box;margin:0;padding:0}
-
-    body{
-      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-      background:var(--bg-page);
-      color:var(--text-main);
-      line-height:1.6;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    a{color:inherit}
-
-    .page{
-      max-width:860px;
-      margin:0 auto;
-      padding:32px 16px 40px;
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.6;
     }
 
-    .card{
-      border-radius:28px;
-      overflow:hidden;
-      box-shadow:0 18px 45px rgba(148,163,184,.6);
-      border:1px solid var(--border);
-      background:linear-gradient(to bottom,var(--bg-card-top) 0 52%,var(--bg-card-bottom) 52% 100%);
+    .page {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 32px 16px 40px;
     }
 
-    .card-inner{
-      padding:50px 26px 38px;
-      text-align:center;
+    .card {
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 16px 40px rgba(148, 163, 184, 0.45);
+      border: 1px solid var(--border);
+      background: linear-gradient(
+        to bottom,
+        var(--bg-card-top) 0 46%,
+        var(--bg-card-mid) 46% 100%
+      );
     }
 
-    @media (max-width:640px){
-      .card-inner{padding:40px 18px 32px}
+    .card-inner {
+      padding: 40px 26px 30px;
     }
 
-    .brand{
-      font-size:1.7rem;
-      letter-spacing:.18em;
-      text-transform:uppercase;
-      font-weight:600;
+    @media (max-width: 640px) {
+      .card-inner {
+        padding: 26px 16px;
+      }
     }
 
-    .subbrand{
-      margin-top:4px;
-      font-size:1.05rem;
-      color:var(--accent-dark);
-      letter-spacing:.08em;
-      text-transform:uppercase;
+    .back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent-dark);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 14px;
     }
 
-    .headline{
-      margin-top:20px;
-      font-size:1.45rem;
-      font-weight:650;
+    .back:hover {
+      text-decoration: underline;
     }
 
-    .lead{
-      margin-top:10px;
-      font-size:.98rem;
-      color:var(--text-muted);
-      max-width:660px;
-      margin-left:auto;
-      margin-right:auto;
+    .avatar-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 14px;
     }
 
-    .cta-row{
-      display:flex;
-      gap:12px;
-      justify-content:center;
-      flex-wrap:wrap;
-      margin-top:18px;
+    .avatar {
+      width: 110px;
+      height: 110px;
+      border-radius: 999px;
+      border: 3px solid var(--white);
+      overflow: hidden;
+      box-shadow: 0 10px 26px rgba(148, 163, 184, 0.6);
+      background: #fff;
     }
 
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:8px;
-      padding:12px 16px;
-      border-radius:14px;
-      border:1px solid rgba(122,168,153,.35);
-      background:rgba(255,255,255,.9);
-      text-decoration:none;
-      font-weight:600;
-      transition:transform .06s ease, box-shadow .12s ease, background .12s ease;
-      min-width:210px;
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
     }
 
-    .btn:hover{
-      transform:translateY(-1px);
-      box-shadow:0 10px 26px rgba(148,163,184,.35);
-      background:#fff;
+    header {
+      text-align: center;
+      margin-bottom: 16px;
     }
 
-    .btn.primary{
-      background:var(--accent);
-      color:white;
-      border-color:transparent;
+    .brand {
+      font-size: 1.6rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 650;
     }
 
-    .btn.primary:hover{
-      background:var(--accent-dark);
+    .title {
+      text-align: center;
+      margin: 10px 0 18px;
+      font-size: 1.12rem;
+      font-weight: 700;
     }
 
-    .btn small{
-      display:block;
-      font-weight:500;
-      opacity:.9;
+    .content-box {
+      margin: 10px auto 18px;
+      max-width: 720px;
+      background: rgba(255, 255, 255, 0.55);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 18px;
+      box-shadow: 0 12px 28px rgba(148, 163, 184, 0.18);
     }
 
-    .section{
-      margin-top:28px;
-      text-align:left;
-      max-width:760px;
-      margin-left:auto;
-      margin-right:auto;
+    .content-box p {
+      font-size: 0.98rem;
+      color: var(--text-muted);
     }
 
-    .section h2{
-      font-size:1.05rem;
-      letter-spacing:.06em;
-      text-transform:uppercase;
-      color:var(--accent-dark);
-      margin-bottom:10px;
+    .content-box p + p {
+      margin-top: 0.75rem;
     }
 
-    .box{
-      background:#fff;
-      border:1px solid var(--border);
-      border-radius:18px;
-      padding:16px 16px;
+    .content-box strong {
+      color: var(--text-main);
+      font-weight: 650;
     }
 
-    .grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:12px;
+    .mail-box {
+      margin: 0 auto 18px;
+      max-width: 520px;
+      display: grid;
+      gap: 12px;
     }
 
-    @media (max-width:740px){
-      .grid{grid-template-columns:1fr}
+    .mail-btn,
+    .mail-btn:visited {
+      display: block;
+      border: 1px solid var(--border);
+      background: rgba(95, 139, 124, 0.14);
+      border-color: rgba(95, 139, 124, 0.32);
+      color: var(--text-main);
+      border-radius: 16px;
+      padding: 14px 16px;
+      font-weight: 650;
+      text-align: center;
+      text-decoration: none;
+      box-shadow: 0 14px 34px rgba(148, 163, 184, 0.22);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, border-color 0.18s ease;
     }
 
-    .item-title{
-      font-weight:650;
-      margin-bottom:6px;
+    .mail-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 44px rgba(148, 163, 184, 0.3);
+      border-color: #cbd5e1;
+      background: rgba(255, 255, 255, 0.9);
     }
 
-    .muted{color:var(--text-muted)}
-
-    .mono{
-      font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+    .faq-wrap {
+      max-width: 720px;
+      margin: 0 auto;
     }
 
-    .pill-row{
-      display:flex;
-      gap:8px;
-      flex-wrap:wrap;
-      margin-top:10px;
-      justify-content:center;
+    details {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.75);
+      padding: 14px 16px;
+      box-shadow: 0 10px 24px rgba(148, 163, 184, 0.12);
     }
 
-    .pill{
-      font-size:.85rem;
-      color:var(--accent-dark);
-      border:1px solid rgba(95,139,124,.25);
-      padding:6px 10px;
-      border-radius:999px;
-      background:rgba(231,240,234,.55);
+    details + details {
+      margin-top: 12px;
     }
 
-    details{
-      border:1px solid var(--border);
-      border-radius:16px;
-      background:#fff;
-      padding:12px 14px;
+    summary {
+      cursor: pointer;
+      font-weight: 650;
+      color: var(--text-main);
+      list-style: none;
     }
 
-    details+details{margin-top:10px}
-
-    summary{
-      cursor:pointer;
-      font-weight:650;
+    summary::-webkit-details-marker {
+      display: none;
     }
 
-    summary::-webkit-details-marker{display:none}
-
-    .faq{margin-top:12px}
-
-    .footer{
-      margin-top:26px;
-      padding-top:14px;
-      border-top:1px solid rgba(229,231,235,.9);
-      font-size:.92rem;
-      color:var(--text-muted);
-      text-align:center;
+    .faq-answer {
+      margin-top: 10px;
+      color: var(--text-muted);
+      font-size: 0.96rem;
     }
 
-    .footer a{
-      color:var(--accent-dark);
-      text-decoration:none;
+    footer {
+      text-align: center;
+      margin-top: 18px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
     }
 
-    .footer a:hover{text-decoration:underline}
+    footer a {
+      color: var(--accent-dark);
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 
@@ -228,121 +228,71 @@
   <div class="page">
     <div class="card">
       <div class="card-inner">
-        <div class="brand">LACHE&LEBE</div>
-        <div class="subbrand">SEELENKOMPASS • SUPPORT</div>
 
-        <div class="headline">Support & Kontakt für die App „Seelenkompass“</div>
-        <div class="lead">
-          Du hast eine Frage zur App oder brauchst Hilfe bei Meditationen, Reflexionen,
-          Journaling, Premium-Inhalten oder der Rauhnächte-Begleitung?
-          Hier findest du die passenden Links und kannst mich direkt erreichen.
-        </div>
+        <a class="back" href="../index.html">← Zur Startseite</a>
 
-        <div class="cta-row">
-          <a class="btn primary" href="https://apps.apple.com/app/id6757330122" target="_blank" rel="noopener">
-             App Store <small>Seelenkompass öffnen</small>
-          </a>
-
-          <a class="btn" href="https://play.google.com/store/apps/details?id=de.lachelebe.rauhnaechte" target="_blank" rel="noopener">
-            ▶ Google Play <small>Seelenkompass öffnen</small>
-          </a>
-        </div>
-
-        <div class="pill-row" aria-label="Kurzüberblick">
-          <span class="pill">Achtsamkeit</span>
-          <span class="pill">Meditationen</span>
-          <span class="pill">Selbstreflexion</span>
-          <span class="pill">Journaling</span>
-          <span class="pill">Rauhnächte</span>
-          <span class="pill">Persönliche Entwicklung</span>
-        </div>
-
-        <div class="section">
-          <h2>Kontakt</h2>
-          <div class="box grid">
-            <div>
-              <div class="item-title">E-Mail Support</div>
-              <div class="muted">
-                Schreib mir gerne an:
-                <a href="mailto:support@lachelebe.com">support@lachelebe.com</a>
-              </div>
-              <div class="muted" style="margin-top:8px">
-                Antwortzeit in der Regel innerhalb von <strong>48 Stunden</strong>.
-              </div>
-            </div>
-
-            <div>
-              <div class="item-title">Damit ich schnell helfen kann</div>
-              <div class="muted">
-                Bitte schicke möglichst mit:
-                <div class="mono" style="margin-top:8px">
-                  • iPhone-/Android-Modell<br>
-                  • iOS-/Android-Version<br>
-                  • App-Version (z. B. 1.0.2)<br>
-                  • kurze Beschreibung des Problems<br>
-                  • Screenshot, falls möglich
-                </div>
-              </div>
-            </div>
+        <div class="avatar-wrapper">
+          <div class="avatar">
+            <img src="icon.png" alt="Seelenkompass Icon" />
           </div>
-
-          <div class="faq">
-            <h2>Häufige Fragen</h2>
-
-            <details>
-              <summary>Mein Abo oder Premium-Zugang wird nicht freigeschaltet – was kann ich tun?</summary>
-              <div class="muted" style="margin-top:8px">
-                Bitte schließe die App vollständig und öffne sie erneut. Wenn es weiterhin nicht funktioniert,
-                sende mir bitte einen Screenshot deiner Kaufbestätigung und – falls vorhanden – deine Bestell-ID
-                aus dem App Store oder Google Play Store.
-              </div>
-            </details>
-
-            <details>
-              <summary>Wo finde ich die App-Version?</summary>
-              <div class="muted" style="margin-top:8px">
-                Du findest sie in der App unter „Einstellungen“ oder „Info“, sofern dieser Bereich angezeigt wird.
-                Alternativ hilft auch ein Screenshot deiner App-Seite im Store.
-              </div>
-            </details>
-
-            <details>
-              <summary>Inhalte werden nicht richtig angezeigt oder laden nicht</summary>
-              <div class="muted" style="margin-top:8px">
-                Bitte prüfe zuerst deine Internetverbindung und starte die App neu. Sollte das Problem bleiben,
-                sende mir gerne einen Screenshot und eine kurze Beschreibung, an welcher Stelle es auftritt.
-              </div>
-            </details>
-
-            <details>
-              <summary>Ich habe eine Frage zu Meditationen, Journaling oder den Reflexionsimpulsen</summary>
-              <div class="muted" style="margin-top:8px">
-                Du kannst mir jederzeit schreiben. Beschreibe am besten kurz, um welchen Bereich es geht,
-                damit ich dir gezielt weiterhelfen kann.
-              </div>
-            </details>
-
-            <details>
-              <summary>Datenschutz</summary>
-              <div class="muted" style="margin-top:8px">
-                Die Datenschutzerklärung findest du hier:
-                <a href="https://lachelebe.github.io/privacy-policy/Datenschutzerklaerung_Landingpage.html" target="_blank" rel="noopener">
-                  Datenschutzerklärung
-                </a>
-              </div>
-            </details>
-          </div>
-
-          <div class="footer">
-            <div>© 2026 Andrea Hopf • lachelebe.com</div>
-            <div style="margin-top:6px">
-              <a href="https://lachelebe.github.io/privacy-policy/Datenschutzerklaerung_Landingpage.html" target="_blank" rel="noopener">Datenschutz</a>
-              &nbsp;•&nbsp;
-              <a href="mailto:support@lachelebe.com">Kontakt</a>
-            </div>
-          </div>
-
         </div>
+
+        <header>
+          <div class="brand">Seelenkompass</div>
+        </header>
+
+        <div class="title">Support</div>
+
+        <section class="content-box">
+          <p>
+            Wenn etwas in der App nicht wie erwartet funktioniert oder du eine kurze Frage hast,
+            findest du hier die wichtigsten Antworten.
+          </p>
+
+          <p>
+            Falls dein Thema hier nicht dabei ist, schreibe mir einfach direkt eine E-Mail.
+          </p>
+        </section>
+
+        <section class="mail-box">
+          <a class="mail-btn" href="mailto:lahe_lebe@web.de">lahe_lebe@web.de</a>
+        </section>
+
+        <section class="faq-wrap">
+          <details>
+            <summary>Die App lädt nicht richtig – was kann ich tun?</summary>
+            <div class="faq-answer">
+              Schließe die App einmal komplett und öffne sie erneut. Prüfe zusätzlich deine Internetverbindung.
+            </div>
+          </details>
+
+          <details>
+            <summary>Ich sehe Inhalte nicht oder etwas wird nicht angezeigt</summary>
+            <div class="faq-answer">
+              Starte die App bitte neu. Wenn das Problem bleibt, hilft oft auch ein erneutes Öffnen nach ein paar Minuten.
+            </div>
+          </details>
+
+          <details>
+            <summary>Mein Premium-Zugang erscheint nicht</summary>
+            <div class="faq-answer">
+              Öffne die App erneut und prüfe, ob dein Kauf bereits übernommen wurde. Wenn nicht, schreibe mir bitte eine kurze E-Mail.
+            </div>
+          </details>
+
+          <details>
+            <summary>Ich habe eine allgemeine Frage zur App</summary>
+            <div class="faq-answer">
+              Dann schreib mir einfach an <strong>lache_lebe@web.de</strong> und beschreibe kurz dein Anliegen.
+            </div>
+          </details>
+        </section>
+
+        <footer>
+          <a href="https://lachelebe.github.io/privacy-policy/Impressum.html" target="_blank" rel="noopener">Impressum</a> •
+          <a href="https://lachelebe.github.io/privacy-policy/Datenschutzerklaerung_Landingpage.html" target="_blank" rel="noopener">Datenschutz</a>
+        </footer>
+
       </div>
     </div>
   </div>
