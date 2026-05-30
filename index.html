@@ -11,6 +11,8 @@
       --bg-card-top:#e7f0ea;
       --bg-card-mid:#eef1f3;
       --accent-dark:#5f8b7c;
+      --accent-soft:rgba(95,139,124,.14);
+      --accent-border:rgba(95,139,124,.32);
       --text-main:#25313a;
       --text-muted:#6b7280;
       --border:#e5e7eb;
@@ -72,36 +74,23 @@
       object-fit:cover;
       display:block;
     }
-      /* Kinderlogo etwas größer */
-    .logo-circle.child img{
-      transform:scale(1.15);
-    }
 
-      /* Erwachsenenlogo stärker reinzoomen */
+    .logo-circle.child img{ transform:scale(1.15); }
+
     .logo-circle.adult img{
       transform:scale(1.15);
       object-position:center 60%;
-      
-    }    
+    }
+
     .logo-circle.center{
       width:112px;
       height:112px;
     }
 
     @media (max-width:640px){
-      .logo-row{
-        gap:10px;
-      }
-
-      .logo-circle{
-        width:72px;
-        height:72px;
-      }
-
-      .logo-circle.center{
-        width:96px;
-        height:96px;
-      }
+      .logo-row{ gap:10px; }
+      .logo-circle{ width:72px; height:72px; }
+      .logo-circle.center{ width:96px; height:96px; }
     }
 
     header{
@@ -126,7 +115,7 @@
     }
 
     .desc-box{
-      margin:18px auto 20px;
+      margin:18px auto 24px;
       max-width:720px;
       background:rgba(255,255,255,0.55);
       border:1px solid var(--border);
@@ -140,9 +129,7 @@
       color:var(--text-muted);
     }
 
-    .desc-box p + p{
-      margin-top:.8rem;
-    }
+    .desc-box p + p{ margin-top:.8rem; }
 
     .desc-box strong{
       color:var(--text-main);
@@ -171,6 +158,8 @@
       box-shadow:0 14px 34px rgba(148,163,184,.22);
       transition:transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
       cursor:pointer;
+      width:100%;
+      display:block;
     }
 
     .big-btn:hover{
@@ -181,8 +170,8 @@
     }
 
     .big-btn.primary{
-      background:rgba(95, 139, 124, 0.14);
-      border-color:rgba(95, 139, 124, 0.32);
+      background:var(--accent-soft);
+      border-color:var(--accent-border);
     }
 
     .social-links{
@@ -228,9 +217,7 @@
       margin:0 10px;
     }
 
-    footer a:hover{
-      text-decoration:underline;
-    }
+    footer a:hover{ text-decoration:underline; }
 
     .footer-note{
       font-size:0.8rem;
@@ -241,6 +228,12 @@
       line-height:1.55;
     }
 
+    .visitor-note{
+      margin-top:12px;
+      font-size:.72rem;
+      color:#9ca3af;
+    }
+
     .modal{
       position:fixed;
       inset:0;
@@ -248,9 +241,7 @@
       z-index:50;
     }
 
-    .modal.is-open{
-      display:block;
-    }
+    .modal.is-open{ display:block; }
 
     .modal-backdrop{
       position:absolute;
@@ -296,9 +287,7 @@
       flex:0 0 auto;
     }
 
-    .modal-body{
-      padding:16px;
-    }
+    .modal-body{ padding:16px; }
 
     .notice{
       border:1px solid rgba(95, 139, 124, 0.25);
@@ -311,9 +300,7 @@
       font-size:.98rem;
     }
 
-    .notice strong{
-      color:var(--text-main);
-    }
+    .notice strong{ color:var(--text-main); }
 
     .brevo-frame{
       width:100%;
@@ -350,6 +337,7 @@
       font-weight:800;
       box-shadow:0 12px 28px rgba(148,163,184,.20);
       transition:transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease;
+      display:inline-block;
     }
 
     .link-btn:hover{
@@ -359,108 +347,69 @@
       box-shadow:0 16px 34px rgba(148,163,184,.26);
     }
 
-
-    /* Neu-/Bücherbereich */
-    .new-section{
-      max-width:720px;
-      margin:0 auto 20px;
-      background:rgba(255,255,255,0.62);
-      border:1px solid rgba(95,139,124,0.22);
-      border-radius:22px;
-      padding:18px;
-      box-shadow:0 14px 34px rgba(148,163,184,.20);
+    .shop-modal .modal-dialog{
+      width:min(520px, calc(100% - 28px));
+      margin:10vh auto;
+      border-radius:24px;
     }
 
-    .new-kicker{
+    .shop-intro{
+      text-align:center;
+      padding:4px 8px 8px;
+    }
+
+    .new-badge{
       display:inline-flex;
       align-items:center;
       gap:8px;
-      padding:6px 11px;
       border-radius:999px;
-      background:rgba(95,139,124,0.14);
+      background:rgba(95,139,124,.12);
       color:var(--accent-dark);
-      font-size:.82rem;
+      padding:7px 12px;
+      font-size:.78rem;
       font-weight:800;
       letter-spacing:.08em;
       text-transform:uppercase;
       margin-bottom:12px;
     }
 
-    .book-card,
-    .book-card:visited{
-      display:grid;
-      grid-template-columns:112px 1fr;
-      gap:16px;
-      align-items:center;
-      color:var(--text-main);
-      text-decoration:none;
-      background:rgba(255,255,255,0.72);
-      border:1px solid var(--border);
-      border-radius:18px;
-      padding:14px;
-      box-shadow:0 14px 32px rgba(148,163,184,.18);
-      transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
-    }
-
-    .book-card:hover{
-      transform:translateY(-2px);
-      background:rgba(255,255,255,0.92);
-      box-shadow:0 20px 42px rgba(148,163,184,.28);
-    }
-
     .book-cover{
-      width:112px;
-      aspect-ratio:3 / 4;
-      border-radius:12px;
+      width:124px;
+      height:176px;
       object-fit:cover;
-      background:#fff;
+      border-radius:10px;
       border:1px solid var(--border);
-      box-shadow:0 14px 30px rgba(15,23,42,0.16);
+      box-shadow:0 14px 30px rgba(148,163,184,.32);
+      margin:0 auto 14px;
+      display:block;
+      background:#fff;
     }
 
-    .book-title{
-      font-size:1.05rem;
-      font-weight:850;
+    .shop-intro h2{
+      font-size:1.28rem;
       line-height:1.25;
-      margin-bottom:5px;
+      margin-bottom:8px;
     }
 
-    .book-text{
+    .shop-intro p{
       color:var(--text-muted);
-      font-size:.94rem;
-      margin-bottom:10px;
+      font-size:.96rem;
+      margin:0 auto 14px;
+      max-width:380px;
     }
 
-    .shop-mini-btn{
-      display:inline-flex;
-      border-radius:999px;
-      padding:8px 12px;
-      background:rgba(95,139,124,0.18);
-      border:1px solid rgba(95,139,124,0.32);
-      color:var(--text-main);
-      font-weight:800;
-      font-size:.9rem;
-    }
-
-    @media (max-width:560px){
-      .book-card{ grid-template-columns:86px 1fr; gap:12px; }
-      .book-cover{ width:86px; }
-      .book-title{ font-size:1rem; }
-    }
-
-    /* Cookie-Hinweis */
     .cookie-banner{
       position:fixed;
       left:16px;
       right:16px;
       bottom:16px;
       z-index:80;
-      max-width:760px;
+      max-width:860px;
       margin:0 auto;
-      background:rgba(255,255,255,0.96);
+      background:rgba(255,255,255,.96);
       border:1px solid var(--border);
       border-radius:20px;
-      box-shadow:0 22px 70px rgba(15,23,42,.24);
+      box-shadow:0 18px 54px rgba(15,23,42,.20);
       padding:16px;
       display:none;
       gap:14px;
@@ -468,11 +417,12 @@
       justify-content:space-between;
     }
 
-    .cookie-banner.is-visible{ display:flex; }
+    .cookie-banner.is-open{ display:flex; }
 
     .cookie-text{
+      font-size:.88rem;
       color:var(--text-muted);
-      font-size:.9rem;
+      padding-right:10px;
     }
 
     .cookie-text strong{
@@ -481,118 +431,37 @@
 
     .cookie-actions{
       display:flex;
-      gap:8px;
+      gap:10px;
+      flex:0 0 auto;
       flex-wrap:wrap;
       justify-content:flex-end;
-      flex:0 0 auto;
     }
 
     .cookie-btn{
       border:1px solid var(--border);
       border-radius:999px;
+      padding:10px 14px;
       background:#fff;
       color:var(--text-main);
-      padding:10px 13px;
-      font-weight:800;
+      font-weight:750;
       cursor:pointer;
-      box-shadow:0 10px 24px rgba(148,163,184,.16);
+      box-shadow:0 10px 22px rgba(148,163,184,.18);
     }
 
-    .cookie-btn.primary{
-      background:rgba(95,139,124,0.18);
-      border-color:rgba(95,139,124,0.38);
+    .cookie-btn.accept{
+      background:var(--accent-soft);
+      border-color:var(--accent-border);
     }
 
     @media (max-width:640px){
-      .cookie-banner{ align-items:stretch; flex-direction:column; }
-      .cookie-actions{ justify-content:flex-start; }
-    }
-
-    /* Neu-Popup nach Cookie-Auswahl */
-    .shop-popup{
-      position:fixed;
-      inset:0;
-      z-index:70;
-      display:none;
-    }
-
-    .shop-popup.is-open{ display:block; }
-
-    .shop-popup-backdrop{
-      position:absolute;
-      inset:0;
-      background:rgba(15,23,42,.42);
-    }
-
-    .shop-popup-dialog{
-      position:relative;
-      width:min(520px, calc(100% - 28px));
-      margin:10vh auto;
-      background:linear-gradient(to bottom, #ffffff 0%, #f7faf8 100%);
-      border:1px solid var(--border);
-      border-radius:24px;
-      box-shadow:0 28px 90px rgba(15,23,42,.35);
-      overflow:hidden;
-      animation:popupGlow .28s ease-out;
-    }
-
-    @keyframes popupGlow{
-      from{ transform:translateY(10px) scale(.98); opacity:0; }
-      to{ transform:translateY(0) scale(1); opacity:1; }
-    }
-
-    .shop-popup-header{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:12px;
-      padding:16px 18px;
-      background:rgba(95,139,124,0.12);
-      border-bottom:1px solid var(--border);
-    }
-
-    .shop-popup-title{
-      font-weight:900;
-      color:var(--text-main);
-    }
-
-    .shop-popup-close{
-      width:36px;
-      height:36px;
-      border-radius:10px;
-      border:1px solid var(--border);
-      background:#fff;
-      font-size:22px;
-      cursor:pointer;
-    }
-
-    .shop-popup-body{
-      padding:18px;
-      text-align:center;
-    }
-
-    .shop-popup-body img{
-      width:140px;
-      max-width:45%;
-      aspect-ratio:3 / 4;
-      object-fit:cover;
-      border-radius:14px;
-      border:1px solid var(--border);
-      box-shadow:0 16px 38px rgba(15,23,42,.18);
-      margin-bottom:14px;
-      background:#fff;
-    }
-
-    .shop-popup-body h2{
-      font-size:1.25rem;
-      line-height:1.25;
-      margin-bottom:8px;
-    }
-
-    .shop-popup-body p{
-      color:var(--text-muted);
-      font-size:.95rem;
-      margin-bottom:16px;
+      .cookie-banner{
+        align-items:stretch;
+        flex-direction:column;
+      }
+      .cookie-actions{ justify-content:stretch; }
+      .cookie-btn{ width:100%; }
+      .modal-dialog{ margin:3vh auto; }
+      .shop-modal .modal-dialog{ margin:7vh auto; }
     }
   </style>
 </head>
@@ -603,7 +472,6 @@
       <div class="card-inner">
 
         <div class="logo-row">
-
           <div class="logo-circle child">
             <img src="bilder/lache_lebe_logo.png" alt="Kindermeditationen">
           </div>
@@ -615,8 +483,7 @@
           <div class="logo-circle adult">
             <img src="bilder/lache_lebe_E_Logo.png" alt="Erwachsenenmeditationen">
           </div>
-
-        </div>    
+        </div>
 
         <header>
           <div class="brand">LACHE&LEBE</div>
@@ -641,23 +508,6 @@
             <strong>Tagesreflexionen</strong>, <strong>innerer Ausrichtung</strong>, meditativen Übungen,
             <strong>Journaling</strong> und besonderen Begleitungen wie den <strong>Rauhnächten</strong>.
           </p>
-        </section>
-
-
-
-        <section class="new-section" aria-label="Neu bei Lache und Lebe">
-          <div class="new-kicker">✨ Neu bei Lache &amp; Lebe</div>
-
-          <a class="book-card" href="https://www.amazon.de/dp/B0H3FJC8X7" target="_blank" rel="noopener">
-            <img class="book-cover" src="bilder/kinderbuch-cover.jpg" alt="Cover des Kinderbuchs">
-            <div>
-              <div class="book-title">Das neue Kinderbuch entdecken</div>
-              <div class="book-text">
-                Eine liebevolle Geschichte aus der Welt von Lache &amp; Lebe – direkt bei Amazon ansehen.
-              </div>
-              <span class="shop-mini-btn">Zum Shop gehen</span>
-            </div>
-          </a>
         </section>
 
         <section class="btn-stack">
@@ -693,41 +543,10 @@
             Meine Meditationen und Inhalte dienen der Entspannung und persönlichen Entwicklung.
             Sie ersetzen keine medizinische oder psychotherapeutische Behandlung.
           </p>
+
+          <p class="visitor-note">Besucherzähler kann später unauffällig ergänzt werden.</p>
         </footer>
 
-      </div>
-    </div>
-  </div>
-
-
-
-  <div class="cookie-banner" id="cookieBanner" role="region" aria-label="Cookie-Hinweis">
-    <div class="cookie-text">
-      <strong>Diese Webseite nutzt notwendige Funktionen und bindet externe Inhalte ein.</strong><br>
-      Dazu können z. B. YouTube, Spotify, Apple Podcasts, Brevo oder Amazon gehören. Details findest du in der Datenschutzerklärung.
-    </div>
-    <div class="cookie-actions">
-      <button class="cookie-btn" id="cookieNecessary" type="button">Nur notwendige</button>
-      <button class="cookie-btn primary" id="cookieAccept" type="button">Alle akzeptieren</button>
-    </div>
-  </div>
-
-  <div class="shop-popup" id="shopPopup" aria-hidden="true">
-    <div class="shop-popup-backdrop" id="closeShopBackdrop"></div>
-
-    <div class="shop-popup-dialog" role="dialog" aria-modal="true" aria-label="Neu bei Lache und Lebe">
-      <div class="shop-popup-header">
-        <div class="shop-popup-title">✨ Neu bei Lache &amp; Lebe</div>
-        <button class="shop-popup-close" id="closeShopPopup" type="button" aria-label="Hinweis schließen">×</button>
-      </div>
-
-      <div class="shop-popup-body">
-        <a href="https://www.amazon.de/dp/B0H3FJC8X7" target="_blank" rel="noopener" aria-label="Kinderbuch bei Amazon ansehen">
-          <img src="bilder/kinderbuch-cover.png" alt="Cover des Kinderbuchs">
-        </a>
-        <h2>Das neue Kinderbuch ist da</h2>
-        <p>Eine liebevolle Geschichte aus der Welt von Lache &amp; Lebe. Du kannst es direkt bei Amazon ansehen.</p>
-        <a class="link-btn" href="https://www.amazon.de/dp/B0H3FJC8X7" target="_blank" rel="noopener">Zum Shop gehen</a>
       </div>
     </div>
   </div>
@@ -766,73 +585,102 @@
     </div>
   </div>
 
-  <script>
-    const modal = document.getElementById("brevoModal");
-    const openBtn = document.getElementById("openBrevo");
-    const closeBtn = document.getElementById("closeBrevo");
-    const backdrop = document.getElementById("closeBrevoBackdrop");
+  <div class="modal shop-modal" id="shopModal" aria-hidden="true">
+    <div class="modal-backdrop" id="closeShopBackdrop"></div>
 
-    function openModal(){
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-label="Neu bei Lache und Lebe">
+      <div class="modal-header">
+        <div class="modal-title">Neu bei Lache &amp; Lebe</div>
+        <button class="modal-close" id="closeShop" type="button" aria-label="Modal schließen">×</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="shop-intro">
+          <div class="new-badge">✨ Neu</div>
+
+          <a href="https://www.amazon.de/dp/B0H3FJC8X7" target="_blank" rel="noopener" aria-label="Kinderbuch bei Amazon ansehen">
+            <img class="book-cover" src="bilder/kinderbuch-cover.png" alt="Kinderbuch Cover">
+          </a>
+
+          <h2>Das neue Kinderbuch entdecken</h2>
+          <p>Eine liebevolle Geschichte aus der Welt von Lache &amp; Lebe – direkt bei Amazon ansehen.</p>
+
+          <a class="link-btn" href="https://www.amazon.de/dp/B0H3FJC8X7" target="_blank" rel="noopener">Zum Shop gehen</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite" aria-label="Cookie-Hinweis">
+    <div class="cookie-text">
+      <strong>Diese Webseite nutzt notwendige Funktionen und bindet externe Inhalte ein.</strong><br>
+      Mit deiner Zustimmung können Inhalte und Dienste von Drittanbietern wie YouTube, Spotify, Apple Podcasts, Brevo oder Amazon geöffnet bzw. eingebunden werden.
+    </div>
+
+    <div class="cookie-actions">
+      <button class="cookie-btn" id="necessaryCookies" type="button">Nur notwendige</button>
+      <button class="cookie-btn accept" id="acceptCookies" type="button">Alle akzeptieren</button>
+    </div>
+  </div>
+
+  <script>
+    const brevoModal = document.getElementById("brevoModal");
+    const openBrevoBtn = document.getElementById("openBrevo");
+    const closeBrevoBtn = document.getElementById("closeBrevo");
+    const brevoBackdrop = document.getElementById("closeBrevoBackdrop");
+
+    const shopModal = document.getElementById("shopModal");
+    const closeShopBtn = document.getElementById("closeShop");
+    const shopBackdrop = document.getElementById("closeShopBackdrop");
+
+    const cookieBanner = document.getElementById("cookieBanner");
+    const acceptCookiesBtn = document.getElementById("acceptCookies");
+    const necessaryCookiesBtn = document.getElementById("necessaryCookies");
+
+    function openModal(modal){
       modal.classList.add("is-open");
       modal.setAttribute("aria-hidden","false");
       document.body.style.overflow = "hidden";
-      closeBtn.focus();
     }
 
-    function closeModal(){
+    function closeModal(modal){
       modal.classList.remove("is-open");
       modal.setAttribute("aria-hidden","true");
       document.body.style.overflow = "";
-      openBtn.focus();
     }
 
-    openBtn.addEventListener("click", openModal);
-    closeBtn.addEventListener("click", closeModal);
-    backdrop.addEventListener("click", closeModal);
+    function acceptCookieChoice(choice){
+      localStorage.setItem("lachelebe_cookie_choice", choice);
+      localStorage.setItem("lachelebe_shop_popup_seen", "yes");
+      cookieBanner.classList.remove("is-open");
 
-    document.addEventListener("keydown", (e) => {
-      if(!modal.classList.contains("is-open")) return;
-      if(e.key === "Escape") closeModal();
+      setTimeout(() => {
+        openModal(shopModal);
+        closeShopBtn.focus();
+      }, 250);
+    }
+
+    window.addEventListener("load", () => {
+      const cookieChoice = localStorage.getItem("lachelebe_cookie_choice");
+      if(!cookieChoice){
+        cookieBanner.classList.add("is-open");
+      }
     });
 
+    openBrevoBtn.addEventListener("click", () => openModal(brevoModal));
+    closeBrevoBtn.addEventListener("click", () => closeModal(brevoModal));
+    brevoBackdrop.addEventListener("click", () => closeModal(brevoModal));
 
-    const cookieBanner = document.getElementById("cookieBanner");
-    const cookieAccept = document.getElementById("cookieAccept");
-    const cookieNecessary = document.getElementById("cookieNecessary");
-    const shopPopup = document.getElementById("shopPopup");
-    const closeShopPopup = document.getElementById("closeShopPopup");
-    const closeShopBackdrop = document.getElementById("closeShopBackdrop");
+    closeShopBtn.addEventListener("click", () => closeModal(shopModal));
+    shopBackdrop.addEventListener("click", () => closeModal(shopModal));
 
-    function openShopPopup(){
-      shopPopup.classList.add("is-open");
-      shopPopup.setAttribute("aria-hidden", "false");
-      document.body.style.overflow = "hidden";
-      closeShopPopup.focus();
-    }
-
-    function closeShopNotice(){
-      shopPopup.classList.remove("is-open");
-      shopPopup.setAttribute("aria-hidden", "true");
-      document.body.style.overflow = "";
-    }
-
-    function acceptCookies(choice){
-      localStorage.setItem("lacheLebeCookieChoice", choice);
-      cookieBanner.classList.remove("is-visible");
-      setTimeout(openShopPopup, 250);
-    }
-
-    if(!localStorage.getItem("lacheLebeCookieChoice")){
-      cookieBanner.classList.add("is-visible");
-    }
-
-    cookieAccept.addEventListener("click", () => acceptCookies("all"));
-    cookieNecessary.addEventListener("click", () => acceptCookies("necessary"));
-    closeShopPopup.addEventListener("click", closeShopNotice);
-    closeShopBackdrop.addEventListener("click", closeShopNotice);
+    acceptCookiesBtn.addEventListener("click", () => acceptCookieChoice("all"));
+    necessaryCookiesBtn.addEventListener("click", () => acceptCookieChoice("necessary"));
 
     document.addEventListener("keydown", (e) => {
-      if(shopPopup.classList.contains("is-open") && e.key === "Escape") closeShopNotice();
+      if(e.key !== "Escape") return;
+      if(brevoModal.classList.contains("is-open")) closeModal(brevoModal);
+      if(shopModal.classList.contains("is-open")) closeModal(shopModal);
     });
   </script>
 </body>
